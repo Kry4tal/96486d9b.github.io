@@ -1,0 +1,1 @@
+"use strict";function user(a,t,n,s){var e,c,h=Math.PI/a,r=[],u=2*s/a;for(e=0;e<a;++e)c=h*e,e%2&&(c+=Math.PI),r.push([t*Math.cos(c),s-u*e,n*Math.sin(c)]);return r}function changeType(a){TagCanvas.Delete("tagcanvas"),TagCanvas.Start("tagcanvas","",{shape:a})}

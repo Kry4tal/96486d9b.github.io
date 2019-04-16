@@ -1,0 +1,578 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Flow</title>
+  <meta name="description" content="All of life is an act of letting go, but what hurts the most is not taking a moment to say goodbye.">
+  <meta name="keywords" content="blog,IT">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/assets/favicon.png">
+  <link rel="alternate" href="/atom.xml" title="Flow">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="框架：Hexo 主题：Theme Fork From Material-Flow 渲染引擎：Marked.js 托管平台：Github Pages Aliyun EC2 同步平台：语雀 保留了大部分的样式。增加或修改了以下这些项目，  采用valine作为评论系统，解决了之前的pjax不兼容问题。 引入思源字体，现在速度跟不上。尝试过google开源的webfontloader，好像没有感觉到很异">
+<meta name="keywords" content="架构,博客,更新">
+<meta property="og:type" content="article">
+<meta property="og:title" content="架构">
+<meta property="og:url" content="https://96486d9b.github.io/2019/01/01/gabsgd/index.html">
+<meta property="og:site_name" content="Flow">
+<meta property="og:description" content="框架：Hexo 主题：Theme Fork From Material-Flow 渲染引擎：Marked.js 托管平台：Github Pages Aliyun EC2 同步平台：语雀 保留了大部分的样式。增加或修改了以下这些项目，  采用valine作为评论系统，解决了之前的pjax不兼容问题。 引入思源字体，现在速度跟不上。尝试过google开源的webfontloader，好像没有感觉到很异">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-09T06:30:47.916Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="架构">
+<meta name="twitter:description" content="框架：Hexo 主题：Theme Fork From Material-Flow 渲染引擎：Marked.js 托管平台：Github Pages Aliyun EC2 同步平台：语雀 保留了大部分的样式。增加或修改了以下这些项目，  采用valine作为评论系统，解决了之前的pjax不兼容问题。 引入思源字体，现在速度跟不上。尝试过google开源的webfontloader，好像没有感觉到很异">
+  <meta name="baidu-site-verification" content="RcgDKTGgGT">
+  <meta name="google-site-verification" content="uLxUm5wTv1GofV8_j9CYt1DPYi8JHoOwA1ZncffgYnw">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-134676129-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-134676129-1');
+  </script>
+  <!-- no console log  -->
+  <script src="/js/console.js"></script>
+
+  <link href="https://fonts.loli.net/css?family=Noto+Serif+SC" rel="stylesheet">
+  <link href="https://fonts.loli.net/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.loli.net/css?family=Roboto+Mono" rel="stylesheet">
+  <link href="https://fonts.loli.net/css?family=Material+Icons" rel="stylesheet">
+
+  <!-- typekit font loader -->
+  <!-- <script src="/js/font.js"></script> -->
+
+  <link href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.10/lib/typed.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-lazyload@1.9.7/jquery.lazyload.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+  
+
+  
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine@1.3.6/dist/Valine.min.js"></script>
+  
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+  
+  <script async="" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/preload.js@1.0.0/dist/preload.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+  <script>
+    let ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+    let CONFIG = {
+      search_service: "hexo",
+      since: '2/16/2018 00:00:00',
+      mathjax_cdn: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.min.js?config=TeX-MML-AM_CHTML',
+      poem_api: 'https://sdk.jinrishici.com/v2/browser/jinrishici.js'
+    }
+  </script>
+
+  <script src="/js/image.js"></script>
+  <script src="/js/search.js"></script>
+  <script src="/js/since.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/wordcount.js"></script>
+  <script src="/js/tagcloud.js"></script>
+  <script src="/js/tagcanvas.js"></script>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <script>NProgress.start();</script>
+  
+  <a href="https://github.com/96486d9b/hexo-theme-material-flow" target="_blank" class="github-corner" aria-label="View source on GitHub">
+    <svg class="github-svg" width="50" height="50" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: fixed; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+  
+  
+  <header class="l_header">
+	<div class="wrapper">
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href="/">
+				Flow
+			</a>
+			<div class="menu">
+				<ul class="h-list">
+					
+					<li>
+						<a class="flat-box nav-home" href="/">
+							首页
+						</a>
+					</li>
+					
+					<li>
+						<a class="flat-box nav-archives" href="/archives/">
+							归档
+						</a>
+					</li>
+					
+					<li>
+						<a class="flat-box nav-timeline" href="/timeline/">
+							时间轴
+						</a>
+					</li>
+					
+					<li>
+						<a class="flat-box nav-gallery" href="/gallery/">
+							回忆录
+						</a>
+					</li>
+					
+					<li>
+						<a class="flat-box nav-project" href="/project/">
+							分享集
+						</a>
+					</li>
+					
+					<li>
+						<a class="flat-box nav-about" href="/about/">
+							简介
+						</a>
+					</li>
+					
+				</ul>
+				<div class="underline"></div>
+			</div>
+			
+			<div class="m_search">
+				<form name="searchform" class="form u-search-form">
+					<input type="text" class="input u-search-input" placeholder="关键词">
+					<i class="material-icons flat-box">search</i>
+				</form>
+			</div>
+			
+			<ul class="switcher h-list">
+				
+				<li class="s-search">
+					<a href="javascript:void(0)"><i class="material-icons flat-box">search</i></a>
+				</li>
+				
+				<li class="s-menu">
+					<a href="javascript:void(0)"><i class="material-icons flat-box">menu</i></a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="nav-sub container container--flex">
+			<a class="logo" href="javascript:void(0)">
+				Flow
+			</a>
+
+			<ul class="switcher h-list">
+				<li class="s-down">
+					<a href="javascript:void(0)"><i class="material-icons flat-box">arrow_downward</i></a>
+				</li>
+				<li class="s-comment">
+					<a href="javascript:void(0)"><i class="material-icons flat-box">comment</i></a>
+				</li>
+				<li class="s-top">
+					<a href="javascript:void(0)"><i class="material-icons flat-box">arrow_upward</i></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</header>
+<aside class="menu-phone">
+	<nav>
+		
+		<a href="/" class="nav-home nav">
+			首页
+		</a>
+		
+		<a href="/archives/" class="nav-archives nav">
+			归档
+		</a>
+		
+		<a href="/timeline/" class="nav-timeline nav">
+			时间轴
+		</a>
+		
+		<a href="/gallery/" class="nav-gallery nav">
+			回忆录
+		</a>
+		
+		<a href="/project/" class="nav-project nav">
+			分享集
+		</a>
+		
+		<a href="/about/" class="nav-about nav">
+			简介
+		</a>
+		
+	</nav>
+</aside>
+  <div class="l_body">
+    <div class="container clearfix">
+      <div id="l_pjax" class="l_main">
+        <article class="post reveal" itemscope="" itemprop="blogPost">
+	<section class="meta">
+		<h2 class="title">
+			<a href="/2019/01/01/gabsgd/">
+				架构
+			</a>
+		</h2>
+		<time>
+			2019-01-01
+		</time>
+
+		
+<span id="/2019/01/01/gabsgd/" class="leancloud-visitors" data-flag-title="架构">
+    <time> 字数 <span id="wordcount"></span> 阅读时长 <span id="min2read"></span> 浏览 <span class="leancloud-visitors-count"></span></time>
+</span>
+<script>
+  count('&#34;框架：Hexo\n主题：Theme Fork From Material-Flow\n渲染引擎：Marked.js\n托管平台：Github Pages Aliyun EC2\n同步平台：语雀\n保留了大部分的样式。增加或修改了以下这些项目，\n\n采用valine作为评论系统，解决了之前的pjax不兼容问题。\n引入思源字体，现在速度跟不上。尝试过google开源的webfontloader，好像没有感觉到很异步的感觉。也尝试过使用内联字，直接转为base64，但这样就是初始的加载太慢了，css大概5M左右。现在暂时使用的是typekit的方案。\npreload.js，作为预缓存live2d的加载效果。\n引入了新的背景，彩色飘带canvas。尤雨溪博客背景。\n引入了每日bing图片选项，开启后背景图片为每日的bing壁纸。\n引入右下角live2d，一个比较可爱的妹子，作为引导角色。\n修复了header由于滚动条宽度造成的问题，vw和%的区别。这一点还是很难完全兼容。\n引入了chatbot，基于deepQA的api，可惜。\nmathJax，SVG静态显式，为了加速动态渲染的过程。\ntoc，还存在Bug，看了一些其他例子，暂时没法解决。\npjax，整体采用局部刷新布局，加速网页。\naplayer，在pjax的前提下，实现了切换网页播放不停滞。\n侧边栏poem，今日诗词api。网页路径更改时自动切换。\npage essay，利用每日一文API 。点击标题或者侧边栏入口可以切换。\npage gallery，参考纯CSS实现Google Photos照片列表布局。\npage timeline，参考Material主题。\npage tagcloud，参考Material主题，基本的md风格便签，以及引入了tagcanvas。支持多种形状风格。\npage Project，简单的展示页。\nlazyload.js，优化图片加载效果。\nfancybox，优化图片展示效果。\n文章置顶，更改了默认的index-generator。\n文章字数以及阅读时长统计，参考hexo-theme-next的实现方式。\n文章阅读人数统计，leancloud数据统计。\nvaline，评论系统，也是基于leancloud的，因为与pjax没法兼容，测试了一下可能是因为是leancloud的问题。\ndisqus，评论系统，太丑了。\ngitalk，基于github repo issues的评论系统，非anonymous。\nheader，主要工作在于适配pjax以及一些跳转按钮的优化。\ncanvas-nest.js，背景的动画粒子线条效果。\nmaterial-icons，font awesome的引进，作为css 图标。为什么选了两个的原因日志里面有。\nsince，计时系统，参考hexo-theme-next的实现方式。样式参考DIYgod。\nBootCDN，大部分css，js的国内cdn镜像源。\nfont.loli.net，从google fonts更换到国内源。这个好像是个人的？\ngulp，基于gulp的全站压缩。\nsitemap，提交了一些站点地图给baidu和google。\nhexo-douban，这个原来引入了，后来觉得不太合适删了。\n想不起来了。\n\n主目录结构123456789101112131415.├── public├── scaffolds├── source│\t\t├── _posts│\t\t├── about│\t\t├── assets│\t\t├── essay│\t\t├── gallery│\t\t├── project│\t\t├── recent│\t\t├── tagcloud│\t\t└── timeline└── themes    └── material\n依赖项123456789101112131415161718192021222324252627282930313233343536373839&amp;#123;  \&#34;name\&#34;: \&#34;hexo-site\&#34;,  \&#34;version\&#34;: \&#34;0.0.0\&#34;,  \&#34;private\&#34;: true,  \&#34;hexo\&#34;: &amp;#123;    \&#34;version\&#34;: \&#34;3.8.0\&#34;  &amp;#125;,  \&#34;dependencies\&#34;: &amp;#123;    \&#34;aplayer\&#34;: \&#34;^1.10.1\&#34;,    \&#34;gulp\&#34;: \&#34;^4.0.0\&#34;,    \&#34;gulp-babel\&#34;: \&#34;^8.0.0\&#34;,    \&#34;gulp-clean-css\&#34;: \&#34;^4.0.0\&#34;,    \&#34;gulp-htmlclean\&#34;: \&#34;^2.7.22\&#34;,    \&#34;gulp-htmlmin\&#34;: \&#34;^5.0.1\&#34;,    \&#34;gulp-imagemin\&#34;: \&#34;^5.0.3\&#34;,    \&#34;gulp-mathjax-page\&#34;: \&#34;^1.1.0\&#34;,    \&#34;gulp-uglify\&#34;: \&#34;^3.0.1\&#34;,    \&#34;hexo\&#34;: \&#34;^3.7.0\&#34;,    \&#34;hexo-autoprefixer\&#34;: \&#34;^2.0.0\&#34;,    \&#34;hexo-deployer-git\&#34;: \&#34;^1.0.0\&#34;,    \&#34;hexo-generator-archive\&#34;: \&#34;^0.1.5\&#34;,    \&#34;hexo-generator-baidu-sitemap\&#34;: \&#34;^0.1.6\&#34;,    \&#34;hexo-generator-category\&#34;: \&#34;^0.1.3\&#34;,    \&#34;hexo-generator-feed\&#34;: \&#34;^1.2.2\&#34;,    \&#34;hexo-generator-index\&#34;: \&#34;^0.2.1\&#34;,    \&#34;hexo-generator-json-content\&#34;: \&#34;^3.0.1\&#34;,    \&#34;hexo-generator-search\&#34;: \&#34;^2.4.0\&#34;,    \&#34;hexo-generator-sitemap\&#34;: \&#34;^1.2.0\&#34;,    \&#34;hexo-generator-tag\&#34;: \&#34;^0.2.0\&#34;,    \&#34;hexo-helper-live2d\&#34;: \&#34;^3.1.0\&#34;,    \&#34;hexo-pdf\&#34;: \&#34;^1.1.1\&#34;,    \&#34;hexo-renderer-ejs\&#34;: \&#34;^0.3.1\&#34;,    \&#34;hexo-renderer-less\&#34;: \&#34;^1.0.0\&#34;,    \&#34;hexo-renderer-marked\&#34;: \&#34;^0.3.2\&#34;,    \&#34;hexo-renderer-stylus\&#34;: \&#34;^0.3.3\&#34;,    \&#34;hexo-server\&#34;: \&#34;^0.3.1\&#34;,    \&#34;live2d-widget-model-hijiki\&#34;: \&#34;^1.0.5\&#34;  &amp;#125;&amp;#125;\n更新日志\n\n2019/02/16\n\n细节优化了live2d的显示效果，加入了preload.js实现缓存。\n\n2019/02/13\n\n全面引入gulp压缩资源，以及将mathjax转会svg存放。\n引入了Poem，Essay两个功能，随机更换内容。增加静态博客的动态性哈哈！\n正本清源，删除了hexo-douban在内的一些冗余功能。\n\n2019/02/12\n\n引入update_date属性。\n引入跳转底部按钮，在当前页面没有评论的情况下，因为跳转评论约等于跳转底部。\n\n2019/02/11\n\n重写了架构，改用局部刷新。\n引入aplayer，采用固定末端的形式。\n引入评论，优先考虑兼容pjax，最终选定gitalk。\n\n2019/02/06\n\n干脆直接就删除了翻页处的icons\n修正了原先material-design-icons的位置偏差。\n加入了hexo-douban，豆瓣读书，电影，游戏页面。\n\n2019/02/05\n\n原先icon是icomoon webfont，本地引入。更换乘了material-icons + fontawesome的组合，为什么要用两个的组合，因为暂时没找到一个比较全的web font。\n引入了文章阅读字数，阅读时长，hexo-wordcount，以及阅读人数，busuanzi.js\n更新了文章排序方式，引入了top字段。现在的逻辑是，只在index页面引入top字段，在tag和category不引入。\n加入了3D 动态词云效果，参考TagCanvas。\n修复了on-phone端的显示效果。\n\n2019/02/03\n\n引入了canvas-nest.js\n\n2019/02/01\n\n之前习惯了用语雀作为在线写作的工具。所以考虑把本地的一些文档全部迁移到语雀上去。\n语雀给开发者提供了很好的api接口，通过token验证，很轻松就可以把云端的一些文档pull到本地。\n文档地址：API\n原来想一口气把所有的doc都同步，但是发现语雀editor2.0对应的markdown导出api，对之前的bug似乎进行了一个错误的处理，期待2.0版本整体迁移到3.0版本的编辑器。后续会把一些笔记慢慢同步到这个Blog。\n其实同步到语雀的另一个好处，就是变相使用了国内的CDN加速哈哈。所以你会看到许多静态资源实际上指向的是Ant对应的存储服务。\n&#34;');
+</script>
+
+		
+
+<div class="categories">
+    <a href="/categories/技·路/">技·路</a>
+</div>
+
+		<br>
+		
+<time>最近更新 2019-04-01</time>
+
+
+	</section>
+
+	
+
+	<section class="article typo">
+		<div class="article-entry" itemprop="articleBody">
+			<p>框架：<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo</a></p>
+<p>主题：<a href="https://github.com/96486d9b/hexo-theme-material-flow" target="_blank" rel="noopener">Theme</a> Fork From <a href="https://github.com/stkevintan/hexo-theme-material-flow" target="_blank" rel="noopener">Material-Flow</a></p>
+<p>渲染引擎：<a href="https://github.com/hexojs/hexo-renderer-marked" target="_blank" rel="noopener">Marked.js</a></p>
+<p>托管平台：<a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a> <a href="https://cn.aliyun.com/" target="_blank" rel="noopener">Aliyun EC2</a></p>
+<p>同步平台：<a href="https://www.yuque.com" target="_blank" rel="noopener">语雀</a></p>
+<p>保留了大部分的样式。增加或修改了以下这些项目，</p>
+<ul>
+<li>采用<a href="https://github.com/xCss/Valine" target="_blank" rel="noopener">valine</a>作为评论系统，解决了之前的pjax不兼容问题。</li>
+<li>引入思源字体，现在速度跟不上。尝试过google开源的<a href="https://github.com/typekit/webfontloader" target="_blank" rel="noopener">webfontloader</a>，好像没有感觉到很异步的感觉。也尝试过使用内联字，直接转为base64，但这样就是初始的加载太慢了，css大概5M左右。现在暂时使用的是<a href="https://fonts.adobe.com/?ref=tk.com" target="_blank" rel="noopener">typekit</a>的方案。</li>
+<li><a href="https://github.com/CreateJS/PreloadJS" target="_blank" rel="noopener">preload.js</a>，作为预缓存live2d的加载效果。</li>
+<li>引入了新的背景，彩色飘带canvas。<a href="https://evanyou.me/" target="_blank" rel="noopener">尤雨溪</a>博客背景。</li>
+<li>引入了每日bing图片选项，开启后背景图片为每日的bing壁纸。</li>
+<li>引入右下角<a href="https://www.live2d.com/ja/" target="_blank" rel="noopener">live2d</a>，一个比较可爱的妹子，作为引导角色。</li>
+<li><del>修复了header由于滚动条宽度造成的问题，vw和%的区别。这一点还是很难完全兼容。</del></li>
+<li><del>引入了chatbot，基于deepQA的api，可惜。</del></li>
+<li><a href="https://www.mathjax.org/" target="_blank" rel="noopener">mathJax</a>，SVG静态显式，为了加速动态渲染的过程。</li>
+<li>toc，还存在Bug，看了一些其他例子，暂时没法解决。</li>
+<li><a href="https://github.com/defunkt/jquery-pjax" target="_blank" rel="noopener">pjax</a>，整体采用局部刷新布局，加速网页。</li>
+<li><a href="https://github.com/MoePlayer/APlayer" target="_blank" rel="noopener">aplayer</a>，在pjax的前提下，实现了切换网页播放不停滞。</li>
+<li>侧边栏poem，<a href="https://www.jinrishici.com/" target="_blank" rel="noopener">今日诗词</a>api。网页路径更改时自动切换。</li>
+<li>page essay，利用<a href="https://meiriyiwen.com/" target="_blank" rel="noopener">每日一文</a>API 。点击标题或者侧边栏入口可以切换。</li>
+<li>page gallery，参考<a href="https://www.cnblogs.com/wwhhq/p/8185864.html" target="_blank" rel="noopener">纯CSS实现Google Photos照片列表布局</a>。</li>
+<li>page timeline，参考<a href="https://github.com/viosey/hexo-theme-material" target="_blank" rel="noopener">Material主题</a>。</li>
+<li>page tagcloud，参考<a href="https://github.com/viosey/hexo-theme-material" target="_blank" rel="noopener">Material主题</a>，基本的md风格便签，以及引入了<a href="http://www.goat1000.com/tagcanvas.php" target="_blank" rel="noopener">tagcanvas</a>。支持多种形状风格。</li>
+<li>page Project，简单的展示页。</li>
+<li><a href="https://github.com/tuupola/jquery_lazyload" target="_blank" rel="noopener">lazyload.js</a>，优化图片加载效果。</li>
+<li><a href="https://github.com/fancyapps/fancybox" target="_blank" rel="noopener">fancybox</a>，优化图片展示效果。</li>
+<li>文章置顶，更改了默认的index-generator。</li>
+<li>文章字数以及阅读时长统计，参考<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">hexo-theme-next</a>的实现方式。</li>
+<li>文章阅读人数统计，<a href="https://leancloud.cn/" target="_blank" rel="noopener">leancloud</a>数据统计。</li>
+<li>valine，评论系统，也是基于leancloud的，因为与pjax没法兼容，测试了一下可能是因为是leancloud的问题。</li>
+<li>disqus，评论系统，太丑了。</li>
+<li><a href="https://github.com/gitalk/gitalk" target="_blank" rel="noopener">gitalk</a>，基于github repo issues的评论系统，非anonymous。</li>
+<li>header，主要工作在于适配pjax以及一些跳转按钮的优化。</li>
+<li>canvas-nest.js，背景的动画粒子线条效果。</li>
+<li>material-icons，font awesome的引进，作为css 图标。为什么选了两个的原因日志里面有。</li>
+<li>since，计时系统，参考hexo-theme-next的实现方式。样式参考<a href="https://diygod.me/" target="_blank" rel="noopener">DIYgod</a>。</li>
+<li><a href="https://www.bootcdn.cn/" target="_blank" rel="noopener">BootCDN</a>，大部分css，js的国内cdn镜像源。</li>
+<li><a href="https://sb.sb/blog/" target="_blank" rel="noopener">font.loli.net</a>，从google fonts更换到国内源。这个好像是个人的？</li>
+<li><a href="https://github.com/gulpjs/gulp" target="_blank" rel="noopener">gulp</a>，基于gulp的全站压缩。</li>
+<li>sitemap，提交了一些站点地图给baidu和google。</li>
+<li><del>hexo-douban，这个原来引入了，后来觉得不太合适删了。</del></li>
+<li>想不起来了。</li>
+</ul>
+<p>主目录结构<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── public</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">│		├── _posts</span><br><span class="line">│		├── about</span><br><span class="line">│		├── assets</span><br><span class="line">│		├── essay</span><br><span class="line">│		├── gallery</span><br><span class="line">│		├── project</span><br><span class="line">│		├── recent</span><br><span class="line">│		├── tagcloud</span><br><span class="line">│		└── timeline</span><br><span class="line">└── themes</span><br><span class="line">    └── material</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>依赖项<br></p><figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"hexo-site"</span>,</span><br><span class="line">  <span class="string">"version"</span>: <span class="string">"0.0.0"</span>,</span><br><span class="line">  <span class="string">"private"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">"hexo"</span>: {</span><br><span class="line">    <span class="string">"version"</span>: <span class="string">"3.8.0"</span></span><br><span class="line">  },</span><br><span class="line">  <span class="string">"dependencies"</span>: {</span><br><span class="line">    <span class="string">"aplayer"</span>: <span class="string">"^1.10.1"</span>,</span><br><span class="line">    <span class="string">"gulp"</span>: <span class="string">"^4.0.0"</span>,</span><br><span class="line">    <span class="string">"gulp-babel"</span>: <span class="string">"^8.0.0"</span>,</span><br><span class="line">    <span class="string">"gulp-clean-css"</span>: <span class="string">"^4.0.0"</span>,</span><br><span class="line">    <span class="string">"gulp-htmlclean"</span>: <span class="string">"^2.7.22"</span>,</span><br><span class="line">    <span class="string">"gulp-htmlmin"</span>: <span class="string">"^5.0.1"</span>,</span><br><span class="line">    <span class="string">"gulp-imagemin"</span>: <span class="string">"^5.0.3"</span>,</span><br><span class="line">    <span class="string">"gulp-mathjax-page"</span>: <span class="string">"^1.1.0"</span>,</span><br><span class="line">    <span class="string">"gulp-uglify"</span>: <span class="string">"^3.0.1"</span>,</span><br><span class="line">    <span class="string">"hexo"</span>: <span class="string">"^3.7.0"</span>,</span><br><span class="line">    <span class="string">"hexo-autoprefixer"</span>: <span class="string">"^2.0.0"</span>,</span><br><span class="line">    <span class="string">"hexo-deployer-git"</span>: <span class="string">"^1.0.0"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-archive"</span>: <span class="string">"^0.1.5"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-baidu-sitemap"</span>: <span class="string">"^0.1.6"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-category"</span>: <span class="string">"^0.1.3"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-feed"</span>: <span class="string">"^1.2.2"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-index"</span>: <span class="string">"^0.2.1"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-json-content"</span>: <span class="string">"^3.0.1"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-search"</span>: <span class="string">"^2.4.0"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-sitemap"</span>: <span class="string">"^1.2.0"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-tag"</span>: <span class="string">"^0.2.0"</span>,</span><br><span class="line">    <span class="string">"hexo-helper-live2d"</span>: <span class="string">"^3.1.0"</span>,</span><br><span class="line">    <span class="string">"hexo-pdf"</span>: <span class="string">"^1.1.1"</span>,</span><br><span class="line">    <span class="string">"hexo-renderer-ejs"</span>: <span class="string">"^0.3.1"</span>,</span><br><span class="line">    <span class="string">"hexo-renderer-less"</span>: <span class="string">"^1.0.0"</span>,</span><br><span class="line">    <span class="string">"hexo-renderer-marked"</span>: <span class="string">"^0.3.2"</span>,</span><br><span class="line">    <span class="string">"hexo-renderer-stylus"</span>: <span class="string">"^0.3.3"</span>,</span><br><span class="line">    <span class="string">"hexo-server"</span>: <span class="string">"^0.3.1"</span>,</span><br><span class="line">    <span class="string">"live2d-widget-model-hijiki"</span>: <span class="string">"^1.0.5"</span></span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>更新日志</p>
+<ul>
+<li>2019/02/16</li>
+</ul>
+<p>细节优化了live2d的显示效果，加入了preload.js实现缓存。</p>
+<ul>
+<li>2019/02/13</li>
+</ul>
+<p>全面引入gulp压缩资源，以及将mathjax转会svg存放。</p>
+<p>引入了Poem，Essay两个功能，随机更换内容。增加静态博客的动态性哈哈！</p>
+<p>正本清源，删除了hexo-douban在内的一些冗余功能。</p>
+<ul>
+<li>2019/02/12</li>
+</ul>
+<p>引入update_date属性。</p>
+<p>引入跳转底部按钮，在当前页面没有评论的情况下，因为跳转评论约等于跳转底部。</p>
+<ul>
+<li>2019/02/11</li>
+</ul>
+<p>重写了架构，改用局部刷新。</p>
+<p>引入<a href="https://github.com/MoePlayer/APlayer" target="_blank" rel="noopener">aplayer</a>，采用固定末端的形式。</p>
+<p>引入评论，优先考虑兼容pjax，最终选定<a href="https://github.com/gitalk/gitalk" target="_blank" rel="noopener">gitalk</a>。</p>
+<ul>
+<li>2019/02/06</li>
+</ul>
+<p>干脆直接就删除了翻页处的icons</p>
+<p>修正了原先material-design-icons的位置偏差。</p>
+<p>加入了hexo-douban，豆瓣读书，电影，游戏页面。</p>
+<ul>
+<li>2019/02/05</li>
+</ul>
+<p>原先icon是icomoon webfont，本地引入。更换乘了material-icons + fontawesome的组合，为什么要用两个的组合，因为暂时没找到一个比较全的web font。</p>
+<p>引入了文章阅读字数，阅读时长，<a href="https://github.com/willin/hexo-wordcount" target="_blank" rel="noopener">hexo-wordcount</a>，以及阅读人数，<a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener">busuanzi.js</a></p>
+<p>更新了文章排序方式，引入了top字段。现在的逻辑是，只在index页面引入top字段，在tag和category不引入。</p>
+<p>加入了3D 动态词云效果，参考<a href="https://github.com/goat1000/TagCanvas" target="_blank" rel="noopener">TagCanvas</a>。</p>
+<p>修复了on-phone端的显示效果。</p>
+<ul>
+<li>2019/02/03</li>
+</ul>
+<p>引入了<a href="https://github.com/hustcc/canvas-nest.js" target="_blank" rel="noopener">canvas-nest.js</a></p>
+<ul>
+<li>2019/02/01</li>
+</ul>
+<p>之前习惯了用<a href="https://www.yuque.com/" target="_blank" rel="noopener">语雀</a>作为在线写作的工具。所以考虑把本地的一些文档全部迁移到语雀上去。</p>
+<p>语雀给开发者提供了很好的api接口，通过token验证，很轻松就可以把云端的一些文档pull到本地。</p>
+<p>文档地址：<a href="https://www.yuque.com/yuque/developer" target="_blank" rel="noopener">API</a></p>
+<p>原来想一口气把所有的doc都同步，但是发现语雀editor2.0对应的markdown导出api，对之前的bug似乎进行了一个错误的处理，期待2.0版本整体迁移到3.0版本的编辑器。后续会把一些笔记慢慢同步到这个Blog。</p>
+<p>其实同步到语雀的另一个好处，就是变相使用了国内的CDN加速哈哈。所以你会看到许多静态资源实际上指向的是Ant对应的存储服务。</p>
+
+		</div>
+		
+		<div class="article-tags tags">
+			
+			<a href="/tags/架构/">
+				架构</a>
+			
+			<a href="/tags/博客/">
+				博客</a>
+			
+			<a href="/tags/更新/">
+				更新</a>
+			
+		</div>
+		
+
+		
+		<div class="art-item-footer">
+			
+			<span class="art-item-left">
+				<a href="/2019/01/25/nuzp8b/" rel="prev" title="回家">
+					<i class="fa fa-angle-left"></i>
+					回家
+				</a>
+			</span>
+			
+			
+			<span class="art-item-right">
+				<a href="/2018/12/08/lgbn47/" rel="next" title="初雪">
+					初雪
+					<i class="fa fa-angle-right"></i>
+				</a>
+			</span>
+			
+		</div>
+		
+	</section>
+</article>
+
+
+
+
+
+
+<article class="post reveal" itemscope="" itemprop="blogPost">
+    <div class="comment"></div>
+    <script>
+        new Valine({
+            el: '.comment',
+            notify: false,
+            verify: false,
+            visitor: true,
+            appId: 'yNQ57noTg3jnFJvLawvv2SrO-gzGzoHsz',
+            appKey: 'kufPfLKXILeMCFpjgJRz4Hd1',
+            placeholder: '在这里，写下你的评论 ~',
+            path: window.location.pathname // **请确保必须写该属性
+        });
+    </script>
+
+</article>
+
+
+
+
+<script>
+	window.subData = {
+		title: '架构',
+		tools: true
+	}
+</script>
+        
+      </div>
+      <aside class="l_side">
+        
+<section class="m_widget about">
+    
+    <img class="avatar waves-image" src="https://cdn.nlark.com/yuque/0/2019/png/223418/1554791423399-avatar/d347f45c-6510-4f1a-9f43-a49fb986e17a.png">
+    
+    <div class="header">
+        山豆几石叶
+    </div>
+    <div id="motto-div" class="content">
+        <div class="desc">
+            <span id="motto" style="white-space:pre-wrap;">Hello, 你好哇!</span>
+        </div>
+    </div>
+</section>
+
+
+    <section class="m_widget poem">
+        <div class="header">诗词</div>
+        <div class="content">
+            <div class="poem">
+                <span id="jinrishici-sentence">正在加载今日诗词....</span>
+            </div>
+            <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        </div>
+    </section>
+
+
+
+
+    <section class="m_widget essay">
+        <a class="header" href="/essay/">一文</a>
+    </section>
+
+
+
+<section class="m_widget categories">
+    <div class="header">分类</div>
+    <div class="content">
+        
+        <ul class="entry">
+            
+            <li><a class="flat-box" href="/categories/一隅/">
+                    <div class="name">
+                        一隅
+                    </div>
+                    <div class="badget">
+                        15
+                    </div>
+                </a></li>
+            
+            <li><a class="flat-box" href="/categories/偶得/">
+                    <div class="name">
+                        偶得
+                    </div>
+                    <div class="badget">
+                        5
+                    </div>
+                </a></li>
+            
+            <li><a class="flat-box" href="/categories/技·路/">
+                    <div class="name">
+                        技·路
+                    </div>
+                    <div class="badget">
+                        7
+                    </div>
+                </a></li>
+            
+            <li><a class="flat-box" href="/categories/记·路/">
+                    <div class="name">
+                        记·路
+                    </div>
+                    <div class="badget">
+                        14
+                    </div>
+                </a></li>
+            
+        </ul>
+        
+    </div>
+</section>
+
+
+<section class="m_widget tagcloud">
+    <div class="header">标签</div>
+    <div class="content">
+        <a href="/tags/C3/" style="font-size: 14px; color: #808080">C3</a> <a href="/tags/C语言/" style="font-size: 14.8px; color: #666">C语言</a> <a href="/tags/GAN/" style="font-size: 14px; color: #808080">GAN</a> <a href="/tags/MRO/" style="font-size: 14px; color: #808080">MRO</a> <a href="/tags/copy/" style="font-size: 14px; color: #808080">copy</a> <a href="/tags/mv/" style="font-size: 14.8px; color: #666">mv</a> <a href="/tags/python/" style="font-size: 15.6px; color: #4d4d4d">python</a> <a href="/tags/youtube/" style="font-size: 14px; color: #808080">youtube</a> <a href="/tags/三联生活周刊/" style="font-size: 14px; color: #808080">三联生活周刊</a> <a href="/tags/冬天/" style="font-size: 14px; color: #808080">冬天</a> <a href="/tags/单例/" style="font-size: 14px; color: #808080">单例</a> <a href="/tags/博客/" style="font-size: 14px; color: #808080">博客</a> <a href="/tags/历史/" style="font-size: 15.6px; color: #4d4d4d">历史</a> <a href="/tags/台词/" style="font-size: 14px; color: #808080">台词</a> <a href="/tags/同理心/" style="font-size: 14px; color: #808080">同理心</a> <a href="/tags/哲学/" style="font-size: 14px; color: #808080">哲学</a> <a href="/tags/回忆/" style="font-size: 17.2px; color: #1a1a1a">回忆</a> <a href="/tags/大师/" style="font-size: 14.8px; color: #666">大师</a> <a href="/tags/宗教/" style="font-size: 14.8px; color: #666">宗教</a> <a href="/tags/家/" style="font-size: 14px; color: #808080">家</a> <a href="/tags/寓言/" style="font-size: 14px; color: #808080">寓言</a> <a href="/tags/对象/" style="font-size: 14px; color: #808080">对象</a> <a href="/tags/庄子/" style="font-size: 14px; color: #808080">庄子</a> <a href="/tags/引用/" style="font-size: 14px; color: #808080">引用</a> <a href="/tags/心情/" style="font-size: 14.8px; color: #666">心情</a> <a href="/tags/感想/" style="font-size: 15.6px; color: #4d4d4d">感想</a> <a href="/tags/感谢/" style="font-size: 14px; color: #808080">感谢</a> <a href="/tags/成长/" style="font-size: 14px; color: #808080">成长</a> <a href="/tags/抗战/" style="font-size: 14px; color: #808080">抗战</a> <a href="/tags/摘录/" style="font-size: 14px; color: #808080">摘录</a> <a href="/tags/教育/" style="font-size: 14px; color: #808080">教育</a> <a href="/tags/数值分析/" style="font-size: 14.8px; color: #666">数值分析</a> <a href="/tags/日常/" style="font-size: 15.6px; color: #4d4d4d">日常</a> <a href="/tags/时间/" style="font-size: 14px; color: #808080">时间</a> <a href="/tags/更新/" style="font-size: 14px; color: #808080">更新</a> <a href="/tags/杂记/" style="font-size: 15.6px; color: #4d4d4d">杂记</a> <a href="/tags/杭州/" style="font-size: 14px; color: #808080">杭州</a> <a href="/tags/林语堂/" style="font-size: 14px; color: #808080">林语堂</a> <a href="/tags/架构/" style="font-size: 14px; color: #808080">架构</a> <a href="/tags/民国/" style="font-size: 14px; color: #808080">民国</a> <a href="/tags/民族/" style="font-size: 15.6px; color: #4d4d4d">民族</a> <a href="/tags/民谣/" style="font-size: 14.8px; color: #666">民谣</a> <a href="/tags/深度学习/" style="font-size: 14px; color: #808080">深度学习</a> <a href="/tags/理想/" style="font-size: 14px; color: #808080">理想</a> <a href="/tags/生活/" style="font-size: 18px; color: #000">生活</a> <a href="/tags/电影/" style="font-size: 16.4px; color: #333">电影</a> <a href="/tags/禅/" style="font-size: 14px; color: #808080">禅</a> <a href="/tags/科幻/" style="font-size: 14.8px; color: #666">科幻</a> <a href="/tags/类/" style="font-size: 14px; color: #808080">类</a> <a href="/tags/纪录片/" style="font-size: 18px; color: #000">纪录片</a> <a href="/tags/经历/" style="font-size: 14px; color: #808080">经历</a> <a href="/tags/继承/" style="font-size: 14px; color: #808080">继承</a> <a href="/tags/茶/" style="font-size: 14px; color: #808080">茶</a> <a href="/tags/西藏/" style="font-size: 14px; color: #808080">西藏</a> <a href="/tags/观后感/" style="font-size: 14.8px; color: #666">观后感</a> <a href="/tags/诗歌/" style="font-size: 14.8px; color: #666">诗歌</a> <a href="/tags/读书/" style="font-size: 14px; color: #808080">读书</a> <a href="/tags/阅读/" style="font-size: 14px; color: #808080">阅读</a> <a href="/tags/雪/" style="font-size: 14px; color: #808080">雪</a> <a href="/tags/音乐/" style="font-size: 14.8px; color: #666">音乐</a>
+    </div>
+</section>
+
+
+      </aside>
+    </div>
+  </div>
+  <footer id="footer" class="clearfix">
+  <div>
+    <p><span id="since"></span><span class="my-face">(●'◡'●)ﾉ♥</span></p>
+  </div>
+  <div class="social-wrapper">
+    
+    
+    <a href="mailto:527892245@qq.com" class="social envelope" target="_blank" rel="external">
+      <i class="fa fa-envelope flat-box"></i>
+    </a>
+    
+    <a href="https://github.com/96486d9b" class="social github" target="_blank" rel="external">
+      <i class="fa fa-github flat-box"></i>
+    </a>
+    
+    <a href="https://www.facebook.com/profile.php?id=100032502468035" class="social facebook" target="_blank" rel="external">
+      <i class="fa fa-facebook flat-box"></i>
+    </a>
+    
+    <a href="/assets/wechat.jpg" class="social wechat" target="_blank" rel="external">
+      <i class="fa fa-wechat flat-box"></i>
+    </a>
+    
+    <a href="/atom.xml" class="social rss" target="_blank" rel="external">
+      <i class="fa fa-rss flat-box"></i>
+    </a>
+    
+    
+  </div>
+  <div>
+    访问量<span id="busuanzi_value_site_pv"></span>次 访客数<span id="busuanzi_value_site_uv"></span>人
+  </div>
+</footer>
+
+  
+
+  
+  <canvas id="evanyou"></canvas>
+  <script src="/js/evanyou.js"></script>
+  
+
+  
+  <div id="aplayer-fixed"></div>
+  <script src="/js/aplayer.js"></script>
+  
+
+  
+  <script src="/js/pjax.js"></script>
+  <script>NProgress.done();</script>
+
+
+</body></html>

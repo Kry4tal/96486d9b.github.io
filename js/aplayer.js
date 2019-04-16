@@ -1,0 +1,1 @@
+"use strict";var apFixed=new APlayer({element:document.getElementById("aplayer-fixed"),mutex:!0,order:"list",lrcType:3,fixed:!0});apFixed.lrc.hide(),$.ajax({url:"https://api.i-meto.com/meting/api?server=netease&type=playlist&id=2663347612",success:function(e){apFixed.list.add(JSON.parse(e))}});

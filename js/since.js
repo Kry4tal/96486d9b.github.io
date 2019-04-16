@@ -1,0 +1,1 @@
+"use strict";var initSince=function e(){window.setTimeout(function(){e()},1e3);var t=new Date(CONFIG.since),i=((new Date).getTime()-t.getTime())/864e5,o=Math.floor(i),n=24*(i-o),a=Math.floor(n),r=60*(n-a),c=Math.floor(60*(n-a)),f=Math.floor(60*(r-c));$("#since").html(o+"天"+a+"时"+c+"分"+f+"秒")};
