@@ -17,72 +17,51 @@
 <meta property="og:site_name" content="Flow">
 <meta property="og:description" content="哈哈，我一直以为我对python的内存模型已经很熟悉了，直到一个同学给我发了这样一段话。  list.copy(): return a shallow copy of the list  最开始的时候，我想到了这样一个实例12345678a = [2, 3]b = a.copy()b[0] = 4print(a, b)print(id(a), id(b))[2, 3] [4, 3]26248078">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-09T06:30:47.634Z">
+<meta property="og:updated_time" content="2019-04-27T11:50:18.319Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shallow or deep copy?">
 <meta name="twitter:description" content="哈哈，我一直以为我对python的内存模型已经很熟悉了，直到一个同学给我发了这样一段话。  list.copy(): return a shallow copy of the list  最开始的时候，我想到了这样一个实例12345678a = [2, 3]b = a.copy()b[0] = 4print(a, b)print(id(a), id(b))[2, 3] [4, 3]26248078">
   <meta name="baidu-site-verification" content="RcgDKTGgGT">
   <meta name="google-site-verification" content="uLxUm5wTv1GofV8_j9CYt1DPYi8JHoOwA1ZncffgYnw">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-134676129-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'UA-134676129-1');
   </script>
-  <!-- no console log  -->
   <script src="/js/console.js"></script>
-
   <link href="https://fonts.loli.net/css?family=Noto+Serif+SC" rel="stylesheet">
   <link href="https://fonts.loli.net/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.loli.net/css?family=Roboto+Mono" rel="stylesheet">
   <link href="https://fonts.loli.net/css?family=Material+Icons" rel="stylesheet">
-
-  <!-- typekit font loader -->
-  <!-- <script src="/js/font.js"></script> -->
-
-  <link href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
-
-  <link href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.10/lib/typed.min.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery-lazyload@1.9.7/jquery.lazyload.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-  
-
-  
+  <link href="https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <link href="https://cdn.bootcss.com/node-waves/0.7.6/waves.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/node-waves/0.7.6/waves.min.js"></script>
+  <script src="https://cdn.bootcss.com/scrollReveal.js/4.0.5/scrollreveal.min.js"></script>
+  <script src="https://cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+  <link href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine@1.3.6/dist/Valine.min.js"></script>
-  
-
-  
-  <link href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   <script async="" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/preload.js@1.0.0/dist/preload.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+  <script src="https://cdn.bootcss.com/PreloadJS/1.0.1/preloadjs.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
   <script>
     let ROOT = "/" || "/";
     if (!ROOT.endsWith('/')) ROOT += '/';
     let CONFIG = {
       search_service: "hexo",
       since: '2/16/2018 00:00:00',
-      mathjax_cdn: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.min.js?config=TeX-MML-AM_CHTML',
+      mathjax_cdn: 'https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML',
       poem_api: 'https://sdk.jinrishici.com/v2/browser/jinrishici.js'
     }
   </script>
-
   <script src="/js/image.js"></script>
   <script src="/js/search.js"></script>
   <script src="/js/since.js"></script>
@@ -93,8 +72,6 @@
 
 <body>
   <script>NProgress.start();</script>
-  
-  
   <header class="l_header">
 	<div class="wrapper">
 		<div class="nav-main container container--flex">
@@ -236,13 +213,6 @@
 		</time>
 
 		
-<span id="/2019/02/07/zcxzk1/" class="leancloud-visitors" data-flag-title="shallow or deep copy?">
-    <time> 字数 <span id="wordcount"></span> 阅读时长 <span id="min2read"></span> 浏览 <span class="leancloud-visitors-count"></span></time>
-</span>
-<script>
-  count('&#34;哈哈，我一直以为我对python的内存模型已经很熟悉了，直到一个同学给我发了这样一段话。\n\nlist.copy(): return a shallow copy of the list\n\n最开始的时候，我想到了这样一个实例12345678a = [2, 3]b = a.copy()b[0] = 4print(a, b)print(id(a), id(b))[2, 3] [4, 3]2624807809864 2624807962184\n输出结果两个是不一样的，并且两个复制之后两个的id值也是不一样的，然后我就脑子习惯性地认为了，是deep copy，问题出现在哪？\n我们从头开始。\n我们从包含子对象的列表开始。1234567891011a = [[1, 2], [3, 4]]b = aprint(id(a)==id(b))b = copy.copy(a)print(id(a)==id(b))b = copy.deepcopy(a)print(id(a)==id(b))TrueFalseFalse\n输出的结果显得有一些奇怪，为什么无论是shallow copy还是deep copy，两个list对象的id值都是不同的呢？\n追根溯源，我们需要考虑深浅copy的定义层次。\nshallow copy还是deep copy，区别在于在我们新建这个对象的时候，对象是否只是复制了引用，还是重新生成了一个新的。\n我们来解释一下上面这个例子，为什么无论是shallow copy还是deep copy，a和b两个list对象的id值都是不同的？shallow copy不应该是一样的吗？原因是在于我们的判断层次出了问题，我们判断shallow copy还是deep copy，并不是依据list对象，而是根据list里面的子对象而言的。\n我们针对上面的例子继续深入下去。123456789101112a = [[1, 2], [3, 4]]b = copy.copy(a)print(id(a)==id(b))print(id(a[1])==id(b[1]))b = copy.deepcopy(b)print(id(a)==id(b))print(id(a[1])==id(b[1]))FalseTrueFalseFalse\n可以发现，虽然从a, b这两个list对象的角度看，即第一个和第三个都是False，似乎没有什么不同。\n但是从子元素a[1], b[1]看，它们的id值在shallow copy中是相同的，在deep copy中确实不同的。\n似乎有了一些些更近的理解，但是你仔细一想，还是会觉得很奇怪。\n我们之前的角度是，我们的判断层次是具体的对象，对于一个大的对象，我们是要判断它内部的子对象是不是一样的，依次来判断是深还是浅复制。依照这个想法，上面第二个例子，还可以更深入。12345a = [[1, 2], [3, 4]]b = copy.copy(a)print(id(a[1][1])==id(b[1][1]))b = copy.deepcopy(b)print(id(a[1][1])==id(b[1][1]))\n按照我们之前的逻辑，deep copy和shallow copy的区别，它到了子对象这个层次，一个是重新生成了，一个只是复制引用，那么上述例子的两个输出，应该第一个是True，第二个是False。然而呢？实际的输出结果是两个都是True，矛盾又出现了。\n按道理来说，a指向的1，和b指向的1，如果是shallow copy，应该是同一个。如果是deep copy，两个1应该是不同的对象，但是结果表明两个1是同一个对象。\n这涉及到了python的内存模型，它做了这样的优化，对于一些简单的对象，采用了重用对象的方法。（因为简单的对象使用的频率可能比较高）12345678910a = 2b = 2print(id(a)==id(b))a = 200000000b = 200000000print(id(a)==id(b))TrueFalse\n似乎问题的出现，就是因为python对于这样的简单对象做了优化，我们如果把对象变得复杂一点，就可以避免重用了，对象的id值就不一样了。于是我们可以再做一个实验。12345a = [[1, 2], [2000000, 4]]b = copy.copy(a)print(id(a[1][1])==id(b[1][1]))b = copy.deepcopy(b)print(id(a[1][1])==id(b[1][1]))\n按照我们的讨论，这样的输出结果应该是True和False，然而实际的输出结果确是两个都是True。\n为什么呢，这次是copy函数做了优化，copy对于一些无法修改的值，比如常量，字符串，元组等，在copy的过程当中，没有采取显式的复制，而是直接引用了。（因为无法修改的对象只会有读取的操作，所以无所谓要不要复制了）\n所以，简单来说，如何判断一个复制是shallow copy还是deep copy。\n\n判断的层次，我们需要判断copy一个对象的时候，我们需要干一件分解的事，从子对象角度去判断是否是产生了新的对象，还是只是复制了引用。\n我们判断子对象的时候，对于无法修改的元素，比如常量，字符串，元组等，它们不会被复制，我们需要避免这些元素对于我们判断的干扰。\n\n\n顺便穿插一下相等的判断，之前我们一直都是用==去判断是否相等。Python中实际上还有is。\n\nis 比较的是两个实例对象是不是完全相同，它们是不是同一个对象，占用的内存地址是否相同。\n\n\n== 比较的是两个对象的内容是否相等，即内存地址可以不一样，内容一样就可以了。默认会调用对象的__eq__()方法。\n\n123456789a = 20000b = 20000print(id(a), id(b))print(a is b)print(a == b)2832764370256 2832764370224FalseTrue\n简而言之，is比较的就是id值是不是一样，因为id值是内存地址的表征，而==号判断的是值，内容是否相同。123456789a = 200b = 200print(id(a), id(b))print(a is b)print(a == b)1850574112 1850574112TrueTrue\n而上面这种特殊情况的出现，其实之前也解释过了，就是小整数池的存在造成的。\n&#34;');
-</script>
-
 		
 
 <div class="categories">
@@ -318,8 +288,8 @@
 		<div class="art-item-footer">
 			
 			<span class="art-item-left">
-				<a href="/2019/02/08/ntdecr/" rel="prev" title="python的多继承机制">
-					python的多继承机制
+				<a href="/2019/02/08/mgve1g/" rel="prev" title="乡村教师">
+					乡村教师
 				</a>
 			</span>
 			
@@ -361,25 +331,19 @@
     </div>
 </section>
 
-
-    <section class="m_widget poem">
-        <div class="header">诗词</div>
-        <div class="content">
-            <div class="poem">
-                <span id="jinrishici-sentence">正在加载今日诗词....</span>
-            </div>
-            <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<section class="m_widget poem">
+    <div class="header">诗词</div>
+    <div class="content">
+        <div class="poem">
+            <span id="jinrishici-sentence">正在加载今日诗词....</span>
         </div>
-    </section>
+        <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    </div>
+</section>
 
-
-
-
-    <section class="m_widget essay">
-        <a class="header" href="/essay/">一文</a>
-    </section>
-
-
+<section class="m_widget essay">
+    <a class="header" href="/essay/">一文</a>
+</section>
 
 <section class="m_widget categories">
     <div class="header">分类</div>
@@ -448,20 +412,10 @@
     访问量<span id="busuanzi_value_site_pv"></span>次 访客数<span id="busuanzi_value_site_uv"></span>人
   </div>
 </footer>
-
-  
-
-  
   <canvas id="evanyou"></canvas>
   <script src="/js/evanyou.js"></script>
-  
-
-  
   <div id="aplayer-fixed"></div>
   <script src="/js/aplayer.js"></script>
-  
-
-  
   <script src="/js/pjax.js"></script>
   <script>NProgress.done();</script>
 

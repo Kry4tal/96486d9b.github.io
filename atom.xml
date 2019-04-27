@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://96486d9b.github.io/"/>
-  <updated>2019-04-09T06:30:46.806Z</updated>
+  <updated>2019-04-27T11:50:17.413Z</updated>
   <id>https://96486d9b.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://96486d9b.github.io/2019/04/08/yrch3g/"/>
     <id>https://96486d9b.github.io/2019/04/08/yrch3g/</id>
     <published>2019-04-07T16:00:00.000Z</published>
-    <updated>2019-04-09T06:30:46.806Z</updated>
+    <updated>2019-04-27T11:50:17.413Z</updated>
     
     <summary type="html">
     
@@ -50,7 +50,7 @@
     <link href="https://96486d9b.github.io/2019/02/18/apgzdc/"/>
     <id>https://96486d9b.github.io/2019/02/18/apgzdc/</id>
     <published>2019-02-17T16:00:00.000Z</published>
-    <updated>2019-04-09T06:30:46.947Z</updated>
+    <updated>2019-04-27T11:50:17.579Z</updated>
     
     <summary type="html">
     
@@ -81,7 +81,7 @@
     <link href="https://96486d9b.github.io/2019/02/17/gcpaf4/"/>
     <id>https://96486d9b.github.io/2019/02/17/gcpaf4/</id>
     <published>2019-02-16T16:00:00.000Z</published>
-    <updated>2019-04-09T06:30:47.009Z</updated>
+    <updated>2019-04-27T11:50:17.669Z</updated>
     
     <summary type="html">
     
@@ -113,7 +113,7 @@
     <link href="https://96486d9b.github.io/2019/02/09/cpcrc8/"/>
     <id>https://96486d9b.github.io/2019/02/09/cpcrc8/</id>
     <published>2019-02-08T16:00:00.000Z</published>
-    <updated>2019-04-09T06:30:47.228Z</updated>
+    <updated>2019-04-27T11:50:17.916Z</updated>
     
     <summary type="html">
     
@@ -140,41 +140,11 @@
   </entry>
   
   <entry>
-    <title>乡村教师</title>
-    <link href="https://96486d9b.github.io/2019/02/08/mgve1g/"/>
-    <id>https://96486d9b.github.io/2019/02/08/mgve1g/</id>
-    <published>2019-02-07T16:00:00.000Z</published>
-    <updated>2019-04-09T06:30:47.087Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;春节档还有另外一部电影，《疯狂的外星人》。&lt;/p&gt;
-&lt;p&gt;当看到幕布上闪过“改编自《乡村教师》”的时候，我的内心是有一些诚惶诚恐的。&lt;/p&gt;
-&lt;p&gt;电影的故事很荒诞，“疯狂的”前缀似乎昭示了导演想要延续《疯狂的石头》，黑色幽默式的手法，表达一些主题。&lt;/p&gt;
-&lt;p&gt;电影作为
-      
-    
-    </summary>
-    
-      <category term="记·路" scheme="https://96486d9b.github.io/categories/%E8%AE%B0%C2%B7%E8%B7%AF/"/>
-    
-    
-      <category term="科幻" scheme="https://96486d9b.github.io/tags/%E7%A7%91%E5%B9%BB/"/>
-    
-      <category term="教育" scheme="https://96486d9b.github.io/tags/%E6%95%99%E8%82%B2/"/>
-    
-      <category term="电影" scheme="https://96486d9b.github.io/tags/%E7%94%B5%E5%BD%B1/"/>
-    
-  </entry>
-  
-  <entry>
     <title>python的多继承机制</title>
     <link href="https://96486d9b.github.io/2019/02/08/ntdecr/"/>
     <id>https://96486d9b.github.io/2019/02/08/ntdecr/</id>
     <published>2019-02-07T16:00:00.000Z</published>
-    <updated>2019-04-09T06:30:47.524Z</updated>
+    <updated>2019-04-27T11:50:18.213Z</updated>
     
     <summary type="html">
     
@@ -201,11 +171,41 @@
   </entry>
   
   <entry>
+    <title>乡村教师</title>
+    <link href="https://96486d9b.github.io/2019/02/08/mgve1g/"/>
+    <id>https://96486d9b.github.io/2019/02/08/mgve1g/</id>
+    <published>2019-02-07T16:00:00.000Z</published>
+    <updated>2019-04-27T11:50:17.755Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;春节档还有另外一部电影，《疯狂的外星人》。&lt;/p&gt;
+&lt;p&gt;当看到幕布上闪过“改编自《乡村教师》”的时候，我的内心是有一些诚惶诚恐的。&lt;/p&gt;
+&lt;p&gt;电影的故事很荒诞，“疯狂的”前缀似乎昭示了导演想要延续《疯狂的石头》，黑色幽默式的手法，表达一些主题。&lt;/p&gt;
+&lt;p&gt;电影作为
+      
+    
+    </summary>
+    
+      <category term="记·路" scheme="https://96486d9b.github.io/categories/%E8%AE%B0%C2%B7%E8%B7%AF/"/>
+    
+    
+      <category term="电影" scheme="https://96486d9b.github.io/tags/%E7%94%B5%E5%BD%B1/"/>
+    
+      <category term="科幻" scheme="https://96486d9b.github.io/tags/%E7%A7%91%E5%B9%BB/"/>
+    
+      <category term="教育" scheme="https://96486d9b.github.io/tags/%E6%95%99%E8%82%B2/"/>
+    
+  </entry>
+  
+  <entry>
     <title>shallow or deep copy?</title>
     <link href="https://96486d9b.github.io/2019/02/07/zcxzk1/"/>
     <id>https://96486d9b.github.io/2019/02/07/zcxzk1/</id>
     <published>2019-02-06T16:00:00.000Z</published>
-    <updated>2019-04-09T06:30:47.634Z</updated>
+    <updated>2019-04-27T11:50:18.319Z</updated>
     
     <summary type="html">
     
@@ -236,7 +236,7 @@
     <link href="https://96486d9b.github.io/2019/02/07/hy7vgh/"/>
     <id>https://96486d9b.github.io/2019/02/07/hy7vgh/</id>
     <published>2019-02-06T16:00:00.000Z</published>
-    <updated>2019-04-09T06:30:47.149Z</updated>
+    <updated>2019-04-27T11:50:17.836Z</updated>
     
     <summary type="html">
     
@@ -257,11 +257,11 @@
       <category term="记·路" scheme="https://96486d9b.github.io/categories/%E8%AE%B0%C2%B7%E8%B7%AF/"/>
     
     
-      <category term="科幻" scheme="https://96486d9b.github.io/tags/%E7%A7%91%E5%B9%BB/"/>
-    
       <category term="电影" scheme="https://96486d9b.github.io/tags/%E7%94%B5%E5%BD%B1/"/>
     
       <category term="观后感" scheme="https://96486d9b.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
+    
+      <category term="科幻" scheme="https://96486d9b.github.io/tags/%E7%A7%91%E5%B9%BB/"/>
     
   </entry>
   
@@ -270,7 +270,7 @@
     <link href="https://96486d9b.github.io/2019/02/01/gv4ls1/"/>
     <id>https://96486d9b.github.io/2019/02/01/gv4ls1/</id>
     <published>2019-02-01T05:32:01.000Z</published>
-    <updated>2019-04-09T06:30:49.158Z</updated>
+    <updated>2019-04-27T11:50:19.976Z</updated>
     
     <summary type="html">
     
@@ -304,7 +304,7 @@
     <link href="https://96486d9b.github.io/2019/02/01/we68gi/"/>
     <id>https://96486d9b.github.io/2019/02/01/we68gi/</id>
     <published>2019-02-01T05:32:01.000Z</published>
-    <updated>2019-04-09T06:30:48.931Z</updated>
+    <updated>2019-04-27T11:50:19.736Z</updated>
     
     <summary type="html">
     
@@ -336,7 +336,7 @@
     <link href="https://96486d9b.github.io/2019/01/25/nuzp8b/"/>
     <id>https://96486d9b.github.io/2019/01/25/nuzp8b/</id>
     <published>2019-01-25T14:10:01.000Z</published>
-    <updated>2019-04-09T06:30:48.556Z</updated>
+    <updated>2019-04-27T11:50:19.285Z</updated>
     
     <summary type="html">
     
@@ -365,7 +365,7 @@
     <link href="https://96486d9b.github.io/2019/01/01/gabsgd/"/>
     <id>https://96486d9b.github.io/2019/01/01/gabsgd/</id>
     <published>2018-12-31T16:00:00.000Z</published>
-    <updated>2019-04-09T06:30:47.916Z</updated>
+    <updated>2019-04-27T11:50:18.590Z</updated>
     
     <summary type="html">
     
@@ -393,7 +393,7 @@
     <link href="https://96486d9b.github.io/2018/12/08/lgbn47/"/>
     <id>https://96486d9b.github.io/2018/12/08/lgbn47/</id>
     <published>2018-12-08T14:10:01.000Z</published>
-    <updated>2019-04-09T06:30:50.299Z</updated>
+    <updated>2019-04-27T11:50:21.487Z</updated>
     
     <summary type="html">
     
@@ -422,7 +422,7 @@
     <link href="https://96486d9b.github.io/2018/12/07/iuvnbg/"/>
     <id>https://96486d9b.github.io/2018/12/07/iuvnbg/</id>
     <published>2018-12-06T18:36:01.000Z</published>
-    <updated>2019-04-09T06:30:48.791Z</updated>
+    <updated>2019-04-27T11:50:19.582Z</updated>
     
     <summary type="html">
     
@@ -440,9 +440,9 @@
     
       <category term="纪录片" scheme="https://96486d9b.github.io/tags/%E7%BA%AA%E5%BD%95%E7%89%87/"/>
     
-      <category term="历史" scheme="https://96486d9b.github.io/tags/%E5%8E%86%E5%8F%B2/"/>
-    
       <category term="大师" scheme="https://96486d9b.github.io/tags/%E5%A4%A7%E5%B8%88/"/>
+    
+      <category term="历史" scheme="https://96486d9b.github.io/tags/%E5%8E%86%E5%8F%B2/"/>
     
   </entry>
   
@@ -451,7 +451,7 @@
     <link href="https://96486d9b.github.io/2018/12/01/yvi8hl/"/>
     <id>https://96486d9b.github.io/2018/12/01/yvi8hl/</id>
     <published>2018-11-30T16:00:00.000Z</published>
-    <updated>2019-04-09T06:30:48.009Z</updated>
+    <updated>2019-04-27T11:50:18.692Z</updated>
     
     <summary type="html">
     
@@ -481,7 +481,7 @@
     <link href="https://96486d9b.github.io/2018/11/29/cmg133/"/>
     <id>https://96486d9b.github.io/2018/11/29/cmg133/</id>
     <published>2018-11-29T10:24:01.000Z</published>
-    <updated>2019-04-09T06:30:49.009Z</updated>
+    <updated>2019-04-27T11:50:19.818Z</updated>
     
     <summary type="html">
     
@@ -506,7 +506,7 @@
     <link href="https://96486d9b.github.io/2018/11/07/hy0tx2/"/>
     <id>https://96486d9b.github.io/2018/11/07/hy0tx2/</id>
     <published>2018-11-06T18:36:01.000Z</published>
-    <updated>2019-04-09T06:30:49.846Z</updated>
+    <updated>2019-04-27T11:50:20.819Z</updated>
     
     <summary type="html">
     
@@ -537,7 +537,7 @@
     <link href="https://96486d9b.github.io/2018/10/19/mmitb4/"/>
     <id>https://96486d9b.github.io/2018/10/19/mmitb4/</id>
     <published>2018-10-19T08:22:01.000Z</published>
-    <updated>2019-04-09T06:30:49.783Z</updated>
+    <updated>2019-04-27T11:50:20.690Z</updated>
     
     <summary type="html">
     
@@ -562,7 +562,7 @@
     <link href="https://96486d9b.github.io/2018/10/04/symt4y/"/>
     <id>https://96486d9b.github.io/2018/10/04/symt4y/</id>
     <published>2018-10-04T08:27:01.000Z</published>
-    <updated>2019-04-09T06:30:49.580Z</updated>
+    <updated>2019-04-27T11:50:20.437Z</updated>
     
     <summary type="html">
     
@@ -593,7 +593,7 @@
     <link href="https://96486d9b.github.io/2018/09/24/de1v61/"/>
     <id>https://96486d9b.github.io/2018/09/24/de1v61/</id>
     <published>2018-09-23T18:32:01.000Z</published>
-    <updated>2019-04-09T06:30:50.220Z</updated>
+    <updated>2019-04-27T11:50:21.395Z</updated>
     
     <summary type="html">
     

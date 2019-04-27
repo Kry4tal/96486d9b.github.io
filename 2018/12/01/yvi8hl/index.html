@@ -24,73 +24,52 @@
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/223418/1547654661973-1d194a04-8200-49ac-8047-8d73e31de14f.png#align=left&amp;display=inline&amp;height=84&amp;name=image.png&amp;originHeight=167&amp;originWidth=427&amp;size=82632&amp;width=214">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/223418/1547654680070-86e9e6c3-9548-4625-9cd3-e44e6bf6ed89.png#align=left&amp;display=inline&amp;height=139&amp;name=image.png&amp;originHeight=278&amp;originWidth=732&amp;size=282740&amp;width=366">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/223418/1547654780991-0de30f9e-c175-4c35-aa3f-d679c596bead.png#align=left&amp;display=inline&amp;height=263&amp;name=image.png&amp;originHeight=525&amp;originWidth=838&amp;size=246692&amp;width=419">
-<meta property="og:updated_time" content="2019-04-09T06:30:48.009Z">
+<meta property="og:updated_time" content="2019-04-27T11:50:18.692Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="fGAN">
 <meta name="twitter:description" content="做一个测试，测试一下从语雀迁移的效果。  General Framework of GAN，用不同的divergence去度量。 关于f-divergence。 $D_f(P||Q)=\int q(x)f(\frac{p(x)}{q(x)})dx,\text{f is convex},f(1)=0$ 基于这样的定义，我们的f-divergence就能衡量两个分布的距离。 $D_f(P||Q)=0">
 <meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2019/png/223418/1547653057931-715f65a6-9efb-4b2d-8f19-68126ee247a8.png#align=left&amp;display=inline&amp;height=163&amp;name=image.png&amp;originHeight=325&amp;originWidth=800&amp;size=37456&amp;width=400">
   <meta name="baidu-site-verification" content="RcgDKTGgGT">
   <meta name="google-site-verification" content="uLxUm5wTv1GofV8_j9CYt1DPYi8JHoOwA1ZncffgYnw">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-134676129-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'UA-134676129-1');
   </script>
-  <!-- no console log  -->
   <script src="/js/console.js"></script>
-
   <link href="https://fonts.loli.net/css?family=Noto+Serif+SC" rel="stylesheet">
   <link href="https://fonts.loli.net/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.loli.net/css?family=Roboto+Mono" rel="stylesheet">
   <link href="https://fonts.loli.net/css?family=Material+Icons" rel="stylesheet">
-
-  <!-- typekit font loader -->
-  <!-- <script src="/js/font.js"></script> -->
-
-  <link href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
-
-  <link href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.10/lib/typed.min.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery-lazyload@1.9.7/jquery.lazyload.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-  
-
-  
+  <link href="https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <link href="https://cdn.bootcss.com/node-waves/0.7.6/waves.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/node-waves/0.7.6/waves.min.js"></script>
+  <script src="https://cdn.bootcss.com/scrollReveal.js/4.0.5/scrollreveal.min.js"></script>
+  <script src="https://cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+  <link href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine@1.3.6/dist/Valine.min.js"></script>
-  
-
-  
-  <link href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   <script async="" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/preload.js@1.0.0/dist/preload.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+  <script src="https://cdn.bootcss.com/PreloadJS/1.0.1/preloadjs.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
   <script>
     let ROOT = "/" || "/";
     if (!ROOT.endsWith('/')) ROOT += '/';
     let CONFIG = {
       search_service: "hexo",
       since: '2/16/2018 00:00:00',
-      mathjax_cdn: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.min.js?config=TeX-MML-AM_CHTML',
+      mathjax_cdn: 'https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML',
       poem_api: 'https://sdk.jinrishici.com/v2/browser/jinrishici.js'
     }
   </script>
-
   <script src="/js/image.js"></script>
   <script src="/js/search.js"></script>
   <script src="/js/since.js"></script>
@@ -101,8 +80,6 @@
 
 <body>
   <script>NProgress.start();</script>
-  
-  
   <header class="l_header">
 	<div class="wrapper">
 		<div class="nav-main container container--flex">
@@ -244,13 +221,6 @@
 		</time>
 
 		
-<span id="/2018/12/01/yvi8hl/" class="leancloud-visitors" data-flag-title="fGAN">
-    <time> 字数 <span id="wordcount"></span> 阅读时长 <span id="min2read"></span> 浏览 <span class="leancloud-visitors-count"></span></time>
-</span>
-<script>
-  count('&#34;\n做一个测试，测试一下从语雀迁移的效果。\n\nGeneral Framework of GAN，用不同的divergence去度量。\n关于f-divergence。\n$D_f(P||Q)=\\int q(x)f(\\frac{p(x)}{q(x)})dx,\\text{f is convex},f(1)=0$\n基于这样的定义，我们的f-divergence就能衡量两个分布的距离。\n$D_f(P||Q)=0\\text{ if p(x)=q(x) for all x}$\n$D_f(P||Q)\\ge 0$\n$D_f(P||Q)=\\int_x q(x)f(\\frac{p(x)}{q(x)})dx\\ge f(\\int_x q(x)\\frac{p(x)}{q(x)}dx)=f(\\int_x p(x)dx )=f(1)=0$\n$f(x)=x\\log x,D_f(P||Q)=\\int_x p(x)\\log(\\frac{p(x)}{q(x)})dx,\\text{KL}$\n$f(x)=-\\log x,D_f(P||Q)=\\int_x q(x)\\log(\\frac{q(x)}{p(x)})dx,\\text{Reverse KL}$\n$f(x)=(x-1)^2,D_f(P||Q)=\\int_x \\frac{(p(x)-q(x))^2}{q(x)}dx,\\text{Chi Square}$\n关于Fenchel Conjugate。\n每一个凸函数$f$都有一个共轭函数$f^*$。实际上$f^*$的共轭也是$f$。\n$f^*(t)=\\max_{x\\in dom(f)}{xt-f(x)}$\n\n可以证明$f(x)=x\\log x \\leftrightarrow f^*(t)=exp(t-1)$\n\n$f^*(t)=\\max_{x\\in dom(f)}{xt-f(x)} \\leftrightarrow f(x)=\\max_{t\\in dom(f^*)}{xt-f^*(t)}$\n下面我们考虑其与GAN的关系\n我们考虑一开始关于F-Divergence的定义。\n$D_f(P||Q)=\\int_x q(x)f(\\frac{p(x)}{q(x)})dx=\\int_x q(x) (\\max_{t\\in dom(f^*)}{\\frac{p(x)}{q(x)}t-f^*(t) })dx$\n我们定义一个$D(x)$，对于输入的$x$，它输出对应令$\\max_{t\\in dom(f^*)}{\\frac{p(x)}{q(x)}t-f^*(t) }$最大的$t$。\n这个其实就对应了，我们的discriminator，他帮我们寻找一个最大的目标值。这样就有\n$D_f(P||Q)\\ge \\int_x q(x)(\\frac{p(x)}{q(x)}D(x)-f^*(D(x)))dx=\\int_x p(x)D(x)dx-\\int_xq(x)f^*(D(x))dx$\n这里是什么意思，就是对于我们不同输入的$x$，它产生的$D(x)=t$，始终有满足这个不等式\n我们为了尽可能地去逼近$D_f(P||Q)$，相当于就是\n$D_f(P||Q)\\approx \\max_D \\int_x p(x)D(x)dx-\\int_x q(x)f^*(D(x))dx$\n$D_f(P||Q)=\\max_D{E_{x\\sim P}[D(x)]-E_{x\\sim Q}[f^*(D(x))]}$\n$D_f(P_{data}||P_G)=\\max_D{E_{x\\sim P_{data}}[D(x)]-E_{x\\sim P_{G}}[f^*(D(x))]}$\n这就是基于F-Divengence定义下，衡量$P_{data},P_{G}$的散度的公式。\n$G^*=\\arg \\min_G D_f(P_{data}||P_G)$\n$G^*=\\arg \\min_G \\max_D{E_{x\\sim P_{data}}[D(x)]-E_{x\\sim P_G}[f^*(D(x))]}$\n$G^*=\\arg \\min_G \\max_D V(G,D)$\n统一起来了。更换不同的F-Divengence即可了。\n\n这可能解决以下问题\nMode Collapse。模式崩溃。\n\n我们产生的数据分布越来越小，（可以看到右边有一个人脸重复出现）\nMode Dropping。\n\n\n每次都只能产生一种肤色的问题了。\n这可能的原因就是我们的Divergence选的不好。\n\n可以看到，KL散度中间不太好，而如果选了Reverse KL只会选择一种Mode。\n所以我们可以基于FGAN，去更换不同的F-Divergence，然而每一种，都有自己的缺陷，mode collapse or dropping可能作用在不同的地方。\n那么如何产生一个全面的比较好的呢，Ensemble。\n&#34;');
-</script>
-
 		
 
 <div class="categories">
@@ -2007,7 +1977,7 @@
             }
         });
     </script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.min.js?config=TeX-MML-AM_CHTML">
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
 </div>
 
@@ -2028,25 +1998,19 @@
     </div>
 </section>
 
-
-    <section class="m_widget poem">
-        <div class="header">诗词</div>
-        <div class="content">
-            <div class="poem">
-                <span id="jinrishici-sentence">正在加载今日诗词....</span>
-            </div>
-            <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<section class="m_widget poem">
+    <div class="header">诗词</div>
+    <div class="content">
+        <div class="poem">
+            <span id="jinrishici-sentence">正在加载今日诗词....</span>
         </div>
-    </section>
+        <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    </div>
+</section>
 
-
-
-
-    <section class="m_widget essay">
-        <a class="header" href="/essay/">一文</a>
-    </section>
-
-
+<section class="m_widget essay">
+    <a class="header" href="/essay/">一文</a>
+</section>
 
 <section class="m_widget categories">
     <div class="header">分类</div>
@@ -2115,20 +2079,10 @@
     访问量<span id="busuanzi_value_site_pv"></span>次 访客数<span id="busuanzi_value_site_uv"></span>人
   </div>
 </footer>
-
-  
-
-  
   <canvas id="evanyou"></canvas>
   <script src="/js/evanyou.js"></script>
-  
-
-  
   <div id="aplayer-fixed"></div>
   <script src="/js/aplayer.js"></script>
-  
-
-  
   <script src="/js/pjax.js"></script>
   <script>NProgress.done();</script>
 

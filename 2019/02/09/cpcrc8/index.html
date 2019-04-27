@@ -17,72 +17,51 @@
 <meta property="og:site_name" content="Flow">
 <meta property="og:description" content="python3之后，所有的类都基于object这个共同基类，称为新式类。 下面这段代码。 12345678910111213class A():    a1 = 1    def __init__(self):        self.a2 = 2class B(A):    b1 = 1    def __init__(self):        self.b2 = 2if __name__ =">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-09T06:30:47.228Z">
+<meta property="og:updated_time" content="2019-04-27T11:50:17.916Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="__new__与__init__">
 <meta name="twitter:description" content="python3之后，所有的类都基于object这个共同基类，称为新式类。 下面这段代码。 12345678910111213class A():    a1 = 1    def __init__(self):        self.a2 = 2class B(A):    b1 = 1    def __init__(self):        self.b2 = 2if __name__ =">
   <meta name="baidu-site-verification" content="RcgDKTGgGT">
   <meta name="google-site-verification" content="uLxUm5wTv1GofV8_j9CYt1DPYi8JHoOwA1ZncffgYnw">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-134676129-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'UA-134676129-1');
   </script>
-  <!-- no console log  -->
   <script src="/js/console.js"></script>
-
   <link href="https://fonts.loli.net/css?family=Noto+Serif+SC" rel="stylesheet">
   <link href="https://fonts.loli.net/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.loli.net/css?family=Roboto+Mono" rel="stylesheet">
   <link href="https://fonts.loli.net/css?family=Material+Icons" rel="stylesheet">
-
-  <!-- typekit font loader -->
-  <!-- <script src="/js/font.js"></script> -->
-
-  <link href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
-
-  <link href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.10/lib/typed.min.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery-lazyload@1.9.7/jquery.lazyload.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-  
-
-  
+  <link href="https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <link href="https://cdn.bootcss.com/node-waves/0.7.6/waves.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/node-waves/0.7.6/waves.min.js"></script>
+  <script src="https://cdn.bootcss.com/scrollReveal.js/4.0.5/scrollreveal.min.js"></script>
+  <script src="https://cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+  <link href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine@1.3.6/dist/Valine.min.js"></script>
-  
-
-  
-  <link href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   <script async="" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/preload.js@1.0.0/dist/preload.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+  <script src="https://cdn.bootcss.com/PreloadJS/1.0.1/preloadjs.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
   <script>
     let ROOT = "/" || "/";
     if (!ROOT.endsWith('/')) ROOT += '/';
     let CONFIG = {
       search_service: "hexo",
       since: '2/16/2018 00:00:00',
-      mathjax_cdn: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.min.js?config=TeX-MML-AM_CHTML',
+      mathjax_cdn: 'https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML',
       poem_api: 'https://sdk.jinrishici.com/v2/browser/jinrishici.js'
     }
   </script>
-
   <script src="/js/image.js"></script>
   <script src="/js/search.js"></script>
   <script src="/js/since.js"></script>
@@ -93,8 +72,6 @@
 
 <body>
   <script>NProgress.start();</script>
-  
-  
   <header class="l_header">
 	<div class="wrapper">
 		<div class="nav-main container container--flex">
@@ -236,13 +213,6 @@
 		</time>
 
 		
-<span id="/2019/02/09/cpcrc8/" class="leancloud-visitors" data-flag-title="__new__与__init__">
-    <time> 字数 <span id="wordcount"></span> 阅读时长 <span id="min2read"></span> 浏览 <span class="leancloud-visitors-count"></span></time>
-</span>
-<script>
-  count('&#34;python3之后，所有的类都基于object这个共同基类，称为新式类。\n下面这段代码。\n12345678910111213class A():    a1 = 1    def __init__(self):        self.a2 = 2class B(A):    b1 = 1    def __init__(self):        self.b2 = 2if __name__ == \&#34;__main__\&#34;:    obj = B()    print(dir(obj))\n输出的结果中会发现，生成的对象里包含了a1，b1，b2。\na1的存在说明，在创建B的过程当中，确确实实，创建了A。\n但是a2的不存在说明，A中的__init__没有被调用，也就是说创建A的过程，__init__不是必须要历经的方法。\n我们可以试图打印类A的方法。其中有一个方法为__new__。它扮演的作用，实际上创建类A。\n\n__new__的作用时间是在类创建之前，它依照规则创建类，如果有继承发生，依照MRO顺序依次向上调用父类的__new__函数创建相应的父类。\n__init__的作用时间是在类创建之后，它依照__init__中的过程进行初始化过程，这一步骤不是必须的。\n\n每一个类创建的过程之中，其实都蕴含了这样的函数。123class A():    def __new__(cls):        return super(A, cls).__new__(cls)\n所以实际上我们上述继承关系可以详细写成。1234567891011121314151617181920212223class A():    a1 = 1    def __new__(cls):        print(\&#34;new class A\&#34;)        return super(A, cls).__new__(cls)    def __init__(self):        self.a2 = 2class B(A):    b1 = 1    def __new__(cls):        print(\&#34;new class B\&#34;)        return super(B, cls).__new__(cls)    def __init__(self):        self.b2 = 2if __name__ == \&#34;__main__\&#34;:    obj = B()    new class Bnew class A\n\n只有新式类才有__new__\n__new__是有返回值的，返回实例化出来的实例，__init__是没有返回值的，准确的说，是不需要返回值\n__new__和__init__都可以完成初始化的动作，类似于c++当中初始化列表和普通初始化不同的作用时间\n__new__是类级别的静态方法，__init__是对象级别的实例方法\n只有当__new__返回了一个cls的实例之后，__init__才能被调用\n\n基于此，可以顺便讨论一下python中的单例模式实现。1234567891011121314import threadingclass Singleton(object):    _instance_lock = threading.Lock()    def __init__(self):        pass            def __new__(cls, *args, **kwargs):        if not hasattr(Singleton, \&#34;_instance\&#34;):            with Singleton._instance_lock:                if not hasattr(Singleton, \&#34;_instance\&#34;):                    Singleton._instance = object.__new__(cls)          return Singleton._instance\n我们在创建阶段，即__new__过程中进行是否存在类当前类实例的判断，如果存在直接返回该实例。如果不存在，则新建。注意判断的时候，因为实际可能的新建操作，需要加一个锁。\n&#34;');
-</script>
-
 		
 
 <div class="categories">
@@ -311,8 +281,8 @@
 			
 			
 			<span class="art-item-right">
-				<a href="/2019/02/08/mgve1g/" rel="next" title="乡村教师">
-					乡村教师
+				<a href="/2019/02/08/ntdecr/" rel="next" title="python的多继承机制">
+					python的多继承机制
 				</a>
 			</span>
 			
@@ -347,25 +317,19 @@
     </div>
 </section>
 
-
-    <section class="m_widget poem">
-        <div class="header">诗词</div>
-        <div class="content">
-            <div class="poem">
-                <span id="jinrishici-sentence">正在加载今日诗词....</span>
-            </div>
-            <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<section class="m_widget poem">
+    <div class="header">诗词</div>
+    <div class="content">
+        <div class="poem">
+            <span id="jinrishici-sentence">正在加载今日诗词....</span>
         </div>
-    </section>
+        <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    </div>
+</section>
 
-
-
-
-    <section class="m_widget essay">
-        <a class="header" href="/essay/">一文</a>
-    </section>
-
-
+<section class="m_widget essay">
+    <a class="header" href="/essay/">一文</a>
+</section>
 
 <section class="m_widget categories">
     <div class="header">分类</div>
@@ -434,20 +398,10 @@
     访问量<span id="busuanzi_value_site_pv"></span>次 访客数<span id="busuanzi_value_site_uv"></span>人
   </div>
 </footer>
-
-  
-
-  
   <canvas id="evanyou"></canvas>
   <script src="/js/evanyou.js"></script>
-  
-
-  
   <div id="aplayer-fixed"></div>
   <script src="/js/aplayer.js"></script>
-  
-
-  
   <script src="/js/pjax.js"></script>
   <script>NProgress.done();</script>
 
