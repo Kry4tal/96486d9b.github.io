@@ -201,37 +201,6 @@
   </entry>
   
   <entry>
-    <title>shallow or deep copy?</title>
-    <link href="https://96486d9b.github.io/2019/02/07/zcxzk1/"/>
-    <id>https://96486d9b.github.io/2019/02/07/zcxzk1/</id>
-    <published>2019-02-06T16:00:00.000Z</published>
-    <updated>2019-04-27T11:50:18.319Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;哈哈，我一直以为我对python的内存模型已经很熟悉了，直到一个同学给我发了这样一段话。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;list.copy(): return a shallow copy of the list&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;最开始的
-      
-    
-    </summary>
-    
-      <category term="技·路" scheme="https://96486d9b.github.io/categories/%E6%8A%80%C2%B7%E8%B7%AF/"/>
-    
-    
-      <category term="python" scheme="https://96486d9b.github.io/tags/python/"/>
-    
-      <category term="copy" scheme="https://96486d9b.github.io/tags/copy/"/>
-    
-      <category term="引用" scheme="https://96486d9b.github.io/tags/%E5%BC%95%E7%94%A8/"/>
-    
-  </entry>
-  
-  <entry>
     <title>流浪地球</title>
     <link href="https://96486d9b.github.io/2019/02/07/hy7vgh/"/>
     <id>https://96486d9b.github.io/2019/02/07/hy7vgh/</id>
@@ -266,36 +235,33 @@
   </entry>
   
   <entry>
-    <title>杀鹌鹑的少女</title>
-    <link href="https://96486d9b.github.io/2019/02/01/gv4ls1/"/>
-    <id>https://96486d9b.github.io/2019/02/01/gv4ls1/</id>
-    <published>2019-02-01T05:32:01.000Z</published>
-    <updated>2019-04-27T11:50:19.976Z</updated>
+    <title>shallow or deep copy?</title>
+    <link href="https://96486d9b.github.io/2019/02/07/zcxzk1/"/>
+    <id>https://96486d9b.github.io/2019/02/07/zcxzk1/</id>
+    <published>2019-02-06T16:00:00.000Z</published>
+    <updated>2019-04-27T11:50:18.319Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;当你老了，回顾一生，就会发觉：&lt;/p&gt;
-&lt;p&gt;什么时候出国读书，&lt;/p&gt;
-&lt;p&gt;什么时候决定做第一份职业，&lt;/p&gt;
-&lt;p&gt;何时选定了对象而恋爱，&lt;/p&gt;
-&lt;p&gt;什么时候结婚，&lt;/p&gt;
-&lt;p&gt;其实都是命运的巨变。&lt;/p&gt;
-&lt;p&gt;只是当时，&lt;/p&gt;
-&lt;p&gt;站在三岔路口，眼见风云
+        &lt;p&gt;哈哈，我一直以为我对python的内存模型已经很熟悉了，直到一个同学给我发了这样一段话。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;list.copy(): return a shallow copy of the list&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最开始的
       
     
     </summary>
     
-      <category term="偶得" scheme="https://96486d9b.github.io/categories/%E5%81%B6%E5%BE%97/"/>
+      <category term="技·路" scheme="https://96486d9b.github.io/categories/%E6%8A%80%C2%B7%E8%B7%AF/"/>
     
     
-      <category term="生活" scheme="https://96486d9b.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+      <category term="python" scheme="https://96486d9b.github.io/tags/python/"/>
     
-      <category term="感想" scheme="https://96486d9b.github.io/tags/%E6%84%9F%E6%83%B3/"/>
+      <category term="copy" scheme="https://96486d9b.github.io/tags/copy/"/>
     
-      <category term="诗歌" scheme="https://96486d9b.github.io/tags/%E8%AF%97%E6%AD%8C/"/>
+      <category term="引用" scheme="https://96486d9b.github.io/tags/%E5%BC%95%E7%94%A8/"/>
     
   </entry>
   
@@ -328,6 +294,40 @@
       <category term="摘录" scheme="https://96486d9b.github.io/tags/%E6%91%98%E5%BD%95/"/>
     
       <category term="感谢" scheme="https://96486d9b.github.io/tags/%E6%84%9F%E8%B0%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>杀鹌鹑的少女</title>
+    <link href="https://96486d9b.github.io/2019/02/01/gv4ls1/"/>
+    <id>https://96486d9b.github.io/2019/02/01/gv4ls1/</id>
+    <published>2019-02-01T05:32:01.000Z</published>
+    <updated>2019-04-27T11:50:19.976Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;当你老了，回顾一生，就会发觉：&lt;/p&gt;
+&lt;p&gt;什么时候出国读书，&lt;/p&gt;
+&lt;p&gt;什么时候决定做第一份职业，&lt;/p&gt;
+&lt;p&gt;何时选定了对象而恋爱，&lt;/p&gt;
+&lt;p&gt;什么时候结婚，&lt;/p&gt;
+&lt;p&gt;其实都是命运的巨变。&lt;/p&gt;
+&lt;p&gt;只是当时，&lt;/p&gt;
+&lt;p&gt;站在三岔路口，眼见风云
+      
+    
+    </summary>
+    
+      <category term="偶得" scheme="https://96486d9b.github.io/categories/%E5%81%B6%E5%BE%97/"/>
+    
+    
+      <category term="生活" scheme="https://96486d9b.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="感想" scheme="https://96486d9b.github.io/tags/%E6%84%9F%E6%83%B3/"/>
+    
+      <category term="诗歌" scheme="https://96486d9b.github.io/tags/%E8%AF%97%E6%AD%8C/"/>
     
   </entry>
   

@@ -184,35 +184,6 @@
     
     
     <entry>
-      <title>shallow or deep copy?</title>
-      <link href="/2019/02/07/zcxzk1/"/>
-      <url>/2019/02/07/zcxzk1/</url>
-      
-        <content type="html"><![CDATA[<p>哈哈，我一直以为我对python的内存模型已经很熟悉了，直到一个同学给我发了这样一段话。</p><blockquote><p>list.copy(): return a shallow copy of the list</p></blockquote><p>最开始的时候，我想到了这样一个实例<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">b = a.copy()</span><br><span class="line">b[<span class="number">0</span>] = <span class="number">4</span></span><br><span class="line">print(a, b)</span><br><span class="line">print(id(a), id(b))</span><br><span class="line"></span><br><span class="line">[<span class="number">2</span>, <span class="number">3</span>] [<span class="number">4</span>, <span class="number">3</span>]</span><br><span class="line"><span class="number">2624807809864</span> <span class="number">2624807962184</span></span><br></pre></td></tr></table></figure></p><p>输出结果两个是不一样的，并且两个复制之后两个的id值也是不一样的，然后我就脑子习惯性地认为了，是deep copy，问题出现在哪？</p><p>我们从头开始。</p><p>我们从包含子对象的列表开始。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a = [[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line">b = a</span><br><span class="line">print(id(a)==id(b))</span><br><span class="line">b = copy.copy(a)</span><br><span class="line">print(id(a)==id(b))</span><br><span class="line">b = copy.deepcopy(a)</span><br><span class="line">print(id(a)==id(b))</span><br><span class="line"></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure></p><p>输出的结果显得有一些奇怪，为什么无论是shallow copy还是deep copy，两个list对象的id值都是不同的呢？</p><p>追根溯源，我们需要考虑深浅copy的定义层次。</p><p>shallow copy还是deep copy，区别在于在我们新建这个对象的时候，对象是否只是复制了引用，还是重新生成了一个新的。</p><p>我们来解释一下上面这个例子，为什么无论是shallow copy还是deep copy，a和b两个list对象的id值都是不同的？shallow copy不应该是一样的吗？原因是在于我们的判断层次出了问题，我们判断shallow copy还是deep copy，并不是依据list对象，而是根据list里面的子对象而言的。</p><p>我们针对上面的例子继续深入下去。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a = [[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line">b = copy.copy(a)</span><br><span class="line">print(id(a)==id(b))</span><br><span class="line">print(id(a[<span class="number">1</span>])==id(b[<span class="number">1</span>]))</span><br><span class="line">b = copy.deepcopy(b)</span><br><span class="line">print(id(a)==id(b))</span><br><span class="line">print(id(a[<span class="number">1</span>])==id(b[<span class="number">1</span>]))</span><br><span class="line"></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure></p><p>可以发现，虽然从a, b这两个list对象的角度看，即第一个和第三个都是False，似乎没有什么不同。</p><p>但是从子元素a[1], b[1]看，它们的id值在shallow copy中是相同的，在deep copy中确实不同的。</p><p>似乎有了一些些更近的理解，但是你仔细一想，还是会觉得很奇怪。</p><p>我们之前的角度是，我们的判断层次是具体的对象，对于一个大的对象，我们是要判断它内部的子对象是不是一样的，依次来判断是深还是浅复制。依照这个想法，上面第二个例子，还可以更深入。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = [[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line">b = copy.copy(a)</span><br><span class="line">print(id(a[<span class="number">1</span>][<span class="number">1</span>])==id(b[<span class="number">1</span>][<span class="number">1</span>]))</span><br><span class="line">b = copy.deepcopy(b)</span><br><span class="line">print(id(a[<span class="number">1</span>][<span class="number">1</span>])==id(b[<span class="number">1</span>][<span class="number">1</span>]))</span><br></pre></td></tr></table></figure></p><p>按照我们之前的逻辑，deep copy和shallow copy的区别，它到了子对象这个层次，一个是重新生成了，一个只是复制引用，那么上述例子的两个输出，应该第一个是True，第二个是False。然而呢？实际的输出结果是两个都是True，矛盾又出现了。</p><p>按道理来说，a指向的1，和b指向的1，如果是shallow copy，应该是同一个。如果是deep copy，两个1应该是不同的对象，但是结果表明两个1是同一个对象。</p><p>这涉及到了python的内存模型，它做了这样的优化，对于一些简单的对象，采用了重用对象的方法。（因为简单的对象使用的频率可能比较高）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">2</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line">print(id(a)==id(b))</span><br><span class="line"></span><br><span class="line">a = <span class="number">200000000</span></span><br><span class="line">b = <span class="number">200000000</span></span><br><span class="line">print(id(a)==id(b))</span><br><span class="line"></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure></p><p>似乎问题的出现，就是因为python对于这样的简单对象做了优化，我们如果把对象变得复杂一点，就可以避免重用了，对象的id值就不一样了。于是我们可以再做一个实验。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = [[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">2000000</span>, <span class="number">4</span>]]</span><br><span class="line">b = copy.copy(a)</span><br><span class="line">print(id(a[<span class="number">1</span>][<span class="number">1</span>])==id(b[<span class="number">1</span>][<span class="number">1</span>]))</span><br><span class="line">b = copy.deepcopy(b)</span><br><span class="line">print(id(a[<span class="number">1</span>][<span class="number">1</span>])==id(b[<span class="number">1</span>][<span class="number">1</span>]))</span><br></pre></td></tr></table></figure></p><p>按照我们的讨论，这样的输出结果应该是True和False，然而实际的输出结果确是两个都是True。</p><p>为什么呢，这次是copy函数做了优化，copy对于一些无法修改的值，比如常量，字符串，元组等，在copy的过程当中，没有采取显式的复制，而是直接引用了。（因为无法修改的对象只会有读取的操作，所以无所谓要不要复制了）</p><p>所以，简单来说，如何判断一个复制是shallow copy还是deep copy。</p><ol><li>判断的层次，我们需要判断copy一个对象的时候，我们需要干一件分解的事，从子对象角度去判断是否是产生了新的对象，还是只是复制了引用。</li><li>我们判断子对象的时候，对于无法修改的元素，比如常量，字符串，元组等，它们不会被复制，我们需要避免这些元素对于我们判断的干扰。</li></ol><hr><p>顺便穿插一下相等的判断，之前我们一直都是用==去判断是否相等。Python中实际上还有is。</p><ul><li>is 比较的是两个实例对象是不是完全相同，它们是不是同一个对象，占用的内存地址是否相同。</li></ul><ul><li>== 比较的是两个对象的内容是否相等，即<strong>内存地址</strong>可以不一样，内容一样就可以了。默认会调用对象的__eq__()方法。</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">20000</span></span><br><span class="line">b = <span class="number">20000</span></span><br><span class="line">print(id(a), id(b))</span><br><span class="line">print(a <span class="keyword">is</span> b)</span><br><span class="line">print(a == b)</span><br><span class="line"></span><br><span class="line"><span class="number">2832764370256</span> <span class="number">2832764370224</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure><p>简而言之，is比较的就是id值是不是一样，因为id值是内存地址的表征，而==号判断的是值，内容是否相同。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">200</span></span><br><span class="line">b = <span class="number">200</span></span><br><span class="line">print(id(a), id(b))</span><br><span class="line">print(a <span class="keyword">is</span> b)</span><br><span class="line">print(a == b)</span><br><span class="line"></span><br><span class="line"><span class="number">1850574112</span> <span class="number">1850574112</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure></p><p>而上面这种特殊情况的出现，其实之前也解释过了，就是小整数池的存在造成的。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技·路 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> python </tag>
-            
-            <tag> copy </tag>
-            
-            <tag> 引用 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>流浪地球</title>
       <link href="/2019/02/07/hy7vgh/"/>
       <url>/2019/02/07/hy7vgh/</url>
@@ -242,27 +213,27 @@
     
     
     <entry>
-      <title>杀鹌鹑的少女</title>
-      <link href="/2019/02/01/gv4ls1/"/>
-      <url>/2019/02/01/gv4ls1/</url>
+      <title>shallow or deep copy?</title>
+      <link href="/2019/02/07/zcxzk1/"/>
+      <url>/2019/02/07/zcxzk1/</url>
       
-        <content type="html"><![CDATA[<p>当你老了，回顾一生，就会发觉：</p><p>什么时候出国读书，</p><p>什么时候决定做第一份职业，</p><p>何时选定了对象而恋爱，</p><p>什么时候结婚，</p><p>其实都是命运的巨变。</p><p>只是当时，</p><p>站在三岔路口，眼见风云千樯，</p><p>你作出选择的那一日，</p><p>在日记上，相当沉闷和平凡，</p><p>当时还以为是生命中普通的一天。</p>]]></content>
+        <content type="html"><![CDATA[<p>哈哈，我一直以为我对python的内存模型已经很熟悉了，直到一个同学给我发了这样一段话。</p><blockquote><p>list.copy(): return a shallow copy of the list</p></blockquote><p>最开始的时候，我想到了这样一个实例<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">b = a.copy()</span><br><span class="line">b[<span class="number">0</span>] = <span class="number">4</span></span><br><span class="line">print(a, b)</span><br><span class="line">print(id(a), id(b))</span><br><span class="line"></span><br><span class="line">[<span class="number">2</span>, <span class="number">3</span>] [<span class="number">4</span>, <span class="number">3</span>]</span><br><span class="line"><span class="number">2624807809864</span> <span class="number">2624807962184</span></span><br></pre></td></tr></table></figure></p><p>输出结果两个是不一样的，并且两个复制之后两个的id值也是不一样的，然后我就脑子习惯性地认为了，是deep copy，问题出现在哪？</p><p>我们从头开始。</p><p>我们从包含子对象的列表开始。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a = [[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line">b = a</span><br><span class="line">print(id(a)==id(b))</span><br><span class="line">b = copy.copy(a)</span><br><span class="line">print(id(a)==id(b))</span><br><span class="line">b = copy.deepcopy(a)</span><br><span class="line">print(id(a)==id(b))</span><br><span class="line"></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure></p><p>输出的结果显得有一些奇怪，为什么无论是shallow copy还是deep copy，两个list对象的id值都是不同的呢？</p><p>追根溯源，我们需要考虑深浅copy的定义层次。</p><p>shallow copy还是deep copy，区别在于在我们新建这个对象的时候，对象是否只是复制了引用，还是重新生成了一个新的。</p><p>我们来解释一下上面这个例子，为什么无论是shallow copy还是deep copy，a和b两个list对象的id值都是不同的？shallow copy不应该是一样的吗？原因是在于我们的判断层次出了问题，我们判断shallow copy还是deep copy，并不是依据list对象，而是根据list里面的子对象而言的。</p><p>我们针对上面的例子继续深入下去。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a = [[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line">b = copy.copy(a)</span><br><span class="line">print(id(a)==id(b))</span><br><span class="line">print(id(a[<span class="number">1</span>])==id(b[<span class="number">1</span>]))</span><br><span class="line">b = copy.deepcopy(b)</span><br><span class="line">print(id(a)==id(b))</span><br><span class="line">print(id(a[<span class="number">1</span>])==id(b[<span class="number">1</span>]))</span><br><span class="line"></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure></p><p>可以发现，虽然从a, b这两个list对象的角度看，即第一个和第三个都是False，似乎没有什么不同。</p><p>但是从子元素a[1], b[1]看，它们的id值在shallow copy中是相同的，在deep copy中确实不同的。</p><p>似乎有了一些些更近的理解，但是你仔细一想，还是会觉得很奇怪。</p><p>我们之前的角度是，我们的判断层次是具体的对象，对于一个大的对象，我们是要判断它内部的子对象是不是一样的，依次来判断是深还是浅复制。依照这个想法，上面第二个例子，还可以更深入。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = [[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line">b = copy.copy(a)</span><br><span class="line">print(id(a[<span class="number">1</span>][<span class="number">1</span>])==id(b[<span class="number">1</span>][<span class="number">1</span>]))</span><br><span class="line">b = copy.deepcopy(b)</span><br><span class="line">print(id(a[<span class="number">1</span>][<span class="number">1</span>])==id(b[<span class="number">1</span>][<span class="number">1</span>]))</span><br></pre></td></tr></table></figure></p><p>按照我们之前的逻辑，deep copy和shallow copy的区别，它到了子对象这个层次，一个是重新生成了，一个只是复制引用，那么上述例子的两个输出，应该第一个是True，第二个是False。然而呢？实际的输出结果是两个都是True，矛盾又出现了。</p><p>按道理来说，a指向的1，和b指向的1，如果是shallow copy，应该是同一个。如果是deep copy，两个1应该是不同的对象，但是结果表明两个1是同一个对象。</p><p>这涉及到了python的内存模型，它做了这样的优化，对于一些简单的对象，采用了重用对象的方法。（因为简单的对象使用的频率可能比较高）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">2</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line">print(id(a)==id(b))</span><br><span class="line"></span><br><span class="line">a = <span class="number">200000000</span></span><br><span class="line">b = <span class="number">200000000</span></span><br><span class="line">print(id(a)==id(b))</span><br><span class="line"></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure></p><p>似乎问题的出现，就是因为python对于这样的简单对象做了优化，我们如果把对象变得复杂一点，就可以避免重用了，对象的id值就不一样了。于是我们可以再做一个实验。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = [[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">2000000</span>, <span class="number">4</span>]]</span><br><span class="line">b = copy.copy(a)</span><br><span class="line">print(id(a[<span class="number">1</span>][<span class="number">1</span>])==id(b[<span class="number">1</span>][<span class="number">1</span>]))</span><br><span class="line">b = copy.deepcopy(b)</span><br><span class="line">print(id(a[<span class="number">1</span>][<span class="number">1</span>])==id(b[<span class="number">1</span>][<span class="number">1</span>]))</span><br></pre></td></tr></table></figure></p><p>按照我们的讨论，这样的输出结果应该是True和False，然而实际的输出结果确是两个都是True。</p><p>为什么呢，这次是copy函数做了优化，copy对于一些无法修改的值，比如常量，字符串，元组等，在copy的过程当中，没有采取显式的复制，而是直接引用了。（因为无法修改的对象只会有读取的操作，所以无所谓要不要复制了）</p><p>所以，简单来说，如何判断一个复制是shallow copy还是deep copy。</p><ol><li>判断的层次，我们需要判断copy一个对象的时候，我们需要干一件分解的事，从子对象角度去判断是否是产生了新的对象，还是只是复制了引用。</li><li>我们判断子对象的时候，对于无法修改的元素，比如常量，字符串，元组等，它们不会被复制，我们需要避免这些元素对于我们判断的干扰。</li></ol><hr><p>顺便穿插一下相等的判断，之前我们一直都是用==去判断是否相等。Python中实际上还有is。</p><ul><li>is 比较的是两个实例对象是不是完全相同，它们是不是同一个对象，占用的内存地址是否相同。</li></ul><ul><li>== 比较的是两个对象的内容是否相等，即<strong>内存地址</strong>可以不一样，内容一样就可以了。默认会调用对象的__eq__()方法。</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">20000</span></span><br><span class="line">b = <span class="number">20000</span></span><br><span class="line">print(id(a), id(b))</span><br><span class="line">print(a <span class="keyword">is</span> b)</span><br><span class="line">print(a == b)</span><br><span class="line"></span><br><span class="line"><span class="number">2832764370256</span> <span class="number">2832764370224</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure><p>简而言之，is比较的就是id值是不是一样，因为id值是内存地址的表征，而==号判断的是值，内容是否相同。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">200</span></span><br><span class="line">b = <span class="number">200</span></span><br><span class="line">print(id(a), id(b))</span><br><span class="line">print(a <span class="keyword">is</span> b)</span><br><span class="line">print(a == b)</span><br><span class="line"></span><br><span class="line"><span class="number">1850574112</span> <span class="number">1850574112</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure></p><p>而上面这种特殊情况的出现，其实之前也解释过了，就是小整数池的存在造成的。</p>]]></content>
       
       
       <categories>
           
-          <category> 偶得 </category>
+          <category> 技·路 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 生活 </tag>
+            <tag> python </tag>
             
-            <tag> 感想 </tag>
+            <tag> copy </tag>
             
-            <tag> 诗歌 </tag>
+            <tag> 引用 </tag>
             
         </tags>
       
@@ -292,6 +263,35 @@
             <tag> 摘录 </tag>
             
             <tag> 感谢 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>杀鹌鹑的少女</title>
+      <link href="/2019/02/01/gv4ls1/"/>
+      <url>/2019/02/01/gv4ls1/</url>
+      
+        <content type="html"><![CDATA[<p>当你老了，回顾一生，就会发觉：</p><p>什么时候出国读书，</p><p>什么时候决定做第一份职业，</p><p>何时选定了对象而恋爱，</p><p>什么时候结婚，</p><p>其实都是命运的巨变。</p><p>只是当时，</p><p>站在三岔路口，眼见风云千樯，</p><p>你作出选择的那一日，</p><p>在日记上，相当沉闷和平凡，</p><p>当时还以为是生命中普通的一天。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 偶得 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+            <tag> 感想 </tag>
+            
+            <tag> 诗歌 </tag>
             
         </tags>
       
@@ -922,9 +922,9 @@
       
         <tags>
             
-            <tag> 阅读 </tag>
-            
             <tag> 宗教 </tag>
+            
+            <tag> 阅读 </tag>
             
             <tag> 哲学 </tag>
             
@@ -951,13 +951,13 @@
       
         <tags>
             
-            <tag> 宗教 </tag>
-            
             <tag> 纪录片 </tag>
             
             <tag> 西藏 </tag>
             
             <tag> 民族 </tag>
+            
+            <tag> 宗教 </tag>
             
         </tags>
       

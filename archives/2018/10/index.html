@@ -61,14 +61,10 @@
       poem_api: 'https://sdk.jinrishici.com/v2/browser/jinrishici.js'
     }
   </script>
-  <script src="/js/image.js"></script>
   <script src="/js/search.js"></script>
-  <script src="/js/since.js"></script>
   <script src="/js/app.js"></script>
-  <script src="/js/wordcount.js"></script>
   <link rel="stylesheet" href="/style.css">
 </head>
-
 <body>
   <script>NProgress.start();</script>
   <header class="l_header">
@@ -125,20 +121,16 @@
 				</ul>
 				<div class="underline"></div>
 			</div>
-			
 			<div class="m_search">
 				<form name="searchform" class="form u-search-form">
-					<input type="text" class="input u-search-input" placeholder="关键词">
+					<input type="text" class="input u-search-input" placeholder="搜索关键词">
 					<i class="material-icons flat-box">search</i>
 				</form>
 			</div>
-			
 			<ul class="switcher h-list">
-				
 				<li class="s-search">
 					<a href="javascript:void(0)"><i class="material-icons flat-box">search</i></a>
 				</li>
-				
 				<li class="s-menu">
 					<a href="javascript:void(0)"><i class="material-icons flat-box">menu</i></a>
 				</li>
@@ -307,11 +299,18 @@ https://www.bilibili.com/video/av14496306?from=search&amp;seid=11724246176535739
 
 <script>
   window.subData = {
-    title: 'Flow',
+    title: '清简',
     tools: true
   }
 </script>
 
+
+<script>
+  window.subData = {
+    title: '归档',
+    tools: true
+  }
+</script>
         
       </div>
       <aside class="l_side">
@@ -412,9 +411,7 @@ https://www.bilibili.com/video/av14496306?from=search&amp;seid=11724246176535739
   </div>
 </footer>
   <canvas id="evanyou"></canvas>
-  <script src="/js/evanyou.js"></script>
   <div id="aplayer-fixed"></div>
-  <script src="/js/aplayer.js"></script>
   <script src="/js/pjax.js"></script>
   <script>NProgress.done();</script>
 
