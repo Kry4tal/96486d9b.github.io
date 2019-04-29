@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="Flow">
 <meta property="og:description" content="哈哈，我一直以为我对python的内存模型已经很熟悉了，直到一个同学给我发了这样一段话。  list.copy(): return a shallow copy of the list  最开始的时候，我想到了这样一个实例12345678a = [2, 3]b = a.copy()b[0] = 4print(a, b)print(id(a), id(b))[2, 3] [4, 3]26248078">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-27T11:50:18.319Z">
+<meta property="og:updated_time" content="2019-04-29T08:21:14.241Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shallow or deep copy?">
 <meta name="twitter:description" content="哈哈，我一直以为我对python的内存模型已经很熟悉了，直到一个同学给我发了这样一段话。  list.copy(): return a shallow copy of the list  最开始的时候，我想到了这样一个实例12345678a = [2, 3]b = a.copy()b[0] = 4print(a, b)print(id(a), id(b))[2, 3] [4, 3]26248078">
@@ -66,6 +66,7 @@
   <script src="/js/app.js"></script>
   <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
   <script>NProgress.start();</script>
   <header class="l_header">
@@ -190,6 +191,46 @@
 		
 	</nav>
 </aside>
+  <div id="l_mathjax">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            "HTML-CSS": {
+                preferredFont: "TeX",
+                availableFonts: ["STIX","TeX"],
+                linebreaks: {
+                    automatic: true,
+                    width: "80%"
+                },
+                EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50),
+            },
+            tex2jax: {
+                inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                ignoreClass: "tex2jax_ignore|dno",
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            TeX: {
+                equationNumbers: { autoNumber: "AMS" },
+                noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+                Macros: { href: "{}" }
+            },
+            displayAlign : "left",
+            messageStyle: "none",
+            showProcessingMessages: false,
+        });
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i=0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</div>
   <div class="l_body">
     <div class="container clearfix">
       <div id="l_pjax" class="l_main">
@@ -205,6 +246,13 @@
 		</time>
 
 		
+<span id="/2019/02/07/zcxzk1/" class="leancloud-visitors" data-flag-title="shallow or deep copy?">
+    <time> 字数 <span id="wordcount"></span> 阅读时长 <span id="min2read"></span> 浏览 <span class="leancloud-visitors-count"></span></time>
+</span>
+<script>
+  initCount('&#34;哈哈，我一直以为我对python的内存模型已经很熟悉了，直到一个同学给我发了这样一段话。\n\nlist.copy(): return a shallow copy of the list\n\n最开始的时候，我想到了这样一个实例12345678a = [2, 3]b = a.copy()b[0] = 4print(a, b)print(id(a), id(b))[2, 3] [4, 3]2624807809864 2624807962184\n输出结果两个是不一样的，并且两个复制之后两个的id值也是不一样的，然后我就脑子习惯性地认为了，是deep copy，问题出现在哪？\n我们从头开始。\n我们从包含子对象的列表开始。1234567891011a = [[1, 2], [3, 4]]b = aprint(id(a)==id(b))b = copy.copy(a)print(id(a)==id(b))b = copy.deepcopy(a)print(id(a)==id(b))TrueFalseFalse\n输出的结果显得有一些奇怪，为什么无论是shallow copy还是deep copy，两个list对象的id值都是不同的呢？\n追根溯源，我们需要考虑深浅copy的定义层次。\nshallow copy还是deep copy，区别在于在我们新建这个对象的时候，对象是否只是复制了引用，还是重新生成了一个新的。\n我们来解释一下上面这个例子，为什么无论是shallow copy还是deep copy，a和b两个list对象的id值都是不同的？shallow copy不应该是一样的吗？原因是在于我们的判断层次出了问题，我们判断shallow copy还是deep copy，并不是依据list对象，而是根据list里面的子对象而言的。\n我们针对上面的例子继续深入下去。123456789101112a = [[1, 2], [3, 4]]b = copy.copy(a)print(id(a)==id(b))print(id(a[1])==id(b[1]))b = copy.deepcopy(b)print(id(a)==id(b))print(id(a[1])==id(b[1]))FalseTrueFalseFalse\n可以发现，虽然从a, b这两个list对象的角度看，即第一个和第三个都是False，似乎没有什么不同。\n但是从子元素a[1], b[1]看，它们的id值在shallow copy中是相同的，在deep copy中确实不同的。\n似乎有了一些些更近的理解，但是你仔细一想，还是会觉得很奇怪。\n我们之前的角度是，我们的判断层次是具体的对象，对于一个大的对象，我们是要判断它内部的子对象是不是一样的，依次来判断是深还是浅复制。依照这个想法，上面第二个例子，还可以更深入。12345a = [[1, 2], [3, 4]]b = copy.copy(a)print(id(a[1][1])==id(b[1][1]))b = copy.deepcopy(b)print(id(a[1][1])==id(b[1][1]))\n按照我们之前的逻辑，deep copy和shallow copy的区别，它到了子对象这个层次，一个是重新生成了，一个只是复制引用，那么上述例子的两个输出，应该第一个是True，第二个是False。然而呢？实际的输出结果是两个都是True，矛盾又出现了。\n按道理来说，a指向的1，和b指向的1，如果是shallow copy，应该是同一个。如果是deep copy，两个1应该是不同的对象，但是结果表明两个1是同一个对象。\n这涉及到了python的内存模型，它做了这样的优化，对于一些简单的对象，采用了重用对象的方法。（因为简单的对象使用的频率可能比较高）12345678910a = 2b = 2print(id(a)==id(b))a = 200000000b = 200000000print(id(a)==id(b))TrueFalse\n似乎问题的出现，就是因为python对于这样的简单对象做了优化，我们如果把对象变得复杂一点，就可以避免重用了，对象的id值就不一样了。于是我们可以再做一个实验。12345a = [[1, 2], [2000000, 4]]b = copy.copy(a)print(id(a[1][1])==id(b[1][1]))b = copy.deepcopy(b)print(id(a[1][1])==id(b[1][1]))\n按照我们的讨论，这样的输出结果应该是True和False，然而实际的输出结果确是两个都是True。\n为什么呢，这次是copy函数做了优化，copy对于一些无法修改的值，比如常量，字符串，元组等，在copy的过程当中，没有采取显式的复制，而是直接引用了。（因为无法修改的对象只会有读取的操作，所以无所谓要不要复制了）\n所以，简单来说，如何判断一个复制是shallow copy还是deep copy。\n\n判断的层次，我们需要判断copy一个对象的时候，我们需要干一件分解的事，从子对象角度去判断是否是产生了新的对象，还是只是复制了引用。\n我们判断子对象的时候，对于无法修改的元素，比如常量，字符串，元组等，它们不会被复制，我们需要避免这些元素对于我们判断的干扰。\n\n\n顺便穿插一下相等的判断，之前我们一直都是用==去判断是否相等。Python中实际上还有is。\n\nis 比较的是两个实例对象是不是完全相同，它们是不是同一个对象，占用的内存地址是否相同。\n\n\n== 比较的是两个对象的内容是否相等，即内存地址可以不一样，内容一样就可以了。默认会调用对象的__eq__()方法。\n\n123456789a = 20000b = 20000print(id(a), id(b))print(a is b)print(a == b)2832764370256 2832764370224FalseTrue\n简而言之，is比较的就是id值是不是一样，因为id值是内存地址的表征，而==号判断的是值，内容是否相同。123456789a = 200b = 200print(id(a), id(b))print(a is b)print(a == b)1850574112 1850574112TrueTrue\n而上面这种特殊情况的出现，其实之前也解释过了，就是小整数池的存在造成的。\n&#34;');
+</script>
+
 		
 
 <div class="categories">
@@ -280,15 +328,15 @@
 		<div class="art-item-footer">
 			
 			<span class="art-item-left">
-				<a href="/2019/02/07/hy7vgh/" rel="prev" title="流浪地球">
-					流浪地球
+				<a href="/2019/02/08/mgve1g/" rel="prev" title="乡村教师">
+					乡村教师
 				</a>
 			</span>
 			
 			
 			<span class="art-item-right">
-				<a href="/2019/02/01/we68gi/" rel="next" title="托斯卡纳艳阳下">
-					托斯卡纳艳阳下
+				<a href="/2019/02/07/hy7vgh/" rel="next" title="流浪地球">
+					流浪地球
 				</a>
 			</span>
 			
@@ -299,13 +347,30 @@
 
 
 
+<article class="post post-comment reveal" itemscope="" itemprop="blogPost">
+    <div class="comment"></div>
+    <script>
+        new Valine({
+            el: '.comment',
+            notify: false,
+            verify: false,
+            visitor: true,
+            appId: 'yNQ57noTg3jnFJvLawvv2SrO-gzGzoHsz',
+            appKey: 'kufPfLKXILeMCFpjgJRz4Hd1',
+            placeholder: '在这里，写下你的评论 ~',
+            path: window.location.pathname
+        });
+    </script>
+</article>
+
+
+
 <script>
 	window.subData = {
 		title: 'shallow or deep copy?',
 		tools: true
 	}
 </script>
-        
       </div>
       <aside class="l_side">
         
@@ -348,7 +413,7 @@
                         一隅
                     </div>
                     <div class="badget">
-                        15
+                        16
                     </div>
                 </a></li>
             
@@ -388,7 +453,7 @@
 <section class="m_widget tagcloud">
     <div class="header">标签</div>
     <div class="content">
-        <a href="/tags/C3/" style="font-size: 14px; color: #808080">C3</a> <a href="/tags/C语言/" style="font-size: 14.8px; color: #666">C语言</a> <a href="/tags/GAN/" style="font-size: 14px; color: #808080">GAN</a> <a href="/tags/MRO/" style="font-size: 14px; color: #808080">MRO</a> <a href="/tags/copy/" style="font-size: 14px; color: #808080">copy</a> <a href="/tags/mv/" style="font-size: 14.8px; color: #666">mv</a> <a href="/tags/python/" style="font-size: 15.6px; color: #4d4d4d">python</a> <a href="/tags/youtube/" style="font-size: 14px; color: #808080">youtube</a> <a href="/tags/三联生活周刊/" style="font-size: 14px; color: #808080">三联生活周刊</a> <a href="/tags/冬天/" style="font-size: 14px; color: #808080">冬天</a> <a href="/tags/单例/" style="font-size: 14px; color: #808080">单例</a> <a href="/tags/博客/" style="font-size: 14px; color: #808080">博客</a> <a href="/tags/历史/" style="font-size: 15.6px; color: #4d4d4d">历史</a> <a href="/tags/台词/" style="font-size: 14px; color: #808080">台词</a> <a href="/tags/同理心/" style="font-size: 14px; color: #808080">同理心</a> <a href="/tags/哲学/" style="font-size: 14px; color: #808080">哲学</a> <a href="/tags/回忆/" style="font-size: 17.2px; color: #1a1a1a">回忆</a> <a href="/tags/大师/" style="font-size: 14.8px; color: #666">大师</a> <a href="/tags/宗教/" style="font-size: 14.8px; color: #666">宗教</a> <a href="/tags/家/" style="font-size: 14px; color: #808080">家</a> <a href="/tags/寓言/" style="font-size: 14px; color: #808080">寓言</a> <a href="/tags/对象/" style="font-size: 14px; color: #808080">对象</a> <a href="/tags/庄子/" style="font-size: 14px; color: #808080">庄子</a> <a href="/tags/引用/" style="font-size: 14px; color: #808080">引用</a> <a href="/tags/心情/" style="font-size: 14.8px; color: #666">心情</a> <a href="/tags/感想/" style="font-size: 15.6px; color: #4d4d4d">感想</a> <a href="/tags/感谢/" style="font-size: 14px; color: #808080">感谢</a> <a href="/tags/成长/" style="font-size: 14px; color: #808080">成长</a> <a href="/tags/抗战/" style="font-size: 14px; color: #808080">抗战</a> <a href="/tags/摘录/" style="font-size: 14px; color: #808080">摘录</a> <a href="/tags/教育/" style="font-size: 14px; color: #808080">教育</a> <a href="/tags/数值分析/" style="font-size: 14.8px; color: #666">数值分析</a> <a href="/tags/日常/" style="font-size: 15.6px; color: #4d4d4d">日常</a> <a href="/tags/时间/" style="font-size: 14px; color: #808080">时间</a> <a href="/tags/更新/" style="font-size: 14px; color: #808080">更新</a> <a href="/tags/杂记/" style="font-size: 15.6px; color: #4d4d4d">杂记</a> <a href="/tags/杭州/" style="font-size: 14px; color: #808080">杭州</a> <a href="/tags/林语堂/" style="font-size: 14px; color: #808080">林语堂</a> <a href="/tags/架构/" style="font-size: 14px; color: #808080">架构</a> <a href="/tags/民国/" style="font-size: 14px; color: #808080">民国</a> <a href="/tags/民族/" style="font-size: 15.6px; color: #4d4d4d">民族</a> <a href="/tags/民谣/" style="font-size: 14.8px; color: #666">民谣</a> <a href="/tags/深度学习/" style="font-size: 14px; color: #808080">深度学习</a> <a href="/tags/理想/" style="font-size: 14px; color: #808080">理想</a> <a href="/tags/生活/" style="font-size: 18px; color: #000">生活</a> <a href="/tags/电影/" style="font-size: 16.4px; color: #333">电影</a> <a href="/tags/禅/" style="font-size: 14px; color: #808080">禅</a> <a href="/tags/科幻/" style="font-size: 14.8px; color: #666">科幻</a> <a href="/tags/类/" style="font-size: 14px; color: #808080">类</a> <a href="/tags/纪录片/" style="font-size: 18px; color: #000">纪录片</a> <a href="/tags/经历/" style="font-size: 14px; color: #808080">经历</a> <a href="/tags/继承/" style="font-size: 14px; color: #808080">继承</a> <a href="/tags/茶/" style="font-size: 14px; color: #808080">茶</a> <a href="/tags/西藏/" style="font-size: 14px; color: #808080">西藏</a> <a href="/tags/观后感/" style="font-size: 14.8px; color: #666">观后感</a> <a href="/tags/诗歌/" style="font-size: 14.8px; color: #666">诗歌</a> <a href="/tags/读书/" style="font-size: 14px; color: #808080">读书</a> <a href="/tags/阅读/" style="font-size: 14px; color: #808080">阅读</a> <a href="/tags/雪/" style="font-size: 14px; color: #808080">雪</a> <a href="/tags/音乐/" style="font-size: 14.8px; color: #666">音乐</a>
+        <a href="/tags/C3/" style="font-size: 14px; color: #808080">C3</a> <a href="/tags/C语言/" style="font-size: 14.8px; color: #666">C语言</a> <a href="/tags/GAN/" style="font-size: 14px; color: #808080">GAN</a> <a href="/tags/MRO/" style="font-size: 14px; color: #808080">MRO</a> <a href="/tags/copy/" style="font-size: 14px; color: #808080">copy</a> <a href="/tags/mv/" style="font-size: 14.8px; color: #666">mv</a> <a href="/tags/python/" style="font-size: 15.6px; color: #4d4d4d">python</a> <a href="/tags/youtube/" style="font-size: 14px; color: #808080">youtube</a> <a href="/tags/三联生活周刊/" style="font-size: 14px; color: #808080">三联生活周刊</a> <a href="/tags/冬天/" style="font-size: 14px; color: #808080">冬天</a> <a href="/tags/单例/" style="font-size: 14px; color: #808080">单例</a> <a href="/tags/博客/" style="font-size: 14px; color: #808080">博客</a> <a href="/tags/历史/" style="font-size: 15.6px; color: #4d4d4d">历史</a> <a href="/tags/台词/" style="font-size: 14px; color: #808080">台词</a> <a href="/tags/同理心/" style="font-size: 14px; color: #808080">同理心</a> <a href="/tags/哲学/" style="font-size: 14px; color: #808080">哲学</a> <a href="/tags/回忆/" style="font-size: 17.2px; color: #1a1a1a">回忆</a> <a href="/tags/大师/" style="font-size: 14.8px; color: #666">大师</a> <a href="/tags/宗教/" style="font-size: 14.8px; color: #666">宗教</a> <a href="/tags/家/" style="font-size: 14px; color: #808080">家</a> <a href="/tags/寓言/" style="font-size: 14px; color: #808080">寓言</a> <a href="/tags/对象/" style="font-size: 14px; color: #808080">对象</a> <a href="/tags/庄子/" style="font-size: 14px; color: #808080">庄子</a> <a href="/tags/引用/" style="font-size: 14px; color: #808080">引用</a> <a href="/tags/心情/" style="font-size: 14.8px; color: #666">心情</a> <a href="/tags/感想/" style="font-size: 15.6px; color: #4d4d4d">感想</a> <a href="/tags/感谢/" style="font-size: 14px; color: #808080">感谢</a> <a href="/tags/成长/" style="font-size: 14px; color: #808080">成长</a> <a href="/tags/抗战/" style="font-size: 14px; color: #808080">抗战</a> <a href="/tags/摘录/" style="font-size: 14px; color: #808080">摘录</a> <a href="/tags/教育/" style="font-size: 14px; color: #808080">教育</a> <a href="/tags/数值分析/" style="font-size: 14.8px; color: #666">数值分析</a> <a href="/tags/日常/" style="font-size: 15.6px; color: #4d4d4d">日常</a> <a href="/tags/时间/" style="font-size: 14px; color: #808080">时间</a> <a href="/tags/更新/" style="font-size: 14px; color: #808080">更新</a> <a href="/tags/杂记/" style="font-size: 15.6px; color: #4d4d4d">杂记</a> <a href="/tags/杭州/" style="font-size: 14px; color: #808080">杭州</a> <a href="/tags/林语堂/" style="font-size: 14px; color: #808080">林语堂</a> <a href="/tags/架构/" style="font-size: 14px; color: #808080">架构</a> <a href="/tags/民国/" style="font-size: 14px; color: #808080">民国</a> <a href="/tags/民族/" style="font-size: 15.6px; color: #4d4d4d">民族</a> <a href="/tags/民谣/" style="font-size: 14.8px; color: #666">民谣</a> <a href="/tags/浙大/" style="font-size: 14px; color: #808080">浙大</a> <a href="/tags/深度学习/" style="font-size: 14px; color: #808080">深度学习</a> <a href="/tags/理想/" style="font-size: 14px; color: #808080">理想</a> <a href="/tags/生活/" style="font-size: 18px; color: #000">生活</a> <a href="/tags/电影/" style="font-size: 16.4px; color: #333">电影</a> <a href="/tags/禅/" style="font-size: 14px; color: #808080">禅</a> <a href="/tags/科幻/" style="font-size: 14.8px; color: #666">科幻</a> <a href="/tags/类/" style="font-size: 14px; color: #808080">类</a> <a href="/tags/纪录片/" style="font-size: 18px; color: #000">纪录片</a> <a href="/tags/经历/" style="font-size: 14px; color: #808080">经历</a> <a href="/tags/继承/" style="font-size: 14px; color: #808080">继承</a> <a href="/tags/茶/" style="font-size: 14px; color: #808080">茶</a> <a href="/tags/西藏/" style="font-size: 14px; color: #808080">西藏</a> <a href="/tags/观后感/" style="font-size: 14.8px; color: #666">观后感</a> <a href="/tags/记忆/" style="font-size: 14px; color: #808080">记忆</a> <a href="/tags/诗歌/" style="font-size: 14.8px; color: #666">诗歌</a> <a href="/tags/读书/" style="font-size: 14px; color: #808080">读书</a> <a href="/tags/阅读/" style="font-size: 14px; color: #808080">阅读</a> <a href="/tags/雪/" style="font-size: 14px; color: #808080">雪</a> <a href="/tags/音乐/" style="font-size: 14.8px; color: #666">音乐</a>
     </div>
 </section>
 
@@ -398,7 +463,7 @@
   </div>
   <footer id="footer" class="clearfix">
   <div>
-    <p><span id="since"></span><span class="my-face">(●'◡'●)ﾉ♥</span></p>
+    站点已运行<span id="since"></span><span class="my-face">(●'◡'●)ﾉ♥</span>
   </div>
   <div>
     访问量<span id="busuanzi_value_site_pv"></span>次 访客数<span id="busuanzi_value_site_uv"></span>人

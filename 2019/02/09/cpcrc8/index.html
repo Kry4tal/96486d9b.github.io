@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="Flow">
 <meta property="og:description" content="python3之后，所有的类都基于object这个共同基类，称为新式类。 下面这段代码。 12345678910111213class A():    a1 = 1    def __init__(self):        self.a2 = 2class B(A):    b1 = 1    def __init__(self):        self.b2 = 2if __name__ =">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-27T11:50:17.916Z">
+<meta property="og:updated_time" content="2019-04-29T08:21:13.769Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="__new__与__init__">
 <meta name="twitter:description" content="python3之后，所有的类都基于object这个共同基类，称为新式类。 下面这段代码。 12345678910111213class A():    a1 = 1    def __init__(self):        self.a2 = 2class B(A):    b1 = 1    def __init__(self):        self.b2 = 2if __name__ =">
@@ -66,6 +66,7 @@
   <script src="/js/app.js"></script>
   <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
   <script>NProgress.start();</script>
   <header class="l_header">
@@ -190,6 +191,46 @@
 		
 	</nav>
 </aside>
+  <div id="l_mathjax">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            "HTML-CSS": {
+                preferredFont: "TeX",
+                availableFonts: ["STIX","TeX"],
+                linebreaks: {
+                    automatic: true,
+                    width: "80%"
+                },
+                EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50),
+            },
+            tex2jax: {
+                inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                ignoreClass: "tex2jax_ignore|dno",
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            TeX: {
+                equationNumbers: { autoNumber: "AMS" },
+                noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+                Macros: { href: "{}" }
+            },
+            displayAlign : "left",
+            messageStyle: "none",
+            showProcessingMessages: false,
+        });
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i=0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</div>
   <div class="l_body">
     <div class="container clearfix">
       <div id="l_pjax" class="l_main">
@@ -205,6 +246,13 @@
 		</time>
 
 		
+<span id="/2019/02/09/cpcrc8/" class="leancloud-visitors" data-flag-title="__new__与__init__">
+    <time> 字数 <span id="wordcount"></span> 阅读时长 <span id="min2read"></span> 浏览 <span class="leancloud-visitors-count"></span></time>
+</span>
+<script>
+  initCount('&#34;python3之后，所有的类都基于object这个共同基类，称为新式类。\n下面这段代码。\n12345678910111213class A():    a1 = 1    def __init__(self):        self.a2 = 2class B(A):    b1 = 1    def __init__(self):        self.b2 = 2if __name__ == \&#34;__main__\&#34;:    obj = B()    print(dir(obj))\n输出的结果中会发现，生成的对象里包含了a1，b1，b2。\na1的存在说明，在创建B的过程当中，确确实实，创建了A。\n但是a2的不存在说明，A中的__init__没有被调用，也就是说创建A的过程，__init__不是必须要历经的方法。\n我们可以试图打印类A的方法。其中有一个方法为__new__。它扮演的作用，实际上创建类A。\n\n__new__的作用时间是在类创建之前，它依照规则创建类，如果有继承发生，依照MRO顺序依次向上调用父类的__new__函数创建相应的父类。\n__init__的作用时间是在类创建之后，它依照__init__中的过程进行初始化过程，这一步骤不是必须的。\n\n每一个类创建的过程之中，其实都蕴含了这样的函数。123class A():    def __new__(cls):        return super(A, cls).__new__(cls)\n所以实际上我们上述继承关系可以详细写成。1234567891011121314151617181920212223class A():    a1 = 1    def __new__(cls):        print(\&#34;new class A\&#34;)        return super(A, cls).__new__(cls)    def __init__(self):        self.a2 = 2class B(A):    b1 = 1    def __new__(cls):        print(\&#34;new class B\&#34;)        return super(B, cls).__new__(cls)    def __init__(self):        self.b2 = 2if __name__ == \&#34;__main__\&#34;:    obj = B()    new class Bnew class A\n\n只有新式类才有__new__\n__new__是有返回值的，返回实例化出来的实例，__init__是没有返回值的，准确的说，是不需要返回值\n__new__和__init__都可以完成初始化的动作，类似于c++当中初始化列表和普通初始化不同的作用时间\n__new__是类级别的静态方法，__init__是对象级别的实例方法\n只有当__new__返回了一个cls的实例之后，__init__才能被调用\n\n基于此，可以顺便讨论一下python中的单例模式实现。1234567891011121314import threadingclass Singleton(object):    _instance_lock = threading.Lock()    def __init__(self):        pass            def __new__(cls, *args, **kwargs):        if not hasattr(Singleton, \&#34;_instance\&#34;):            with Singleton._instance_lock:                if not hasattr(Singleton, \&#34;_instance\&#34;):                    Singleton._instance = object.__new__(cls)          return Singleton._instance\n我们在创建阶段，即__new__过程中进行是否存在类当前类实例的判断，如果存在直接返回该实例。如果不存在，则新建。注意判断的时候，因为实际可能的新建操作，需要加一个锁。\n&#34;');
+</script>
+
 		
 
 <div class="categories">
@@ -285,13 +333,30 @@
 
 
 
+<article class="post post-comment reveal" itemscope="" itemprop="blogPost">
+    <div class="comment"></div>
+    <script>
+        new Valine({
+            el: '.comment',
+            notify: false,
+            verify: false,
+            visitor: true,
+            appId: 'yNQ57noTg3jnFJvLawvv2SrO-gzGzoHsz',
+            appKey: 'kufPfLKXILeMCFpjgJRz4Hd1',
+            placeholder: '在这里，写下你的评论 ~',
+            path: window.location.pathname
+        });
+    </script>
+</article>
+
+
+
 <script>
 	window.subData = {
 		title: '__new__与__init__',
 		tools: true
 	}
 </script>
-        
       </div>
       <aside class="l_side">
         
@@ -334,7 +399,7 @@
                         一隅
                     </div>
                     <div class="badget">
-                        15
+                        16
                     </div>
                 </a></li>
             
@@ -374,7 +439,7 @@
 <section class="m_widget tagcloud">
     <div class="header">标签</div>
     <div class="content">
-        <a href="/tags/C3/" style="font-size: 14px; color: #808080">C3</a> <a href="/tags/C语言/" style="font-size: 14.8px; color: #666">C语言</a> <a href="/tags/GAN/" style="font-size: 14px; color: #808080">GAN</a> <a href="/tags/MRO/" style="font-size: 14px; color: #808080">MRO</a> <a href="/tags/copy/" style="font-size: 14px; color: #808080">copy</a> <a href="/tags/mv/" style="font-size: 14.8px; color: #666">mv</a> <a href="/tags/python/" style="font-size: 15.6px; color: #4d4d4d">python</a> <a href="/tags/youtube/" style="font-size: 14px; color: #808080">youtube</a> <a href="/tags/三联生活周刊/" style="font-size: 14px; color: #808080">三联生活周刊</a> <a href="/tags/冬天/" style="font-size: 14px; color: #808080">冬天</a> <a href="/tags/单例/" style="font-size: 14px; color: #808080">单例</a> <a href="/tags/博客/" style="font-size: 14px; color: #808080">博客</a> <a href="/tags/历史/" style="font-size: 15.6px; color: #4d4d4d">历史</a> <a href="/tags/台词/" style="font-size: 14px; color: #808080">台词</a> <a href="/tags/同理心/" style="font-size: 14px; color: #808080">同理心</a> <a href="/tags/哲学/" style="font-size: 14px; color: #808080">哲学</a> <a href="/tags/回忆/" style="font-size: 17.2px; color: #1a1a1a">回忆</a> <a href="/tags/大师/" style="font-size: 14.8px; color: #666">大师</a> <a href="/tags/宗教/" style="font-size: 14.8px; color: #666">宗教</a> <a href="/tags/家/" style="font-size: 14px; color: #808080">家</a> <a href="/tags/寓言/" style="font-size: 14px; color: #808080">寓言</a> <a href="/tags/对象/" style="font-size: 14px; color: #808080">对象</a> <a href="/tags/庄子/" style="font-size: 14px; color: #808080">庄子</a> <a href="/tags/引用/" style="font-size: 14px; color: #808080">引用</a> <a href="/tags/心情/" style="font-size: 14.8px; color: #666">心情</a> <a href="/tags/感想/" style="font-size: 15.6px; color: #4d4d4d">感想</a> <a href="/tags/感谢/" style="font-size: 14px; color: #808080">感谢</a> <a href="/tags/成长/" style="font-size: 14px; color: #808080">成长</a> <a href="/tags/抗战/" style="font-size: 14px; color: #808080">抗战</a> <a href="/tags/摘录/" style="font-size: 14px; color: #808080">摘录</a> <a href="/tags/教育/" style="font-size: 14px; color: #808080">教育</a> <a href="/tags/数值分析/" style="font-size: 14.8px; color: #666">数值分析</a> <a href="/tags/日常/" style="font-size: 15.6px; color: #4d4d4d">日常</a> <a href="/tags/时间/" style="font-size: 14px; color: #808080">时间</a> <a href="/tags/更新/" style="font-size: 14px; color: #808080">更新</a> <a href="/tags/杂记/" style="font-size: 15.6px; color: #4d4d4d">杂记</a> <a href="/tags/杭州/" style="font-size: 14px; color: #808080">杭州</a> <a href="/tags/林语堂/" style="font-size: 14px; color: #808080">林语堂</a> <a href="/tags/架构/" style="font-size: 14px; color: #808080">架构</a> <a href="/tags/民国/" style="font-size: 14px; color: #808080">民国</a> <a href="/tags/民族/" style="font-size: 15.6px; color: #4d4d4d">民族</a> <a href="/tags/民谣/" style="font-size: 14.8px; color: #666">民谣</a> <a href="/tags/深度学习/" style="font-size: 14px; color: #808080">深度学习</a> <a href="/tags/理想/" style="font-size: 14px; color: #808080">理想</a> <a href="/tags/生活/" style="font-size: 18px; color: #000">生活</a> <a href="/tags/电影/" style="font-size: 16.4px; color: #333">电影</a> <a href="/tags/禅/" style="font-size: 14px; color: #808080">禅</a> <a href="/tags/科幻/" style="font-size: 14.8px; color: #666">科幻</a> <a href="/tags/类/" style="font-size: 14px; color: #808080">类</a> <a href="/tags/纪录片/" style="font-size: 18px; color: #000">纪录片</a> <a href="/tags/经历/" style="font-size: 14px; color: #808080">经历</a> <a href="/tags/继承/" style="font-size: 14px; color: #808080">继承</a> <a href="/tags/茶/" style="font-size: 14px; color: #808080">茶</a> <a href="/tags/西藏/" style="font-size: 14px; color: #808080">西藏</a> <a href="/tags/观后感/" style="font-size: 14.8px; color: #666">观后感</a> <a href="/tags/诗歌/" style="font-size: 14.8px; color: #666">诗歌</a> <a href="/tags/读书/" style="font-size: 14px; color: #808080">读书</a> <a href="/tags/阅读/" style="font-size: 14px; color: #808080">阅读</a> <a href="/tags/雪/" style="font-size: 14px; color: #808080">雪</a> <a href="/tags/音乐/" style="font-size: 14.8px; color: #666">音乐</a>
+        <a href="/tags/C3/" style="font-size: 14px; color: #808080">C3</a> <a href="/tags/C语言/" style="font-size: 14.8px; color: #666">C语言</a> <a href="/tags/GAN/" style="font-size: 14px; color: #808080">GAN</a> <a href="/tags/MRO/" style="font-size: 14px; color: #808080">MRO</a> <a href="/tags/copy/" style="font-size: 14px; color: #808080">copy</a> <a href="/tags/mv/" style="font-size: 14.8px; color: #666">mv</a> <a href="/tags/python/" style="font-size: 15.6px; color: #4d4d4d">python</a> <a href="/tags/youtube/" style="font-size: 14px; color: #808080">youtube</a> <a href="/tags/三联生活周刊/" style="font-size: 14px; color: #808080">三联生活周刊</a> <a href="/tags/冬天/" style="font-size: 14px; color: #808080">冬天</a> <a href="/tags/单例/" style="font-size: 14px; color: #808080">单例</a> <a href="/tags/博客/" style="font-size: 14px; color: #808080">博客</a> <a href="/tags/历史/" style="font-size: 15.6px; color: #4d4d4d">历史</a> <a href="/tags/台词/" style="font-size: 14px; color: #808080">台词</a> <a href="/tags/同理心/" style="font-size: 14px; color: #808080">同理心</a> <a href="/tags/哲学/" style="font-size: 14px; color: #808080">哲学</a> <a href="/tags/回忆/" style="font-size: 17.2px; color: #1a1a1a">回忆</a> <a href="/tags/大师/" style="font-size: 14.8px; color: #666">大师</a> <a href="/tags/宗教/" style="font-size: 14.8px; color: #666">宗教</a> <a href="/tags/家/" style="font-size: 14px; color: #808080">家</a> <a href="/tags/寓言/" style="font-size: 14px; color: #808080">寓言</a> <a href="/tags/对象/" style="font-size: 14px; color: #808080">对象</a> <a href="/tags/庄子/" style="font-size: 14px; color: #808080">庄子</a> <a href="/tags/引用/" style="font-size: 14px; color: #808080">引用</a> <a href="/tags/心情/" style="font-size: 14.8px; color: #666">心情</a> <a href="/tags/感想/" style="font-size: 15.6px; color: #4d4d4d">感想</a> <a href="/tags/感谢/" style="font-size: 14px; color: #808080">感谢</a> <a href="/tags/成长/" style="font-size: 14px; color: #808080">成长</a> <a href="/tags/抗战/" style="font-size: 14px; color: #808080">抗战</a> <a href="/tags/摘录/" style="font-size: 14px; color: #808080">摘录</a> <a href="/tags/教育/" style="font-size: 14px; color: #808080">教育</a> <a href="/tags/数值分析/" style="font-size: 14.8px; color: #666">数值分析</a> <a href="/tags/日常/" style="font-size: 15.6px; color: #4d4d4d">日常</a> <a href="/tags/时间/" style="font-size: 14px; color: #808080">时间</a> <a href="/tags/更新/" style="font-size: 14px; color: #808080">更新</a> <a href="/tags/杂记/" style="font-size: 15.6px; color: #4d4d4d">杂记</a> <a href="/tags/杭州/" style="font-size: 14px; color: #808080">杭州</a> <a href="/tags/林语堂/" style="font-size: 14px; color: #808080">林语堂</a> <a href="/tags/架构/" style="font-size: 14px; color: #808080">架构</a> <a href="/tags/民国/" style="font-size: 14px; color: #808080">民国</a> <a href="/tags/民族/" style="font-size: 15.6px; color: #4d4d4d">民族</a> <a href="/tags/民谣/" style="font-size: 14.8px; color: #666">民谣</a> <a href="/tags/浙大/" style="font-size: 14px; color: #808080">浙大</a> <a href="/tags/深度学习/" style="font-size: 14px; color: #808080">深度学习</a> <a href="/tags/理想/" style="font-size: 14px; color: #808080">理想</a> <a href="/tags/生活/" style="font-size: 18px; color: #000">生活</a> <a href="/tags/电影/" style="font-size: 16.4px; color: #333">电影</a> <a href="/tags/禅/" style="font-size: 14px; color: #808080">禅</a> <a href="/tags/科幻/" style="font-size: 14.8px; color: #666">科幻</a> <a href="/tags/类/" style="font-size: 14px; color: #808080">类</a> <a href="/tags/纪录片/" style="font-size: 18px; color: #000">纪录片</a> <a href="/tags/经历/" style="font-size: 14px; color: #808080">经历</a> <a href="/tags/继承/" style="font-size: 14px; color: #808080">继承</a> <a href="/tags/茶/" style="font-size: 14px; color: #808080">茶</a> <a href="/tags/西藏/" style="font-size: 14px; color: #808080">西藏</a> <a href="/tags/观后感/" style="font-size: 14.8px; color: #666">观后感</a> <a href="/tags/记忆/" style="font-size: 14px; color: #808080">记忆</a> <a href="/tags/诗歌/" style="font-size: 14.8px; color: #666">诗歌</a> <a href="/tags/读书/" style="font-size: 14px; color: #808080">读书</a> <a href="/tags/阅读/" style="font-size: 14px; color: #808080">阅读</a> <a href="/tags/雪/" style="font-size: 14px; color: #808080">雪</a> <a href="/tags/音乐/" style="font-size: 14.8px; color: #666">音乐</a>
     </div>
 </section>
 
@@ -384,7 +449,7 @@
   </div>
   <footer id="footer" class="clearfix">
   <div>
-    <p><span id="since"></span><span class="my-face">(●'◡'●)ﾉ♥</span></p>
+    站点已运行<span id="since"></span><span class="my-face">(●'◡'●)ﾉ♥</span>
   </div>
   <div>
     访问量<span id="busuanzi_value_site_pv"></span>次 访客数<span id="busuanzi_value_site_uv"></span>人

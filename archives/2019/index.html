@@ -65,6 +65,7 @@
   <script src="/js/app.js"></script>
   <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
   <script>NProgress.start();</script>
   <header class="l_header">
@@ -189,6 +190,46 @@
 		
 	</nav>
 </aside>
+  <div id="l_mathjax">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            "HTML-CSS": {
+                preferredFont: "TeX",
+                availableFonts: ["STIX","TeX"],
+                linebreaks: {
+                    automatic: true,
+                    width: "80%"
+                },
+                EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50),
+            },
+            tex2jax: {
+                inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                ignoreClass: "tex2jax_ignore|dno",
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            TeX: {
+                equationNumbers: { autoNumber: "AMS" },
+                noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+                Macros: { href: "{}" }
+            },
+            displayAlign : "left",
+            messageStyle: "none",
+            showProcessingMessages: false,
+        });
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i=0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</div>
   <div class="l_body">
     <div class="container clearfix">
       <div id="l_pjax" class="l_main">
@@ -240,6 +281,53 @@ The stain you got on your shirt at lunch.
       
       <a href="/tags/台词/">
         台词</a>
+      
+    </div>
+    
+  </section>
+
+</article>
+  </div>
+  
+  <div class="post-wrapper">
+    <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2019/03/08/ga9dtw/">
+        回想(一)
+      </a>
+    </h2>
+    
+    <time>
+      2019-03-08
+    </time>
+    
+
+<div class="categories">
+    <a href="/categories/一隅/">一隅</a>
+</div>
+
+    
+  </section>
+  <section class="article typo">
+    
+    四年前高考结束的时候，一切都很仓促，人生间许许多多的抉择都被挤压在那个炎热的夏天，没有了初时的爱情，放弃了学医的想法，我来到浙大。那时候，天很小，人很少，伸开手，仿佛能抓住整个世界。
+参观校史馆的时候，幽黄的灯光落在墙上，在看到罗列的前辈师长肖像时，第一次感受到何谓“此后你将与历史上众多灿若星辰的名字一起，分享浙大人这个无上荣光的称号，共同承担起国家和社会的责任”。
+开学典礼前的口号热场，势...
+    
+    <div class="readmore">
+      <a href="/2019/03/08/ga9dtw/">阅读更多</a>
+    </div>
+    
+    
+    <div class="full-width auto-padding tags">
+      
+      <a href="/tags/浙大/">
+        浙大</a>
+      
+      <a href="/tags/记忆/">
+        记忆</a>
       
     </div>
     
@@ -467,60 +555,6 @@ Python是如何处理的，干脆，
 </article>
   </div>
   
-  <div class="post-wrapper">
-    <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2019/02/08/mgve1g/">
-        乡村教师
-      </a>
-    </h2>
-    
-    <time>
-      2019-02-08
-    </time>
-    
-
-<div class="categories">
-    <a href="/categories/记·路/">记·路</a>
-</div>
-
-    
-  </section>
-  <section class="article typo">
-    
-    春节档还有另外一部电影，《疯狂的外星人》。
-当看到幕布上闪过“改编自《乡村教师》”的时候，我的内心是有一些诚惶诚恐的。
-电影的故事很荒诞，“疯狂的”前缀似乎昭示了导演想要延续《疯狂的石头》，黑色幽默式的手法，表达一些主题。
-电影作为喜剧片很不错，也的的确确表现出了导演想要表现的东西。但作为空壳的《乡村教师》，的的确确也很可惜。
-
-乡村教师的故事大概是这样的。
-https://www.bili...
-    
-    <div class="readmore">
-      <a href="/2019/02/08/mgve1g/">阅读更多</a>
-    </div>
-    
-    
-    <div class="full-width auto-padding tags">
-      
-      <a href="/tags/电影/">
-        电影</a>
-      
-      <a href="/tags/科幻/">
-        科幻</a>
-      
-      <a href="/tags/教育/">
-        教育</a>
-      
-    </div>
-    
-  </section>
-
-</article>
-  </div>
-  
 </section>
 
 
@@ -548,7 +582,6 @@ https://www.bili...
     tools: true
   }
 </script>
-        
       </div>
       <aside class="l_side">
         
@@ -591,7 +624,7 @@ https://www.bili...
                         一隅
                     </div>
                     <div class="badget">
-                        15
+                        16
                     </div>
                 </a></li>
             
@@ -631,7 +664,7 @@ https://www.bili...
 <section class="m_widget tagcloud">
     <div class="header">标签</div>
     <div class="content">
-        <a href="/tags/C3/" style="font-size: 14px; color: #808080">C3</a> <a href="/tags/C语言/" style="font-size: 14.8px; color: #666">C语言</a> <a href="/tags/GAN/" style="font-size: 14px; color: #808080">GAN</a> <a href="/tags/MRO/" style="font-size: 14px; color: #808080">MRO</a> <a href="/tags/copy/" style="font-size: 14px; color: #808080">copy</a> <a href="/tags/mv/" style="font-size: 14.8px; color: #666">mv</a> <a href="/tags/python/" style="font-size: 15.6px; color: #4d4d4d">python</a> <a href="/tags/youtube/" style="font-size: 14px; color: #808080">youtube</a> <a href="/tags/三联生活周刊/" style="font-size: 14px; color: #808080">三联生活周刊</a> <a href="/tags/冬天/" style="font-size: 14px; color: #808080">冬天</a> <a href="/tags/单例/" style="font-size: 14px; color: #808080">单例</a> <a href="/tags/博客/" style="font-size: 14px; color: #808080">博客</a> <a href="/tags/历史/" style="font-size: 15.6px; color: #4d4d4d">历史</a> <a href="/tags/台词/" style="font-size: 14px; color: #808080">台词</a> <a href="/tags/同理心/" style="font-size: 14px; color: #808080">同理心</a> <a href="/tags/哲学/" style="font-size: 14px; color: #808080">哲学</a> <a href="/tags/回忆/" style="font-size: 17.2px; color: #1a1a1a">回忆</a> <a href="/tags/大师/" style="font-size: 14.8px; color: #666">大师</a> <a href="/tags/宗教/" style="font-size: 14.8px; color: #666">宗教</a> <a href="/tags/家/" style="font-size: 14px; color: #808080">家</a> <a href="/tags/寓言/" style="font-size: 14px; color: #808080">寓言</a> <a href="/tags/对象/" style="font-size: 14px; color: #808080">对象</a> <a href="/tags/庄子/" style="font-size: 14px; color: #808080">庄子</a> <a href="/tags/引用/" style="font-size: 14px; color: #808080">引用</a> <a href="/tags/心情/" style="font-size: 14.8px; color: #666">心情</a> <a href="/tags/感想/" style="font-size: 15.6px; color: #4d4d4d">感想</a> <a href="/tags/感谢/" style="font-size: 14px; color: #808080">感谢</a> <a href="/tags/成长/" style="font-size: 14px; color: #808080">成长</a> <a href="/tags/抗战/" style="font-size: 14px; color: #808080">抗战</a> <a href="/tags/摘录/" style="font-size: 14px; color: #808080">摘录</a> <a href="/tags/教育/" style="font-size: 14px; color: #808080">教育</a> <a href="/tags/数值分析/" style="font-size: 14.8px; color: #666">数值分析</a> <a href="/tags/日常/" style="font-size: 15.6px; color: #4d4d4d">日常</a> <a href="/tags/时间/" style="font-size: 14px; color: #808080">时间</a> <a href="/tags/更新/" style="font-size: 14px; color: #808080">更新</a> <a href="/tags/杂记/" style="font-size: 15.6px; color: #4d4d4d">杂记</a> <a href="/tags/杭州/" style="font-size: 14px; color: #808080">杭州</a> <a href="/tags/林语堂/" style="font-size: 14px; color: #808080">林语堂</a> <a href="/tags/架构/" style="font-size: 14px; color: #808080">架构</a> <a href="/tags/民国/" style="font-size: 14px; color: #808080">民国</a> <a href="/tags/民族/" style="font-size: 15.6px; color: #4d4d4d">民族</a> <a href="/tags/民谣/" style="font-size: 14.8px; color: #666">民谣</a> <a href="/tags/深度学习/" style="font-size: 14px; color: #808080">深度学习</a> <a href="/tags/理想/" style="font-size: 14px; color: #808080">理想</a> <a href="/tags/生活/" style="font-size: 18px; color: #000">生活</a> <a href="/tags/电影/" style="font-size: 16.4px; color: #333">电影</a> <a href="/tags/禅/" style="font-size: 14px; color: #808080">禅</a> <a href="/tags/科幻/" style="font-size: 14.8px; color: #666">科幻</a> <a href="/tags/类/" style="font-size: 14px; color: #808080">类</a> <a href="/tags/纪录片/" style="font-size: 18px; color: #000">纪录片</a> <a href="/tags/经历/" style="font-size: 14px; color: #808080">经历</a> <a href="/tags/继承/" style="font-size: 14px; color: #808080">继承</a> <a href="/tags/茶/" style="font-size: 14px; color: #808080">茶</a> <a href="/tags/西藏/" style="font-size: 14px; color: #808080">西藏</a> <a href="/tags/观后感/" style="font-size: 14.8px; color: #666">观后感</a> <a href="/tags/诗歌/" style="font-size: 14.8px; color: #666">诗歌</a> <a href="/tags/读书/" style="font-size: 14px; color: #808080">读书</a> <a href="/tags/阅读/" style="font-size: 14px; color: #808080">阅读</a> <a href="/tags/雪/" style="font-size: 14px; color: #808080">雪</a> <a href="/tags/音乐/" style="font-size: 14.8px; color: #666">音乐</a>
+        <a href="/tags/C3/" style="font-size: 14px; color: #808080">C3</a> <a href="/tags/C语言/" style="font-size: 14.8px; color: #666">C语言</a> <a href="/tags/GAN/" style="font-size: 14px; color: #808080">GAN</a> <a href="/tags/MRO/" style="font-size: 14px; color: #808080">MRO</a> <a href="/tags/copy/" style="font-size: 14px; color: #808080">copy</a> <a href="/tags/mv/" style="font-size: 14.8px; color: #666">mv</a> <a href="/tags/python/" style="font-size: 15.6px; color: #4d4d4d">python</a> <a href="/tags/youtube/" style="font-size: 14px; color: #808080">youtube</a> <a href="/tags/三联生活周刊/" style="font-size: 14px; color: #808080">三联生活周刊</a> <a href="/tags/冬天/" style="font-size: 14px; color: #808080">冬天</a> <a href="/tags/单例/" style="font-size: 14px; color: #808080">单例</a> <a href="/tags/博客/" style="font-size: 14px; color: #808080">博客</a> <a href="/tags/历史/" style="font-size: 15.6px; color: #4d4d4d">历史</a> <a href="/tags/台词/" style="font-size: 14px; color: #808080">台词</a> <a href="/tags/同理心/" style="font-size: 14px; color: #808080">同理心</a> <a href="/tags/哲学/" style="font-size: 14px; color: #808080">哲学</a> <a href="/tags/回忆/" style="font-size: 17.2px; color: #1a1a1a">回忆</a> <a href="/tags/大师/" style="font-size: 14.8px; color: #666">大师</a> <a href="/tags/宗教/" style="font-size: 14.8px; color: #666">宗教</a> <a href="/tags/家/" style="font-size: 14px; color: #808080">家</a> <a href="/tags/寓言/" style="font-size: 14px; color: #808080">寓言</a> <a href="/tags/对象/" style="font-size: 14px; color: #808080">对象</a> <a href="/tags/庄子/" style="font-size: 14px; color: #808080">庄子</a> <a href="/tags/引用/" style="font-size: 14px; color: #808080">引用</a> <a href="/tags/心情/" style="font-size: 14.8px; color: #666">心情</a> <a href="/tags/感想/" style="font-size: 15.6px; color: #4d4d4d">感想</a> <a href="/tags/感谢/" style="font-size: 14px; color: #808080">感谢</a> <a href="/tags/成长/" style="font-size: 14px; color: #808080">成长</a> <a href="/tags/抗战/" style="font-size: 14px; color: #808080">抗战</a> <a href="/tags/摘录/" style="font-size: 14px; color: #808080">摘录</a> <a href="/tags/教育/" style="font-size: 14px; color: #808080">教育</a> <a href="/tags/数值分析/" style="font-size: 14.8px; color: #666">数值分析</a> <a href="/tags/日常/" style="font-size: 15.6px; color: #4d4d4d">日常</a> <a href="/tags/时间/" style="font-size: 14px; color: #808080">时间</a> <a href="/tags/更新/" style="font-size: 14px; color: #808080">更新</a> <a href="/tags/杂记/" style="font-size: 15.6px; color: #4d4d4d">杂记</a> <a href="/tags/杭州/" style="font-size: 14px; color: #808080">杭州</a> <a href="/tags/林语堂/" style="font-size: 14px; color: #808080">林语堂</a> <a href="/tags/架构/" style="font-size: 14px; color: #808080">架构</a> <a href="/tags/民国/" style="font-size: 14px; color: #808080">民国</a> <a href="/tags/民族/" style="font-size: 15.6px; color: #4d4d4d">民族</a> <a href="/tags/民谣/" style="font-size: 14.8px; color: #666">民谣</a> <a href="/tags/浙大/" style="font-size: 14px; color: #808080">浙大</a> <a href="/tags/深度学习/" style="font-size: 14px; color: #808080">深度学习</a> <a href="/tags/理想/" style="font-size: 14px; color: #808080">理想</a> <a href="/tags/生活/" style="font-size: 18px; color: #000">生活</a> <a href="/tags/电影/" style="font-size: 16.4px; color: #333">电影</a> <a href="/tags/禅/" style="font-size: 14px; color: #808080">禅</a> <a href="/tags/科幻/" style="font-size: 14.8px; color: #666">科幻</a> <a href="/tags/类/" style="font-size: 14px; color: #808080">类</a> <a href="/tags/纪录片/" style="font-size: 18px; color: #000">纪录片</a> <a href="/tags/经历/" style="font-size: 14px; color: #808080">经历</a> <a href="/tags/继承/" style="font-size: 14px; color: #808080">继承</a> <a href="/tags/茶/" style="font-size: 14px; color: #808080">茶</a> <a href="/tags/西藏/" style="font-size: 14px; color: #808080">西藏</a> <a href="/tags/观后感/" style="font-size: 14.8px; color: #666">观后感</a> <a href="/tags/记忆/" style="font-size: 14px; color: #808080">记忆</a> <a href="/tags/诗歌/" style="font-size: 14.8px; color: #666">诗歌</a> <a href="/tags/读书/" style="font-size: 14px; color: #808080">读书</a> <a href="/tags/阅读/" style="font-size: 14px; color: #808080">阅读</a> <a href="/tags/雪/" style="font-size: 14px; color: #808080">雪</a> <a href="/tags/音乐/" style="font-size: 14.8px; color: #666">音乐</a>
     </div>
 </section>
 
@@ -641,7 +674,7 @@ https://www.bili...
   </div>
   <footer id="footer" class="clearfix">
   <div>
-    <p><span id="since"></span><span class="my-face">(●'◡'●)ﾉ♥</span></p>
+    站点已运行<span id="since"></span><span class="my-face">(●'◡'●)ﾉ♥</span>
   </div>
   <div>
     访问量<span id="busuanzi_value_site_pv"></span>次 访客数<span id="busuanzi_value_site_uv"></span>人

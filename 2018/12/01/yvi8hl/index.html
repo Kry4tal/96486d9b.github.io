@@ -24,7 +24,7 @@
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/223418/1547654661973-1d194a04-8200-49ac-8047-8d73e31de14f.png#align=left&amp;display=inline&amp;height=84&amp;name=image.png&amp;originHeight=167&amp;originWidth=427&amp;size=82632&amp;width=214">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/223418/1547654680070-86e9e6c3-9548-4625-9cd3-e44e6bf6ed89.png#align=left&amp;display=inline&amp;height=139&amp;name=image.png&amp;originHeight=278&amp;originWidth=732&amp;size=282740&amp;width=366">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/223418/1547654780991-0de30f9e-c175-4c35-aa3f-d679c596bead.png#align=left&amp;display=inline&amp;height=263&amp;name=image.png&amp;originHeight=525&amp;originWidth=838&amp;size=246692&amp;width=419">
-<meta property="og:updated_time" content="2019-04-27T11:50:18.692Z">
+<meta property="og:updated_time" content="2019-04-29T08:21:14.697Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="fGAN">
 <meta name="twitter:description" content="做一个测试，测试一下从语雀迁移的效果。  General Framework of GAN，用不同的divergence去度量。 关于f-divergence。 $D_f(P||Q)=\int q(x)f(\frac{p(x)}{q(x)})dx,\text{f is convex},f(1)=0$ 基于这样的定义，我们的f-divergence就能衡量两个分布的距离。 $D_f(P||Q)=0">
@@ -74,6 +74,7 @@
   <script src="/js/app.js"></script>
   <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
   <script>NProgress.start();</script>
   <header class="l_header">
@@ -198,6 +199,46 @@
 		
 	</nav>
 </aside>
+  <div id="l_mathjax">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            "HTML-CSS": {
+                preferredFont: "TeX",
+                availableFonts: ["STIX","TeX"],
+                linebreaks: {
+                    automatic: true,
+                    width: "80%"
+                },
+                EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50),
+            },
+            tex2jax: {
+                inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true,
+                ignoreClass: "tex2jax_ignore|dno",
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            TeX: {
+                equationNumbers: { autoNumber: "AMS" },
+                noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+                Macros: { href: "{}" }
+            },
+            displayAlign : "left",
+            messageStyle: "none",
+            showProcessingMessages: false,
+        });
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i=0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</div>
   <div class="l_body">
     <div class="container clearfix">
       <div id="l_pjax" class="l_main">
@@ -213,6 +254,13 @@
 		</time>
 
 		
+<span id="/2018/12/01/yvi8hl/" class="leancloud-visitors" data-flag-title="fGAN">
+    <time> 字数 <span id="wordcount"></span> 阅读时长 <span id="min2read"></span> 浏览 <span class="leancloud-visitors-count"></span></time>
+</span>
+<script>
+  initCount('&#34;\n做一个测试，测试一下从语雀迁移的效果。\n\nGeneral Framework of GAN，用不同的divergence去度量。\n关于f-divergence。\n$D_f(P||Q)=\\int q(x)f(\\frac{p(x)}{q(x)})dx,\\text{f is convex},f(1)=0$\n基于这样的定义，我们的f-divergence就能衡量两个分布的距离。\n$D_f(P||Q)=0\\text{ if p(x)=q(x) for all x}$\n$D_f(P||Q)\\ge 0$\n$D_f(P||Q)=\\int_x q(x)f(\\frac{p(x)}{q(x)})dx\\ge f(\\int_x q(x)\\frac{p(x)}{q(x)}dx)=f(\\int_x p(x)dx )=f(1)=0$\n$f(x)=x\\log x,D_f(P||Q)=\\int_x p(x)\\log(\\frac{p(x)}{q(x)})dx,\\text{KL}$\n$f(x)=-\\log x,D_f(P||Q)=\\int_x q(x)\\log(\\frac{q(x)}{p(x)})dx,\\text{Reverse KL}$\n$f(x)=(x-1)^2,D_f(P||Q)=\\int_x \\frac{(p(x)-q(x))^2}{q(x)}dx,\\text{Chi Square}$\n关于Fenchel Conjugate。\n每一个凸函数$f$都有一个共轭函数$f^*$。实际上$f^*$的共轭也是$f$。\n$f^*(t)=\\max_{x\\in dom(f)}{xt-f(x)}$\n\n可以证明$f(x)=x\\log x \\leftrightarrow f^*(t)=exp(t-1)$\n\n$f^*(t)=\\max_{x\\in dom(f)}{xt-f(x)} \\leftrightarrow f(x)=\\max_{t\\in dom(f^*)}{xt-f^*(t)}$\n下面我们考虑其与GAN的关系\n我们考虑一开始关于F-Divergence的定义。\n$D_f(P||Q)=\\int_x q(x)f(\\frac{p(x)}{q(x)})dx=\\int_x q(x) (\\max_{t\\in dom(f^*)}{\\frac{p(x)}{q(x)}t-f^*(t) })dx$\n我们定义一个$D(x)$，对于输入的$x$，它输出对应令$\\max_{t\\in dom(f^*)}{\\frac{p(x)}{q(x)}t-f^*(t) }$最大的$t$。\n这个其实就对应了，我们的discriminator，他帮我们寻找一个最大的目标值。这样就有\n$D_f(P||Q)\\ge \\int_x q(x)(\\frac{p(x)}{q(x)}D(x)-f^*(D(x)))dx=\\int_x p(x)D(x)dx-\\int_xq(x)f^*(D(x))dx$\n这里是什么意思，就是对于我们不同输入的$x$，它产生的$D(x)=t$，始终有满足这个不等式\n我们为了尽可能地去逼近$D_f(P||Q)$，相当于就是\n$D_f(P||Q)\\approx \\max_D \\int_x p(x)D(x)dx-\\int_x q(x)f^*(D(x))dx$\n$D_f(P||Q)=\\max_D{E_{x\\sim P}[D(x)]-E_{x\\sim Q}[f^*(D(x))]}$\n$D_f(P_{data}||P_G)=\\max_D{E_{x\\sim P_{data}}[D(x)]-E_{x\\sim P_{G}}[f^*(D(x))]}$\n这就是基于F-Divengence定义下，衡量$P_{data},P_{G}$的散度的公式。\n$G^*=\\arg \\min_G D_f(P_{data}||P_G)$\n$G^*=\\arg \\min_G \\max_D{E_{x\\sim P_{data}}[D(x)]-E_{x\\sim P_G}[f^*(D(x))]}$\n$G^*=\\arg \\min_G \\max_D V(G,D)$\n统一起来了。更换不同的F-Divengence即可了。\n\n这可能解决以下问题\nMode Collapse。模式崩溃。\n\n我们产生的数据分布越来越小，（可以看到右边有一个人脸重复出现）\nMode Dropping。\n\n\n每次都只能产生一种肤色的问题了。\n这可能的原因就是我们的Divergence选的不好。\n\n可以看到，KL散度中间不太好，而如果选了Reverse KL只会选择一种Mode。\n所以我们可以基于FGAN，去更换不同的F-Divergence，然而每一种，都有自己的缺陷，mode collapse or dropping可能作用在不同的地方。\n那么如何产生一个全面的比较好的呢，Ensemble。\n&#34;');
+</script>
+
 		
 
 <div class="categories">
@@ -1928,51 +1976,30 @@
 
 
 
+<article class="post post-comment reveal" itemscope="" itemprop="blogPost">
+    <div class="comment"></div>
+    <script>
+        new Valine({
+            el: '.comment',
+            notify: false,
+            verify: false,
+            visitor: true,
+            appId: 'yNQ57noTg3jnFJvLawvv2SrO-gzGzoHsz',
+            appKey: 'kufPfLKXILeMCFpjgJRz4Hd1',
+            placeholder: '在这里，写下你的评论 ~',
+            path: window.location.pathname
+        });
+    </script>
+</article>
+
+
+
 <script>
 	window.subData = {
 		title: 'fGAN',
 		tools: true
 	}
 </script>
-        
-<div id="l_mathjax">
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            "HTML-CSS": {
-                preferredFont: "TeX",
-                availableFonts: ["STIX","TeX"],
-                linebreaks: { automatic:true },
-                EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50),
-            },
-            tex2jax: {
-                inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
-                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
-                processEscapes: true,
-                ignoreClass: "tex2jax_ignore|dno",
-                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-            },
-            TeX: {
-                equationNumbers: { autoNumber: "AMS" },
-                noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
-                Macros: { href: "{}" }
-            },
-            displayAlign : "left",
-            messageStyle: "none",
-            showProcessingMessages: false,
-        });
-    </script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Queue(function() {
-            var all = MathJax.Hub.getAllJax(), i;
-            for(i=0; i < all.length; i += 1) {
-                all[i].SourceElement().parentNode.className += ' has-jax';
-            }
-        });
-    </script>
-    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-</div>
-
       </div>
       <aside class="l_side">
         
@@ -2015,7 +2042,7 @@
                         一隅
                     </div>
                     <div class="badget">
-                        15
+                        16
                     </div>
                 </a></li>
             
@@ -2055,7 +2082,7 @@
 <section class="m_widget tagcloud">
     <div class="header">标签</div>
     <div class="content">
-        <a href="/tags/C3/" style="font-size: 14px; color: #808080">C3</a> <a href="/tags/C语言/" style="font-size: 14.8px; color: #666">C语言</a> <a href="/tags/GAN/" style="font-size: 14px; color: #808080">GAN</a> <a href="/tags/MRO/" style="font-size: 14px; color: #808080">MRO</a> <a href="/tags/copy/" style="font-size: 14px; color: #808080">copy</a> <a href="/tags/mv/" style="font-size: 14.8px; color: #666">mv</a> <a href="/tags/python/" style="font-size: 15.6px; color: #4d4d4d">python</a> <a href="/tags/youtube/" style="font-size: 14px; color: #808080">youtube</a> <a href="/tags/三联生活周刊/" style="font-size: 14px; color: #808080">三联生活周刊</a> <a href="/tags/冬天/" style="font-size: 14px; color: #808080">冬天</a> <a href="/tags/单例/" style="font-size: 14px; color: #808080">单例</a> <a href="/tags/博客/" style="font-size: 14px; color: #808080">博客</a> <a href="/tags/历史/" style="font-size: 15.6px; color: #4d4d4d">历史</a> <a href="/tags/台词/" style="font-size: 14px; color: #808080">台词</a> <a href="/tags/同理心/" style="font-size: 14px; color: #808080">同理心</a> <a href="/tags/哲学/" style="font-size: 14px; color: #808080">哲学</a> <a href="/tags/回忆/" style="font-size: 17.2px; color: #1a1a1a">回忆</a> <a href="/tags/大师/" style="font-size: 14.8px; color: #666">大师</a> <a href="/tags/宗教/" style="font-size: 14.8px; color: #666">宗教</a> <a href="/tags/家/" style="font-size: 14px; color: #808080">家</a> <a href="/tags/寓言/" style="font-size: 14px; color: #808080">寓言</a> <a href="/tags/对象/" style="font-size: 14px; color: #808080">对象</a> <a href="/tags/庄子/" style="font-size: 14px; color: #808080">庄子</a> <a href="/tags/引用/" style="font-size: 14px; color: #808080">引用</a> <a href="/tags/心情/" style="font-size: 14.8px; color: #666">心情</a> <a href="/tags/感想/" style="font-size: 15.6px; color: #4d4d4d">感想</a> <a href="/tags/感谢/" style="font-size: 14px; color: #808080">感谢</a> <a href="/tags/成长/" style="font-size: 14px; color: #808080">成长</a> <a href="/tags/抗战/" style="font-size: 14px; color: #808080">抗战</a> <a href="/tags/摘录/" style="font-size: 14px; color: #808080">摘录</a> <a href="/tags/教育/" style="font-size: 14px; color: #808080">教育</a> <a href="/tags/数值分析/" style="font-size: 14.8px; color: #666">数值分析</a> <a href="/tags/日常/" style="font-size: 15.6px; color: #4d4d4d">日常</a> <a href="/tags/时间/" style="font-size: 14px; color: #808080">时间</a> <a href="/tags/更新/" style="font-size: 14px; color: #808080">更新</a> <a href="/tags/杂记/" style="font-size: 15.6px; color: #4d4d4d">杂记</a> <a href="/tags/杭州/" style="font-size: 14px; color: #808080">杭州</a> <a href="/tags/林语堂/" style="font-size: 14px; color: #808080">林语堂</a> <a href="/tags/架构/" style="font-size: 14px; color: #808080">架构</a> <a href="/tags/民国/" style="font-size: 14px; color: #808080">民国</a> <a href="/tags/民族/" style="font-size: 15.6px; color: #4d4d4d">民族</a> <a href="/tags/民谣/" style="font-size: 14.8px; color: #666">民谣</a> <a href="/tags/深度学习/" style="font-size: 14px; color: #808080">深度学习</a> <a href="/tags/理想/" style="font-size: 14px; color: #808080">理想</a> <a href="/tags/生活/" style="font-size: 18px; color: #000">生活</a> <a href="/tags/电影/" style="font-size: 16.4px; color: #333">电影</a> <a href="/tags/禅/" style="font-size: 14px; color: #808080">禅</a> <a href="/tags/科幻/" style="font-size: 14.8px; color: #666">科幻</a> <a href="/tags/类/" style="font-size: 14px; color: #808080">类</a> <a href="/tags/纪录片/" style="font-size: 18px; color: #000">纪录片</a> <a href="/tags/经历/" style="font-size: 14px; color: #808080">经历</a> <a href="/tags/继承/" style="font-size: 14px; color: #808080">继承</a> <a href="/tags/茶/" style="font-size: 14px; color: #808080">茶</a> <a href="/tags/西藏/" style="font-size: 14px; color: #808080">西藏</a> <a href="/tags/观后感/" style="font-size: 14.8px; color: #666">观后感</a> <a href="/tags/诗歌/" style="font-size: 14.8px; color: #666">诗歌</a> <a href="/tags/读书/" style="font-size: 14px; color: #808080">读书</a> <a href="/tags/阅读/" style="font-size: 14px; color: #808080">阅读</a> <a href="/tags/雪/" style="font-size: 14px; color: #808080">雪</a> <a href="/tags/音乐/" style="font-size: 14.8px; color: #666">音乐</a>
+        <a href="/tags/C3/" style="font-size: 14px; color: #808080">C3</a> <a href="/tags/C语言/" style="font-size: 14.8px; color: #666">C语言</a> <a href="/tags/GAN/" style="font-size: 14px; color: #808080">GAN</a> <a href="/tags/MRO/" style="font-size: 14px; color: #808080">MRO</a> <a href="/tags/copy/" style="font-size: 14px; color: #808080">copy</a> <a href="/tags/mv/" style="font-size: 14.8px; color: #666">mv</a> <a href="/tags/python/" style="font-size: 15.6px; color: #4d4d4d">python</a> <a href="/tags/youtube/" style="font-size: 14px; color: #808080">youtube</a> <a href="/tags/三联生活周刊/" style="font-size: 14px; color: #808080">三联生活周刊</a> <a href="/tags/冬天/" style="font-size: 14px; color: #808080">冬天</a> <a href="/tags/单例/" style="font-size: 14px; color: #808080">单例</a> <a href="/tags/博客/" style="font-size: 14px; color: #808080">博客</a> <a href="/tags/历史/" style="font-size: 15.6px; color: #4d4d4d">历史</a> <a href="/tags/台词/" style="font-size: 14px; color: #808080">台词</a> <a href="/tags/同理心/" style="font-size: 14px; color: #808080">同理心</a> <a href="/tags/哲学/" style="font-size: 14px; color: #808080">哲学</a> <a href="/tags/回忆/" style="font-size: 17.2px; color: #1a1a1a">回忆</a> <a href="/tags/大师/" style="font-size: 14.8px; color: #666">大师</a> <a href="/tags/宗教/" style="font-size: 14.8px; color: #666">宗教</a> <a href="/tags/家/" style="font-size: 14px; color: #808080">家</a> <a href="/tags/寓言/" style="font-size: 14px; color: #808080">寓言</a> <a href="/tags/对象/" style="font-size: 14px; color: #808080">对象</a> <a href="/tags/庄子/" style="font-size: 14px; color: #808080">庄子</a> <a href="/tags/引用/" style="font-size: 14px; color: #808080">引用</a> <a href="/tags/心情/" style="font-size: 14.8px; color: #666">心情</a> <a href="/tags/感想/" style="font-size: 15.6px; color: #4d4d4d">感想</a> <a href="/tags/感谢/" style="font-size: 14px; color: #808080">感谢</a> <a href="/tags/成长/" style="font-size: 14px; color: #808080">成长</a> <a href="/tags/抗战/" style="font-size: 14px; color: #808080">抗战</a> <a href="/tags/摘录/" style="font-size: 14px; color: #808080">摘录</a> <a href="/tags/教育/" style="font-size: 14px; color: #808080">教育</a> <a href="/tags/数值分析/" style="font-size: 14.8px; color: #666">数值分析</a> <a href="/tags/日常/" style="font-size: 15.6px; color: #4d4d4d">日常</a> <a href="/tags/时间/" style="font-size: 14px; color: #808080">时间</a> <a href="/tags/更新/" style="font-size: 14px; color: #808080">更新</a> <a href="/tags/杂记/" style="font-size: 15.6px; color: #4d4d4d">杂记</a> <a href="/tags/杭州/" style="font-size: 14px; color: #808080">杭州</a> <a href="/tags/林语堂/" style="font-size: 14px; color: #808080">林语堂</a> <a href="/tags/架构/" style="font-size: 14px; color: #808080">架构</a> <a href="/tags/民国/" style="font-size: 14px; color: #808080">民国</a> <a href="/tags/民族/" style="font-size: 15.6px; color: #4d4d4d">民族</a> <a href="/tags/民谣/" style="font-size: 14.8px; color: #666">民谣</a> <a href="/tags/浙大/" style="font-size: 14px; color: #808080">浙大</a> <a href="/tags/深度学习/" style="font-size: 14px; color: #808080">深度学习</a> <a href="/tags/理想/" style="font-size: 14px; color: #808080">理想</a> <a href="/tags/生活/" style="font-size: 18px; color: #000">生活</a> <a href="/tags/电影/" style="font-size: 16.4px; color: #333">电影</a> <a href="/tags/禅/" style="font-size: 14px; color: #808080">禅</a> <a href="/tags/科幻/" style="font-size: 14.8px; color: #666">科幻</a> <a href="/tags/类/" style="font-size: 14px; color: #808080">类</a> <a href="/tags/纪录片/" style="font-size: 18px; color: #000">纪录片</a> <a href="/tags/经历/" style="font-size: 14px; color: #808080">经历</a> <a href="/tags/继承/" style="font-size: 14px; color: #808080">继承</a> <a href="/tags/茶/" style="font-size: 14px; color: #808080">茶</a> <a href="/tags/西藏/" style="font-size: 14px; color: #808080">西藏</a> <a href="/tags/观后感/" style="font-size: 14.8px; color: #666">观后感</a> <a href="/tags/记忆/" style="font-size: 14px; color: #808080">记忆</a> <a href="/tags/诗歌/" style="font-size: 14.8px; color: #666">诗歌</a> <a href="/tags/读书/" style="font-size: 14px; color: #808080">读书</a> <a href="/tags/阅读/" style="font-size: 14px; color: #808080">阅读</a> <a href="/tags/雪/" style="font-size: 14px; color: #808080">雪</a> <a href="/tags/音乐/" style="font-size: 14.8px; color: #666">音乐</a>
     </div>
 </section>
 
@@ -2065,7 +2092,7 @@
   </div>
   <footer id="footer" class="clearfix">
   <div>
-    <p><span id="since"></span><span class="my-face">(●'◡'●)ﾉ♥</span></p>
+    站点已运行<span id="since"></span><span class="my-face">(●'◡'●)ﾉ♥</span>
   </div>
   <div>
     访问量<span id="busuanzi_value_site_pv"></span>次 访客数<span id="busuanzi_value_site_uv"></span>人

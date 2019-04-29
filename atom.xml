@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://96486d9b.github.io/"/>
-  <updated>2019-04-27T11:50:17.413Z</updated>
+  <updated>2019-04-29T08:21:13.103Z</updated>
   <id>https://96486d9b.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://96486d9b.github.io/2019/04/08/yrch3g/"/>
     <id>https://96486d9b.github.io/2019/04/08/yrch3g/</id>
     <published>2019-04-07T16:00:00.000Z</published>
-    <updated>2019-04-27T11:50:17.413Z</updated>
+    <updated>2019-04-29T08:21:13.103Z</updated>
     
     <summary type="html">
     
@@ -46,11 +46,37 @@
   </entry>
   
   <entry>
+    <title>回想(一)</title>
+    <link href="https://96486d9b.github.io/2019/03/08/ga9dtw/"/>
+    <id>https://96486d9b.github.io/2019/03/08/ga9dtw/</id>
+    <published>2019-03-07T16:00:00.000Z</published>
+    <updated>2019-04-29T08:21:12.947Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;四年前高考结束的时候，一切都很仓促，人生间许许多多的抉择都被挤压在那个炎热的夏天，没有了初时的爱情，放弃了学医的想法，我来到浙大。那时候，天很小，人很少，伸开手，仿佛能抓住整个世界。&lt;/p&gt;
+&lt;p&gt;参观校史馆的时候，幽黄的灯光落在墙上，在看到罗列的前辈师长肖像时，第一次感受
+      
+    
+    </summary>
+    
+      <category term="一隅" scheme="https://96486d9b.github.io/categories/%E4%B8%80%E9%9A%85/"/>
+    
+    
+      <category term="浙大" scheme="https://96486d9b.github.io/tags/%E6%B5%99%E5%A4%A7/"/>
+    
+      <category term="记忆" scheme="https://96486d9b.github.io/tags/%E8%AE%B0%E5%BF%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>成长的似水流年</title>
     <link href="https://96486d9b.github.io/2019/02/18/apgzdc/"/>
     <id>https://96486d9b.github.io/2019/02/18/apgzdc/</id>
     <published>2019-02-17T16:00:00.000Z</published>
-    <updated>2019-04-27T11:50:17.579Z</updated>
+    <updated>2019-04-29T08:21:13.290Z</updated>
     
     <summary type="html">
     
@@ -81,7 +107,7 @@
     <link href="https://96486d9b.github.io/2019/02/17/gcpaf4/"/>
     <id>https://96486d9b.github.io/2019/02/17/gcpaf4/</id>
     <published>2019-02-16T16:00:00.000Z</published>
-    <updated>2019-04-27T11:50:17.669Z</updated>
+    <updated>2019-04-29T08:21:13.406Z</updated>
     
     <summary type="html">
     
@@ -113,7 +139,7 @@
     <link href="https://96486d9b.github.io/2019/02/09/cpcrc8/"/>
     <id>https://96486d9b.github.io/2019/02/09/cpcrc8/</id>
     <published>2019-02-08T16:00:00.000Z</published>
-    <updated>2019-04-27T11:50:17.916Z</updated>
+    <updated>2019-04-29T08:21:13.769Z</updated>
     
     <summary type="html">
     
@@ -144,7 +170,7 @@
     <link href="https://96486d9b.github.io/2019/02/08/ntdecr/"/>
     <id>https://96486d9b.github.io/2019/02/08/ntdecr/</id>
     <published>2019-02-07T16:00:00.000Z</published>
-    <updated>2019-04-27T11:50:18.213Z</updated>
+    <updated>2019-04-29T08:21:14.109Z</updated>
     
     <summary type="html">
     
@@ -175,7 +201,7 @@
     <link href="https://96486d9b.github.io/2019/02/08/mgve1g/"/>
     <id>https://96486d9b.github.io/2019/02/08/mgve1g/</id>
     <published>2019-02-07T16:00:00.000Z</published>
-    <updated>2019-04-27T11:50:17.755Z</updated>
+    <updated>2019-04-29T08:21:13.512Z</updated>
     
     <summary type="html">
     
@@ -201,11 +227,42 @@
   </entry>
   
   <entry>
+    <title>shallow or deep copy?</title>
+    <link href="https://96486d9b.github.io/2019/02/07/zcxzk1/"/>
+    <id>https://96486d9b.github.io/2019/02/07/zcxzk1/</id>
+    <published>2019-02-06T16:00:00.000Z</published>
+    <updated>2019-04-29T08:21:14.241Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;哈哈，我一直以为我对python的内存模型已经很熟悉了，直到一个同学给我发了这样一段话。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;list.copy(): return a shallow copy of the list&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最开始的
+      
+    
+    </summary>
+    
+      <category term="技·路" scheme="https://96486d9b.github.io/categories/%E6%8A%80%C2%B7%E8%B7%AF/"/>
+    
+    
+      <category term="python" scheme="https://96486d9b.github.io/tags/python/"/>
+    
+      <category term="copy" scheme="https://96486d9b.github.io/tags/copy/"/>
+    
+      <category term="引用" scheme="https://96486d9b.github.io/tags/%E5%BC%95%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>流浪地球</title>
     <link href="https://96486d9b.github.io/2019/02/07/hy7vgh/"/>
     <id>https://96486d9b.github.io/2019/02/07/hy7vgh/</id>
     <published>2019-02-06T16:00:00.000Z</published>
-    <updated>2019-04-27T11:50:17.836Z</updated>
+    <updated>2019-04-29T08:21:13.630Z</updated>
     
     <summary type="html">
     
@@ -235,42 +292,11 @@
   </entry>
   
   <entry>
-    <title>shallow or deep copy?</title>
-    <link href="https://96486d9b.github.io/2019/02/07/zcxzk1/"/>
-    <id>https://96486d9b.github.io/2019/02/07/zcxzk1/</id>
-    <published>2019-02-06T16:00:00.000Z</published>
-    <updated>2019-04-27T11:50:18.319Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;哈哈，我一直以为我对python的内存模型已经很熟悉了，直到一个同学给我发了这样一段话。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;list.copy(): return a shallow copy of the list&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;最开始的
-      
-    
-    </summary>
-    
-      <category term="技·路" scheme="https://96486d9b.github.io/categories/%E6%8A%80%C2%B7%E8%B7%AF/"/>
-    
-    
-      <category term="python" scheme="https://96486d9b.github.io/tags/python/"/>
-    
-      <category term="copy" scheme="https://96486d9b.github.io/tags/copy/"/>
-    
-      <category term="引用" scheme="https://96486d9b.github.io/tags/%E5%BC%95%E7%94%A8/"/>
-    
-  </entry>
-  
-  <entry>
     <title>托斯卡纳艳阳下</title>
     <link href="https://96486d9b.github.io/2019/02/01/we68gi/"/>
     <id>https://96486d9b.github.io/2019/02/01/we68gi/</id>
     <published>2019-02-01T05:32:01.000Z</published>
-    <updated>2019-04-27T11:50:19.736Z</updated>
+    <updated>2019-04-29T08:21:15.946Z</updated>
     
     <summary type="html">
     
@@ -302,7 +328,7 @@
     <link href="https://96486d9b.github.io/2019/02/01/gv4ls1/"/>
     <id>https://96486d9b.github.io/2019/02/01/gv4ls1/</id>
     <published>2019-02-01T05:32:01.000Z</published>
-    <updated>2019-04-27T11:50:19.976Z</updated>
+    <updated>2019-04-29T08:21:16.279Z</updated>
     
     <summary type="html">
     
@@ -336,7 +362,7 @@
     <link href="https://96486d9b.github.io/2019/01/25/nuzp8b/"/>
     <id>https://96486d9b.github.io/2019/01/25/nuzp8b/</id>
     <published>2019-01-25T14:10:01.000Z</published>
-    <updated>2019-04-27T11:50:19.285Z</updated>
+    <updated>2019-04-29T08:21:15.389Z</updated>
     
     <summary type="html">
     
@@ -361,11 +387,11 @@
   </entry>
   
   <entry>
-    <title>架构</title>
+    <title>博客架构</title>
     <link href="https://96486d9b.github.io/2019/01/01/gabsgd/"/>
     <id>https://96486d9b.github.io/2019/01/01/gabsgd/</id>
     <published>2018-12-31T16:00:00.000Z</published>
-    <updated>2019-04-27T11:50:18.590Z</updated>
+    <updated>2019-04-29T08:21:14.577Z</updated>
     
     <summary type="html">
     
@@ -393,7 +419,7 @@
     <link href="https://96486d9b.github.io/2018/12/08/lgbn47/"/>
     <id>https://96486d9b.github.io/2018/12/08/lgbn47/</id>
     <published>2018-12-08T14:10:01.000Z</published>
-    <updated>2019-04-27T11:50:21.487Z</updated>
+    <updated>2019-04-29T08:21:18.097Z</updated>
     
     <summary type="html">
     
@@ -422,7 +448,7 @@
     <link href="https://96486d9b.github.io/2018/12/07/iuvnbg/"/>
     <id>https://96486d9b.github.io/2018/12/07/iuvnbg/</id>
     <published>2018-12-06T18:36:01.000Z</published>
-    <updated>2019-04-27T11:50:19.582Z</updated>
+    <updated>2019-04-29T08:21:15.725Z</updated>
     
     <summary type="html">
     
@@ -451,7 +477,7 @@
     <link href="https://96486d9b.github.io/2018/12/01/yvi8hl/"/>
     <id>https://96486d9b.github.io/2018/12/01/yvi8hl/</id>
     <published>2018-11-30T16:00:00.000Z</published>
-    <updated>2019-04-27T11:50:18.692Z</updated>
+    <updated>2019-04-29T08:21:14.697Z</updated>
     
     <summary type="html">
     
@@ -481,7 +507,7 @@
     <link href="https://96486d9b.github.io/2018/11/29/cmg133/"/>
     <id>https://96486d9b.github.io/2018/11/29/cmg133/</id>
     <published>2018-11-29T10:24:01.000Z</published>
-    <updated>2019-04-27T11:50:19.818Z</updated>
+    <updated>2019-04-29T08:21:16.043Z</updated>
     
     <summary type="html">
     
@@ -506,7 +532,7 @@
     <link href="https://96486d9b.github.io/2018/11/07/hy0tx2/"/>
     <id>https://96486d9b.github.io/2018/11/07/hy0tx2/</id>
     <published>2018-11-06T18:36:01.000Z</published>
-    <updated>2019-04-27T11:50:20.819Z</updated>
+    <updated>2019-04-29T08:21:17.387Z</updated>
     
     <summary type="html">
     
@@ -537,7 +563,7 @@
     <link href="https://96486d9b.github.io/2018/10/19/mmitb4/"/>
     <id>https://96486d9b.github.io/2018/10/19/mmitb4/</id>
     <published>2018-10-19T08:22:01.000Z</published>
-    <updated>2019-04-27T11:50:20.690Z</updated>
+    <updated>2019-04-29T08:21:17.291Z</updated>
     
     <summary type="html">
     
@@ -562,7 +588,7 @@
     <link href="https://96486d9b.github.io/2018/10/04/symt4y/"/>
     <id>https://96486d9b.github.io/2018/10/04/symt4y/</id>
     <published>2018-10-04T08:27:01.000Z</published>
-    <updated>2019-04-27T11:50:20.437Z</updated>
+    <updated>2019-04-29T08:21:16.879Z</updated>
     
     <summary type="html">
     
@@ -585,32 +611,6 @@
       <category term="民族" scheme="https://96486d9b.github.io/tags/%E6%B0%91%E6%97%8F/"/>
     
       <category term="历史" scheme="https://96486d9b.github.io/tags/%E5%8E%86%E5%8F%B2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>平凡的世界</title>
-    <link href="https://96486d9b.github.io/2018/09/24/de1v61/"/>
-    <id>https://96486d9b.github.io/2018/09/24/de1v61/</id>
-    <published>2018-09-23T18:32:01.000Z</published>
-    <updated>2019-04-27T11:50:21.395Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;那时候高三，躺在教室的最后一排。&lt;/p&gt;
-&lt;p&gt;最喜欢坐在窗户边的时候，趴在那看着窗外，会有各式各样的人走过。&lt;/p&gt;
-&lt;p&gt;聚拢来的风，会吹过躁动的夏天，连同每天不一样的心境，在岁月里呢喃。&lt;/p&gt;
-&lt;p&gt;那时候刷刷卷子，我教僧哥数学僧哥教我生物，在嘈杂里谈论着隔壁班的女
-      
-    
-    </summary>
-    
-      <category term="一隅" scheme="https://96486d9b.github.io/categories/%E4%B8%80%E9%9A%85/"/>
-    
-    
-      <category term="回忆" scheme="https://96486d9b.github.io/tags/%E5%9B%9E%E5%BF%86/"/>
     
   </entry>
   
