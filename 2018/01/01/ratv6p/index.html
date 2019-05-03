@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="Flow">
 <meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-29T08:21:14.813Z">
+<meta property="og:updated_time" content="2019-05-03T04:58:33.661Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NA2">
 <meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
@@ -245,14 +245,12 @@
 			2018-01-01
 		</time>
 
-		
-<span id="/2018/01/01/ratv6p/" class="leancloud-visitors" data-flag-title="NA2">
+		<span id="/2018/01/01/ratv6p/" class="leancloud-visitors" data-flag-title="NA2">
     <time> 字数 <span id="wordcount"></span> 阅读时长 <span id="min2read"></span> 浏览 <span class="leancloud-visitors-count"></span></time>
 </span>
 <script>
   initCount('&#34;123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;math.h&amp;gt;#define ZERO 1e-13 /* X is considered to be 0 if |X|&amp;lt;ZERO */#define MAXN 11    /* Max Polynomial Degree + 1 */double Polynomial_Root(int n, double c[], double a, double b, double EPS);int main()&amp;#123;    int n;    double c[MAXN], a, b;    double EPS = 0.00005;    int i;    scanf(\&#34;%d\&#34;, &amp;amp;n);    for (i = n; i &amp;gt;= 0; i--)        scanf(\&#34;%lf\&#34;, &amp;amp;c[i]);    scanf(\&#34;%lf %lf\&#34;, &amp;amp;a, &amp;amp;b);    printf(\&#34;%.4f\\n\&#34;, Polynomial_Root(n, c, a, b, EPS));    return 0;&amp;#125;double f0(int n, double c[], double x)&amp;#123;    double res = c[n];    int i;    for (i = n; i &amp;gt;= 1; i--)    &amp;#123;        res = res * x + c[i - 1];    &amp;#125;    return res;&amp;#125;double f1(int n, double c[], double x)&amp;#123;    double res = c[n] * n;    int i;    for (i = n - 1; i &amp;gt;= 1; i--)    &amp;#123;        res = res * x + c[i] * i;    &amp;#125;    return res;&amp;#125;double f2(int n, double c[], double x)&amp;#123;    double res = c[n] * n * (n - 1);    int i;    for (i = n - 2; i &amp;gt;= 1; i--)    &amp;#123;        res = res * x + c[i + 1] * (i + 1) * i;    &amp;#125;    return res;&amp;#125;int newton(int n, double x, double a, double b, double c[], double *root, double *value, double EPS)&amp;#123;    int pivot = 1000;    int flag = 0;    double p0 = x;    double p1 = p0;    while (pivot--)    &amp;#123;        double y0 = f0(n, c, p0);        double y1 = f1(n, c, p0);        double y2 = f2(n, c, p0);        double det = y1 * y1 - y0 * y2;        if (fabs(y0) &amp;lt; ZERO)        &amp;#123;            flag = 1;            break;        &amp;#125;        if (fabs(det) &amp;lt; ZERO)        &amp;#123;            flag = 0;            break;        &amp;#125;        p1 = p0 - y0 * y1 / det;        double fp = f0(n, c, p1);        if (p1 &amp;lt; a || p1 &amp;gt; b)        &amp;#123;            flag = 0;            break;        &amp;#125;        if (fabs(p1 - p0) &amp;lt; EPS &amp;amp;&amp;amp; fabs(fp) &amp;lt; EPS)        &amp;#123;            flag = 1;            break;        &amp;#125;        p0 = p1;    &amp;#125;    *root = p1;    *value = fabs(f0(n, c, p1));    return flag;&amp;#125;double Polynomial_Root(int n, double c[], double a, double b, double EPS)&amp;#123;    double swap;    int flag;    double root;    const int looptimes = 5;    double value = 99999;    if (a &amp;gt;= b)    &amp;#123;        swap = a;        a = b;        b = swap;    &amp;#125;    double s[looptimes + 1];    int i;    for (i = 0; i &amp;lt; looptimes; i++)        s[i] = a + (b - a) / looptimes * i;    i = 0;    double tmproot;    double tmpvalue;    while (i &amp;lt; looptimes + 1)    &amp;#123;        if (newton(n, s[i], a, b, c, &amp;amp;tmproot, &amp;amp;tmpvalue, EPS))        &amp;#123;            if (tmpvalue &amp;lt; value)            &amp;#123;                value = tmpvalue;                root = tmproot;            &amp;#125;        &amp;#125;        i++;    &amp;#125;    if (fabs(root) &amp;lt; EPS)        return fabs(root);    else        return root;&amp;#125;\n&#34;');
 </script>
-
 		
 
 <div class="categories">
