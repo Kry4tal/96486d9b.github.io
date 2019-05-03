@@ -69,7 +69,7 @@
 <body>
   <script>NProgress.start();</script>
   <header class="l_header">
-	<div class="wrapper">
+	<div class="wrapper compensate-for-scrollbar">
 		<div class="nav-main container container--flex">
 			<a class="logo flat-box" href="/">
 				Flow
@@ -273,14 +273,14 @@ https://www.bili...
     
     <div class="full-width auto-padding tags">
       
+      <a href="/tags/电影/">
+        电影</a>
+      
       <a href="/tags/科幻/">
         科幻</a>
       
       <a href="/tags/教育/">
         教育</a>
-      
-      <a href="/tags/电影/">
-        电影</a>
       
     </div>
     
@@ -397,7 +397,9 @@ https://www.bili...
     访问量<span id="busuanzi_value_site_pv"></span>次 访客数<span id="busuanzi_value_site_uv"></span>人
   </div>
 </footer>
-  <canvas id="evanyou"></canvas>
+  <div class="evanyou compensate-for-scrollbar">
+    <canvas id="evanyou"></canvas>
+</div>
   <div id="aplayer-fixed"></div>
   <script src="/js/pjax.js"></script>
   <script>NProgress.done();</script>

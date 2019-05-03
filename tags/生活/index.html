@@ -69,7 +69,7 @@
 <body>
   <script>NProgress.start();</script>
   <header class="l_header">
-	<div class="wrapper">
+	<div class="wrapper compensate-for-scrollbar">
 		<div class="nav-main container container--flex">
 			<a class="logo flat-box" href="/">
 				Flow
@@ -384,14 +384,14 @@ The stain you got on your shirt at lunch.
     
     <div class="full-width auto-padding tags">
       
+      <a href="/tags/诗歌/">
+        诗歌</a>
+      
       <a href="/tags/生活/">
         生活</a>
       
       <a href="/tags/感想/">
         感想</a>
-      
-      <a href="/tags/诗歌/">
-        诗歌</a>
       
     </div>
     
@@ -497,11 +497,11 @@ The stain you got on your shirt at lunch.
       <a href="/tags/生活/">
         生活</a>
       
-      <a href="/tags/杂记/">
-        杂记</a>
-      
       <a href="/tags/心情/">
         心情</a>
+      
+      <a href="/tags/杂记/">
+        杂记</a>
       
     </div>
     
@@ -672,7 +672,9 @@ The stain you got on your shirt at lunch.
     访问量<span id="busuanzi_value_site_pv"></span>次 访客数<span id="busuanzi_value_site_uv"></span>人
   </div>
 </footer>
-  <canvas id="evanyou"></canvas>
+  <div class="evanyou compensate-for-scrollbar">
+    <canvas id="evanyou"></canvas>
+</div>
   <div id="aplayer-fixed"></div>
   <script src="/js/pjax.js"></script>
   <script>NProgress.done();</script>
