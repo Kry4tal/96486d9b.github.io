@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://96486d9b.github.io/"/>
-  <updated>2019-05-03T04:58:31.902Z</updated>
+  <updated>2019-05-04T04:40:26.204Z</updated>
   <id>https://96486d9b.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Her</title>
-    <link href="https://96486d9b.github.io/2019/04/08/yrch3g/"/>
-    <id>https://96486d9b.github.io/2019/04/08/yrch3g/</id>
+    <link href="https://96486d9b.github.io/2019/04/08/Flow/yrch3g/"/>
+    <id>https://96486d9b.github.io/2019/04/08/Flow/yrch3g/</id>
     <published>2019-04-07T16:00:00.000Z</published>
-    <updated>2019-05-03T04:58:31.902Z</updated>
+    <updated>2019-05-04T04:40:26.204Z</updated>
     
     <summary type="html">
     
@@ -47,10 +47,10 @@
   
   <entry>
     <title>回想(一)</title>
-    <link href="https://96486d9b.github.io/2019/03/08/ga9dtw/"/>
-    <id>https://96486d9b.github.io/2019/03/08/ga9dtw/</id>
+    <link href="https://96486d9b.github.io/2019/03/08/Flow/ga9dtw/"/>
+    <id>https://96486d9b.github.io/2019/03/08/Flow/ga9dtw/</id>
     <published>2019-03-07T16:00:00.000Z</published>
-    <updated>2019-05-03T04:58:31.779Z</updated>
+    <updated>2019-05-04T04:40:26.048Z</updated>
     
     <summary type="html">
     
@@ -73,10 +73,10 @@
   
   <entry>
     <title>成长的似水流年</title>
-    <link href="https://96486d9b.github.io/2019/02/18/apgzdc/"/>
-    <id>https://96486d9b.github.io/2019/02/18/apgzdc/</id>
+    <link href="https://96486d9b.github.io/2019/02/18/Flow/apgzdc/"/>
+    <id>https://96486d9b.github.io/2019/02/18/Flow/apgzdc/</id>
     <published>2019-02-17T16:00:00.000Z</published>
-    <updated>2019-05-03T04:58:32.112Z</updated>
+    <updated>2019-05-04T04:40:26.423Z</updated>
     
     <summary type="html">
     
@@ -104,10 +104,10 @@
   
   <entry>
     <title>安知鱼之乐？</title>
-    <link href="https://96486d9b.github.io/2019/02/17/gcpaf4/"/>
-    <id>https://96486d9b.github.io/2019/02/17/gcpaf4/</id>
+    <link href="https://96486d9b.github.io/2019/02/17/Flow/gcpaf4/"/>
+    <id>https://96486d9b.github.io/2019/02/17/Flow/gcpaf4/</id>
     <published>2019-02-16T16:00:00.000Z</published>
-    <updated>2019-05-03T04:58:32.208Z</updated>
+    <updated>2019-05-04T04:40:26.544Z</updated>
     
     <summary type="html">
     
@@ -136,10 +136,10 @@
   
   <entry>
     <title>__new__与__init__</title>
-    <link href="https://96486d9b.github.io/2019/02/09/cpcrc8/"/>
-    <id>https://96486d9b.github.io/2019/02/09/cpcrc8/</id>
+    <link href="https://96486d9b.github.io/2019/02/09/Flow/cpcrc8/"/>
+    <id>https://96486d9b.github.io/2019/02/09/Flow/cpcrc8/</id>
     <published>2019-02-08T16:00:00.000Z</published>
-    <updated>2019-05-03T04:58:32.537Z</updated>
+    <updated>2019-05-04T04:40:26.935Z</updated>
     
     <summary type="html">
     
@@ -167,10 +167,10 @@
   
   <entry>
     <title>乡村教师</title>
-    <link href="https://96486d9b.github.io/2019/02/08/mgve1g/"/>
-    <id>https://96486d9b.github.io/2019/02/08/mgve1g/</id>
+    <link href="https://96486d9b.github.io/2019/02/08/Flow/mgve1g/"/>
+    <id>https://96486d9b.github.io/2019/02/08/Flow/mgve1g/</id>
     <published>2019-02-07T16:00:00.000Z</published>
-    <updated>2019-05-03T04:58:32.316Z</updated>
+    <updated>2019-05-04T04:40:26.685Z</updated>
     
     <summary type="html">
     
@@ -197,10 +197,10 @@
   
   <entry>
     <title>python的多继承机制</title>
-    <link href="https://96486d9b.github.io/2019/02/08/ntdecr/"/>
-    <id>https://96486d9b.github.io/2019/02/08/ntdecr/</id>
+    <link href="https://96486d9b.github.io/2019/02/08/Flow/ntdecr/"/>
+    <id>https://96486d9b.github.io/2019/02/08/Flow/ntdecr/</id>
     <published>2019-02-07T16:00:00.000Z</published>
-    <updated>2019-05-03T04:58:32.937Z</updated>
+    <updated>2019-05-04T04:40:27.419Z</updated>
     
     <summary type="html">
     
@@ -227,11 +227,42 @@
   </entry>
   
   <entry>
-    <title>流浪地球</title>
-    <link href="https://96486d9b.github.io/2019/02/07/hy7vgh/"/>
-    <id>https://96486d9b.github.io/2019/02/07/hy7vgh/</id>
+    <title>shallow or deep copy?</title>
+    <link href="https://96486d9b.github.io/2019/02/07/Flow/zcxzk1/"/>
+    <id>https://96486d9b.github.io/2019/02/07/Flow/zcxzk1/</id>
     <published>2019-02-06T16:00:00.000Z</published>
-    <updated>2019-05-03T04:58:32.423Z</updated>
+    <updated>2019-05-04T04:40:27.545Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;哈哈，我一直以为我对python的内存模型已经很熟悉了，直到一个同学给我发了这样一段话。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;list.copy(): return a shallow copy of the list&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最开始的
+      
+    
+    </summary>
+    
+      <category term="技·路" scheme="https://96486d9b.github.io/categories/%E6%8A%80%C2%B7%E8%B7%AF/"/>
+    
+    
+      <category term="python" scheme="https://96486d9b.github.io/tags/python/"/>
+    
+      <category term="copy" scheme="https://96486d9b.github.io/tags/copy/"/>
+    
+      <category term="引用" scheme="https://96486d9b.github.io/tags/%E5%BC%95%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>流浪地球</title>
+    <link href="https://96486d9b.github.io/2019/02/07/Flow/hy7vgh/"/>
+    <id>https://96486d9b.github.io/2019/02/07/Flow/hy7vgh/</id>
+    <published>2019-02-06T16:00:00.000Z</published>
+    <updated>2019-05-04T04:40:26.794Z</updated>
     
     <summary type="html">
     
@@ -261,42 +292,11 @@
   </entry>
   
   <entry>
-    <title>shallow or deep copy?</title>
-    <link href="https://96486d9b.github.io/2019/02/07/zcxzk1/"/>
-    <id>https://96486d9b.github.io/2019/02/07/zcxzk1/</id>
-    <published>2019-02-06T16:00:00.000Z</published>
-    <updated>2019-05-03T04:58:33.033Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;哈哈，我一直以为我对python的内存模型已经很熟悉了，直到一个同学给我发了这样一段话。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;list.copy(): return a shallow copy of the list&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;最开始的
-      
-    
-    </summary>
-    
-      <category term="技·路" scheme="https://96486d9b.github.io/categories/%E6%8A%80%C2%B7%E8%B7%AF/"/>
-    
-    
-      <category term="python" scheme="https://96486d9b.github.io/tags/python/"/>
-    
-      <category term="copy" scheme="https://96486d9b.github.io/tags/copy/"/>
-    
-      <category term="引用" scheme="https://96486d9b.github.io/tags/%E5%BC%95%E7%94%A8/"/>
-    
-  </entry>
-  
-  <entry>
     <title>托斯卡纳艳阳下</title>
-    <link href="https://96486d9b.github.io/2019/02/01/we68gi/"/>
-    <id>https://96486d9b.github.io/2019/02/01/we68gi/</id>
+    <link href="https://96486d9b.github.io/2019/02/01/Flow/we68gi/"/>
+    <id>https://96486d9b.github.io/2019/02/01/Flow/we68gi/</id>
     <published>2019-02-01T05:32:01.000Z</published>
-    <updated>2019-05-03T04:58:34.745Z</updated>
+    <updated>2019-05-04T04:40:29.828Z</updated>
     
     <summary type="html">
     
@@ -325,10 +325,10 @@
   
   <entry>
     <title>杀鹌鹑的少女</title>
-    <link href="https://96486d9b.github.io/2019/02/01/gv4ls1/"/>
-    <id>https://96486d9b.github.io/2019/02/01/gv4ls1/</id>
+    <link href="https://96486d9b.github.io/2019/02/01/Flow/gv4ls1/"/>
+    <id>https://96486d9b.github.io/2019/02/01/Flow/gv4ls1/</id>
     <published>2019-02-01T05:32:01.000Z</published>
-    <updated>2019-05-03T04:58:35.091Z</updated>
+    <updated>2019-05-04T04:40:30.188Z</updated>
     
     <summary type="html">
     
@@ -349,20 +349,20 @@
       <category term="偶得" scheme="https://96486d9b.github.io/categories/%E5%81%B6%E5%BE%97/"/>
     
     
-      <category term="诗歌" scheme="https://96486d9b.github.io/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="生活" scheme="https://96486d9b.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
     
       <category term="感想" scheme="https://96486d9b.github.io/tags/%E6%84%9F%E6%83%B3/"/>
+    
+      <category term="诗歌" scheme="https://96486d9b.github.io/tags/%E8%AF%97%E6%AD%8C/"/>
     
   </entry>
   
   <entry>
     <title>回家</title>
-    <link href="https://96486d9b.github.io/2019/01/25/nuzp8b/"/>
-    <id>https://96486d9b.github.io/2019/01/25/nuzp8b/</id>
+    <link href="https://96486d9b.github.io/2019/01/25/Flow/nuzp8b/"/>
+    <id>https://96486d9b.github.io/2019/01/25/Flow/nuzp8b/</id>
     <published>2019-01-25T14:10:01.000Z</published>
-    <updated>2019-05-03T04:58:34.219Z</updated>
+    <updated>2019-05-04T04:40:29.090Z</updated>
     
     <summary type="html">
     
@@ -388,10 +388,10 @@
   
   <entry>
     <title>博客架构</title>
-    <link href="https://96486d9b.github.io/2019/01/01/gabsgd/"/>
-    <id>https://96486d9b.github.io/2019/01/01/gabsgd/</id>
+    <link href="https://96486d9b.github.io/2019/01/01/Flow/gabsgd/"/>
+    <id>https://96486d9b.github.io/2019/01/01/Flow/gabsgd/</id>
     <published>2018-12-31T16:00:00.000Z</published>
-    <updated>2019-05-03T04:58:33.437Z</updated>
+    <updated>2019-05-04T04:40:28.013Z</updated>
     
     <summary type="html">
     
@@ -416,10 +416,10 @@
   
   <entry>
     <title>初雪</title>
-    <link href="https://96486d9b.github.io/2018/12/08/lgbn47/"/>
-    <id>https://96486d9b.github.io/2018/12/08/lgbn47/</id>
+    <link href="https://96486d9b.github.io/2018/12/08/Flow/lgbn47/"/>
+    <id>https://96486d9b.github.io/2018/12/08/Flow/lgbn47/</id>
     <published>2018-12-08T14:10:01.000Z</published>
-    <updated>2019-05-03T04:58:37.066Z</updated>
+    <updated>2019-05-04T04:40:32.553Z</updated>
     
     <summary type="html">
     
@@ -445,10 +445,10 @@
   
   <entry>
     <title>西南联大</title>
-    <link href="https://96486d9b.github.io/2018/12/07/iuvnbg/"/>
-    <id>https://96486d9b.github.io/2018/12/07/iuvnbg/</id>
+    <link href="https://96486d9b.github.io/2018/12/07/Flow/iuvnbg/"/>
+    <id>https://96486d9b.github.io/2018/12/07/Flow/iuvnbg/</id>
     <published>2018-12-06T18:36:01.000Z</published>
-    <updated>2019-05-03T04:58:34.525Z</updated>
+    <updated>2019-05-04T04:40:29.547Z</updated>
     
     <summary type="html">
     
@@ -464,9 +464,9 @@
       <category term="记·路" scheme="https://96486d9b.github.io/categories/%E8%AE%B0%C2%B7%E8%B7%AF/"/>
     
     
-      <category term="纪录片" scheme="https://96486d9b.github.io/tags/%E7%BA%AA%E5%BD%95%E7%89%87/"/>
-    
       <category term="大师" scheme="https://96486d9b.github.io/tags/%E5%A4%A7%E5%B8%88/"/>
+    
+      <category term="纪录片" scheme="https://96486d9b.github.io/tags/%E7%BA%AA%E5%BD%95%E7%89%87/"/>
     
       <category term="历史" scheme="https://96486d9b.github.io/tags/%E5%8E%86%E5%8F%B2/"/>
     
@@ -474,10 +474,10 @@
   
   <entry>
     <title>fGAN</title>
-    <link href="https://96486d9b.github.io/2018/12/01/yvi8hl/"/>
-    <id>https://96486d9b.github.io/2018/12/01/yvi8hl/</id>
+    <link href="https://96486d9b.github.io/2018/12/01/Flow/yvi8hl/"/>
+    <id>https://96486d9b.github.io/2018/12/01/Flow/yvi8hl/</id>
     <published>2018-11-30T16:00:00.000Z</published>
-    <updated>2019-05-03T04:58:33.564Z</updated>
+    <updated>2019-05-04T04:40:28.154Z</updated>
     
     <summary type="html">
     
@@ -504,10 +504,10 @@
   
   <entry>
     <title>实习</title>
-    <link href="https://96486d9b.github.io/2018/11/29/cmg133/"/>
-    <id>https://96486d9b.github.io/2018/11/29/cmg133/</id>
+    <link href="https://96486d9b.github.io/2018/11/29/Flow/cmg133/"/>
+    <id>https://96486d9b.github.io/2018/11/29/Flow/cmg133/</id>
     <published>2018-11-29T10:24:01.000Z</published>
-    <updated>2019-05-03T04:58:34.861Z</updated>
+    <updated>2019-05-04T04:40:29.938Z</updated>
     
     <summary type="html">
     
@@ -529,10 +529,10 @@
   
   <entry>
     <title>大后方</title>
-    <link href="https://96486d9b.github.io/2018/11/07/hy0tx2/"/>
-    <id>https://96486d9b.github.io/2018/11/07/hy0tx2/</id>
+    <link href="https://96486d9b.github.io/2018/11/07/Flow/hy0tx2/"/>
+    <id>https://96486d9b.github.io/2018/11/07/Flow/hy0tx2/</id>
     <published>2018-11-06T18:36:01.000Z</published>
-    <updated>2019-05-03T04:58:36.091Z</updated>
+    <updated>2019-05-04T04:40:31.508Z</updated>
     
     <summary type="html">
     
@@ -550,20 +550,20 @@
     
       <category term="纪录片" scheme="https://96486d9b.github.io/tags/%E7%BA%AA%E5%BD%95%E7%89%87/"/>
     
-      <category term="民族" scheme="https://96486d9b.github.io/tags/%E6%B0%91%E6%97%8F/"/>
-    
       <category term="抗战" scheme="https://96486d9b.github.io/tags/%E6%8A%97%E6%88%98/"/>
     
       <category term="历史" scheme="https://96486d9b.github.io/tags/%E5%8E%86%E5%8F%B2/"/>
+    
+      <category term="民族" scheme="https://96486d9b.github.io/tags/%E6%B0%91%E6%97%8F/"/>
     
   </entry>
   
   <entry>
     <title>两天一夜</title>
-    <link href="https://96486d9b.github.io/2018/10/19/mmitb4/"/>
-    <id>https://96486d9b.github.io/2018/10/19/mmitb4/</id>
+    <link href="https://96486d9b.github.io/2018/10/19/Flow/mmitb4/"/>
+    <id>https://96486d9b.github.io/2018/10/19/Flow/mmitb4/</id>
     <published>2018-10-19T08:22:01.000Z</published>
-    <updated>2019-05-03T04:58:35.997Z</updated>
+    <updated>2019-05-04T04:40:31.384Z</updated>
     
     <summary type="html">
     
@@ -585,10 +585,10 @@
   
   <entry>
     <title>南宋</title>
-    <link href="https://96486d9b.github.io/2018/10/04/symt4y/"/>
-    <id>https://96486d9b.github.io/2018/10/04/symt4y/</id>
+    <link href="https://96486d9b.github.io/2018/10/04/Flow/symt4y/"/>
+    <id>https://96486d9b.github.io/2018/10/04/Flow/symt4y/</id>
     <published>2018-10-04T08:27:01.000Z</published>
-    <updated>2019-05-03T04:58:35.638Z</updated>
+    <updated>2019-05-04T04:40:30.962Z</updated>
     
     <summary type="html">
     
@@ -608,9 +608,9 @@
     
       <category term="纪录片" scheme="https://96486d9b.github.io/tags/%E7%BA%AA%E5%BD%95%E7%89%87/"/>
     
-      <category term="民族" scheme="https://96486d9b.github.io/tags/%E6%B0%91%E6%97%8F/"/>
-    
       <category term="历史" scheme="https://96486d9b.github.io/tags/%E5%8E%86%E5%8F%B2/"/>
+    
+      <category term="民族" scheme="https://96486d9b.github.io/tags/%E6%B0%91%E6%97%8F/"/>
     
   </entry>
   
